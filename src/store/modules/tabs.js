@@ -119,9 +119,11 @@ export default {
             "Web Back end": [
               {name: 'Flask', description: 'Python framework for generating simple server-side web applications (ex: REST API, DBMS connections)'},
               {name: 'Django', description: 'Python framework for generating enterprise-grade server-side web applications'},
+              {name: 'AioHTTP', description: 'Python framework for generating single-threaded server-side web applications leveraging python\'s async module'},
               {name: 'NodeJS', description: 'Javascript runtime for server-side developmnent of web applications (ex: REST API, DBMS connections)'},
-              {name: 'JSON Web Tokens', description: 'Authorization objects to share between server and client to authenticate users'},
-              {name: 'oAuth', description: 'Authorization objects to authenticate a user on remote 3rd party applications'}
+              {name: 'Celery', description: 'Task queue for distributed message/task management'},
+              {name: 'ZeroMQ', description: 'Open source task queue for performant distributed message/task management'},
+              {name: 'HTTPS', description: 'Secure HTTP communication between client and server'}
             ],
             "Data Storage": [
               {name: 'MySQL', description: 'One of the most popular database management system to generate relational databases'},
@@ -134,9 +136,8 @@ export default {
             "Administation": [
               {name: 'Apache', description: 'Classic server application for file distribution, traffic shaping and reverse proxying of APIs'},
               {name: 'Nginx', description: 'Popular server application for file distribution, traffic shaping and reverse proxying of APIs'},
-              {name: 'Celery', description: 'Task queue for distributed message/task management'},
-              {name: 'ZeroMQ', description: 'Open source task queue for performant distributed message/task management'},
-              {name: 'HTTPS', description: 'Secure HTTP communication between client and server'}
+              {name: 'JSON Web Tokens', description: 'Authorization objects to share between server and client to authenticate users'},
+              {name: 'oAuth', description: 'Authorization objects to authenticate a user on remote 3rd party applications'}
             ]
           }
         },
