@@ -3,7 +3,8 @@ export default {
   state() {
     return {
       dark: false,
-      language: "gb"
+      language: "gb",
+      show: false
     };
   },
   mutations: {
