@@ -120,6 +120,7 @@ export default {
               {name: 'Flask', description: 'Python framework for generating simple server-side web applications (ex: REST API, DBMS connections)'},
               {name: 'Django', description: 'Python framework for generating enterprise-grade server-side web applications'},
               {name: 'AioHTTP', description: 'Python framework for generating single-threaded server-side web applications leveraging python\'s async module'},
+              {name: 'Websockets', description: 'Full-stack construct that allows full duplex communication, making real-time web applications possible'},
               {name: 'NodeJS', description: 'Javascript runtime for server-side developmnent of web applications (ex: REST API, DBMS connections)'},
               {name: 'Celery', description: 'Task queue for distributed message/task management'},
               {name: 'ZeroMQ', description: 'Open source task queue for performant distributed message/task management'},
