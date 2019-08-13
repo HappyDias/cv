@@ -1,6 +1,3 @@
-//import bibliography from '@/data/bib.json';
-//import template from '@/data/tabs/index.js';
-
 import axios from "axios";
 import qs from 'qs';
 
@@ -37,25 +34,6 @@ function homogenize(obj){
 
   return toReturn;
 }
-
-/*const tabs = Object.keys(template).map((key,idx) => ({
-  title: key,
-  content: {...template[key]}
-}));
-
-tabs.forEach((tab,idx)=>{
-  if(tab.title === 'Publications'){
-    tabs[idx].content.bibliography = tabs[idx].content.bibliography.map(homogenize).sort(orderByDate);
-  }
-})*/
-
-/*axios.get("/.netlify/functions/get_tabs")
-  .then(res => {
-    console.log("result", res);
-  })
-  .catch(error => {
-    console.log("error", error);
-  });*/
 
 export default {
   namespaced: true,
@@ -135,6 +113,10 @@ export default {
       axios.get("/.netlify/functions/get_tab_info?title="+title)
         .then(res=>{
           if(res.status === 200){
+            const returnData = res.data.data;
+            if(title === 'Publications'){
+              returnData.bibliography = returnData.bibliography.map(homogenize).sort(orderByDate);
+            }
             context.commit("setTab", {idx, content: res.data.data});
           }
           context.commit("set", {key: 'fetchingTab', value: false});

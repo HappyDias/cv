@@ -8,6 +8,19 @@ const Tab = conn.model('tabs', new mongoose.Schema({
 },
 {strict:false}));
 
+const orders = {
+  "Interests" : 0,
+  "Education" : 1,
+  "Experience" : 2,
+  "Skills" : 3,
+  "Language" : 4,
+  "Publications" : 5,
+}
+
+function order(a,b){
+  return orders[a] - orders[b];
+}
+
 export async function handler(event, context) {
   const response = {
     statusCode: 200,
@@ -19,7 +32,7 @@ export async function handler(event, context) {
     //Queries the distinct tab names in the database
     const query = await Tab.find().distinct('title');
 
-    response.body = JSON.stringify(query);
+    response.body = JSON.stringify(query.sort(order));
     response.headers["Content-Type"] = "application/json";
   }
   catch(e){
