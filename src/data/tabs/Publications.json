@@ -1,0 +1,131 @@
+{
+	"bibliography":[
+		{
+			"keywords": "rank5",
+			"adsurl": "http://adsabs.harvard.edu/abs/2016EGUGA..1813410D",
+			"adsnote": "Provided by the SAO/NASA Astrophysics Data System",
+			"month": "April",
+			"pages": "13410",
+			"series": "EGU General Assembly Conference Abstracts",
+			"volume": "18",
+			"year": "2016",
+			"booktitle": "EGU General Assembly Conference Abstracts",
+			"title": "CLOUDCLOUD : general-purpose instrument monitoring and data managing software",
+			"author": ["Dias, A. ", " Amorim, A. ", " Tom\u00e9, A."],
+			"ENTRYTYPE": "inproceedings",
+			"ID": "dias2016"
+		}, {
+			"keywords": "0305 Aerosols and particles, 0320 Cloud physics and chemistry, 3311 Clouds and aerosols, 3355 Regional modeling",
+			"adsurl": "http://adsabs.harvard.edu/abs/2014AGUFM.A31F3090D",
+			"adsnote": "Provided by the SAO/NASA Astrophysics Data System",
+			"month": "December",
+			"year": "2014",
+			"journal": "AGU Fall Meeting Abstracts",
+			"title": "Temperature characterisation of the CLOUD chamber at CERN",
+			"author": ["Dias, A.~M. ", " Almeida, J. ", " Kirkby, J. ", " Mathot, S. ", " Onnela, A. ", " Vogel, A. ", " Ehrhart, S."],
+			"ENTRYTYPE": "article",
+			"ID": "dias2014"
+		}, {
+			"url": " \nhttp://aip.scitation.org/doi/abs/10.1063/1.4803286\n",
+			"eprint": "http://aip.scitation.org/doi/pdf/10.1063/1.4803286",
+			"doi": "10.1063/1.4803286",
+			"pages": "393-396",
+			"number": "1",
+			"volume": "1527",
+			"year": "2013",
+			"journal": "AIP Conference Proceedings",
+			"title": "The CLOUD data acquisition system and online derivation of nucleation rates",
+			"author": ["A. Dias ", " J. Almeida ", " A. Amorim ", " A. David ", " A. Tom\u00c3\u00a9 ", " CLOUD Collaboration"],
+			"ENTRYTYPE": "article",
+			"ID": "dias2013"
+		}, {
+			"url": "https://doi.org/10.1038/nature18271",
+			"publisher": "Springer Nature",
+			"doi": "10.1038/nature18271",
+			"month": "may",
+			"pages": "527--531",
+			"number": "7604",
+			"volume": "533",
+			"year": "2016",
+			"journal": "Nature",
+			"title": "The role of low-volatility organic compounds in initial particle growth in the atmosphere",
+			"author": ["Jasmin Tr\u00f6stl ", " Wayne K. Chuang ", " Hamish Gordon ", " Martin Heinritzi ", " Chao Yan ", " Ugo Molteni ", " Lars Ahlm ", " Carla Frege ", " Federico Bianchi ", " Robert Wagner ", " Mario Simon ", " Katrianne Lehtipalo ", " Christina Williamson ", " Jill S. Craven ", " Jonathan Duplissy ", " Alexey Adamov ", " Joao Almeida ", " Anne-Kathrin Bernhammer ", " Martin Breitenlechner ", " Sophia Brilke ", " Ant\u00f2nio Dias ", " Sebastian Ehrhart ", " Richard C. Flagan ", " Aless", "ro Franchin ", " Claudia Fuchs ", " Roberto Guida ", " Martin Gysel ", " Armin Hansel ", " Christopher R. Hoyle ", " Tuija Jokinen ", " Heikki Junninen ", " Juha Kangasluoma ", " Helmi Keskinen ", " Jaeseok Kim ", " Manuel Krapf ", " Andreas K\u00fcrten ", " Ari Laaksonen ", " Michael Lawler ", " Markus Leiminger ", " Serge Mathot ", " Ottmar M\u00f6hler ", " Tuomo Nieminen ", " Antti Onnela ", " Tuukka Pet\u00e4j\u00e4 ", " Felix M. Piel ", " Pasi Miettinen ", " Matti P. Rissanen ", " Linda Rondo ", " Nina Sarnela ", " Siegfried Schobesberger ", " Kamalika Sengupta ", " Mikko Sipil\u00e4 ", " James N. Smith ", " Gerhard Steiner ", " Ant\u00f2nio Tom\u00e8 ", " Annele Virtanen ", " Andrea C. Wagner ", " Ernest Weingartner ", " Daniela Wimmer ", " Paul M. Winkler ", " Penglin Ye ", " Kenneth S. Carslaw ", " Joachim Curtius ", " Josef Dommen ", " Jasper Kirkby ", " Markku Kulmala ", " Ilona Riipinen ", " Douglas R. Worsnop ", " Neil M. Donahue ", " Urs Baltensperger"],
+			"ENTRYTYPE": "article",
+			"ID": "Trstl2016"
+		}, {
+			"url": "https://doi.org/10.1038/nature17953",
+			"publisher": "Springer Nature",
+			"doi": "10.1038/nature17953",
+			"month": "may",
+			"pages": "521--526",
+			"number": "7604",
+			"volume": "533",
+			"year": "2016",
+			"journal": "Nature",
+			"title": "Ion-induced nucleation of pure biogenic particles",
+			"author": ["Jasper Kirkby ", " Jonathan Duplissy ", " Kamalika Sengupta ", " Carla Frege ", " Hamish Gordon ", " Christina Williamson ", " Martin Heinritzi ", " Mario Simon ", " Chao Yan ", " Jo\u00e3o Almeida ", " Jasmin Tr\u00f6stl ", " Tuomo Nieminen ", " Ismael K. Ortega ", " Robert Wagner ", " Alexey Adamov ", " Antonio Amorim ", " Anne-Kathrin Bernhammer ", " Federico Bianchi ", " Martin Breitenlechner ", " Sophia Brilke ", " Xuemeng Chen ", " Jill Craven ", " Antonio Dias ", " Sebastian Ehrhart ", " Richard C. Flagan ", " Aless", "ro Franchin ", " Claudia Fuchs ", " Roberto Guida ", " Jani Hakala ", " Christopher R. Hoyle ", " Tuija Jokinen ", " Heikki Junninen ", " Juha Kangasluoma ", " Jaeseok Kim ", " Manuel Krapf ", " Andreas K\u00fcrten ", " Ari Laaksonen ", " Katrianne Lehtipalo ", " Vladimir Makhmutov ", " Serge Mathot ", " Ugo Molteni ", " Antti Onnela ", " Otso Per\u00e4kyl\u00e4 ", " Felix Piel ", " Tuukka Pet\u00e4j\u00e4 ", " Arnaud P. Praplan ", " Kirsty Pringle ", " Alex", "ru Rap ", " Nigel A. D. Richards ", " Ilona Riipinen ", " Matti P. Rissanen ", " Linda Rondo ", " Nina Sarnela ", " Siegfried Schobesberger ", " Catherine E. Scott ", " John H. Seinfeld ", " Mikko Sipil\u00e4 ", " Gerhard Steiner ", " Yuri Stozhkov ", " Frank Stratmann ", " Antonio Tom\u00e9 ", " Annele Virtanen ", " Alex", "er L. Vogel ", " Andrea C. Wagner ", " Paul E. Wagner ", " Ernest Weingartner ", " Daniela Wimmer ", " Paul M. Winkler ", " Penglin Ye ", " Xuan Zhang ", " Armin Hansel ", " Josef Dommen ", " Neil M. Donahue ", " Douglas R. Worsnop ", " Urs Baltensperger ", " Markku Kulmala ", " Kenneth S. Carslaw ", " Joachim Curtius"],
+			"ENTRYTYPE": "article",
+			"ID": "Kirkby2016"
+		}, {
+			"url": "http://www.atmos-chem-phys.net/16/1693/2016/",
+			"doi": "10.5194/acp-16-1693-2016",
+			"pages": "1693--1712",
+			"number": "3",
+			"volume": "16",
+			"year": "2016",
+			"journal": "Atmospheric Chemistry and Physics",
+			"title": "Aqueous phase oxidation of sulphur dioxide by ozone in cloud droplets",
+			"author": ["Hoyle, C. R. ", " Fuchs, C. ", " J\u00e4rvinen, E. ", " Saathoff, H. ", " Dias, A. ", " El Haddad, I. ", " Gysel, M. ", " Coburn, S. C. ", " Tr\u00f6stl, J. ", " Bernhammer, A.-K. ", " Bianchi, F. ", " Breitenlechner, M. ", " Corbin, J. C. ", " Craven, J. ", " Donahue, N. M. ", " Duplissy, J. ", " Ehrhart, S. ", " Frege, C. ", " Gordon, H. ", " H\u00f6ppel, N. ", " Heinritzi, M. ", " Kristensen, T. B. ", " Molteni, U. ", " Nichman, L. ", " Pinterich, T. ", " Pr\u00e9v\u00f4t, A. S. H. ", " Simon, M. ", " Slowik, J. G. ", " Steiner, G. ", " Tom\u00e9, A. ", " Vogel, A. L. ", " Volkamer, R. ", " Wagner, A. C. ", " Wagner, R. ", " Wexler, A. S. ", " Williamson, C. ", " Winkler, P. M. ", " Yan, C. ", " Amorim, A. ", " Dommen, J. ", " Curtius, J. ", " Gallagher, M. W. ", " Flagan, R. C. ", " Hansel, A. ", " Kirkby, J. ", " Kulmala, M. ", " M\u00f6hler, O. ", " Stratmann, F. ", " Worsnop, D. R. ", " Baltensperger, U."],
+			"ENTRYTYPE": "article",
+			"ID": "hoyle2016"
+		}, {
+			"url": "http://www.atmos-chem-phys.net/16/6495/2016/",
+			"doi": "10.5194/acp-16-6495-2016",
+			"pages": "6495--6509",
+			"number": "10",
+			"volume": "16",
+			"year": "2016",
+			"journal": "Atmospheric Chemistry and Physics",
+			"title": "Heterogeneous ice nucleation of viscous secondary organic aerosol produced from ozonolysis of $\u03b1$-pinene",
+			"author": ["Ignatius, K. ", " Kristensen, T. B. ", " J\u00e4rvinen, E. ", " Nichman, L. ", " Fuchs, C. ", " Gordon, H. ", " Herenz, P. ", " Hoyle, C. R. ", " Duplissy, J. ", " Garimella, S. ", " Dias, A. ", " Frege, C. ", " H\u00f6ppel, N. ", " Tr\u00f6stl, J. ", " Wagner, R. ", " Yan, C. ", " Amorim, A. ", " Baltensperger, U. ", " Curtius, J. ", " Donahue, N. M. ", " Gallagher, M. W. ", " Kirkby, J. ", " Kulmala, M. ", " M\u00f6hler, O. ", " Saathoff, H. ", " Schnaiter, M. ", " Tom\u00e9, A. ", " Virtanen, A. ", " Worsnop, D. ", " Stratmann, F."],
+			"ENTRYTYPE": "article",
+			"ID": "ignatius2016"
+		}, {
+			"url": "https://www.atmos-meas-tech.net/10/5075/2017/",
+			"journaltitle": "Atmospheric Measurement Techniques",
+			"doi": "10.5194/amt-10-5075-2017",
+			"date": "2017",
+			"pages": "5075--5088",
+			"number": "12",
+			"volume": "10",
+			"title": "Temperature uniformity in the CERN CLOUD chamber",
+			"author": ["Dias, A. ", " Ehrhart, S. ", " Vogel, A. ", " Williamson, C. ", " Almeida, J. ", " Kirkby, J. ", " Mathot, S. ", " Mumford, S. ", " Onnela, A."],
+			"ENTRYTYPE": "article",
+			"ID": "dias2017"
+		}, {
+			"url": "https://www.atmos-chem-phys.net/18/65/2018/",
+			"doi": "10.5194/acp-18-65-2018",
+			"pages": "65--79",
+			"number": "1",
+			"volume": "18",
+			"year": "2018",
+			"journal": "Atmospheric Chemistry and Physics",
+			"title": "Influence of temperature on the molecular composition of ions and charged clusters during pure biogenic nucleation",
+			"author": ["Frege, C. ", " Ortega, I. K. ", " Rissanen, M. P. ", " Praplan, A. P. ", " Steiner, G. ", " Heinritzi, M. ", " Ahonen, L. ", " Amorim, A. ", " Bernhammer, A.-K. ", " Bianchi, F. ", " Brilke, S. ", " Breitenlechner, M. ", " Dada, L. ", " Dias, A. ", " Duplissy, J. ", " Ehrhart, S. ", " El-Haddad, I. ", " Fischer, L. ", " Fuchs, C. ", " Garmash, O. ", " Gonin, M. ", " Hansel, A. ", " Hoyle, C. R. ", " Jokinen, T. ", " Junninen, H. ", " Kirkby, J. ", " K\u00fcrten, A. ", " Lehtipalo, K. ", " Leiminger, M. ", " Mauldin, R. L. ", " Molteni, U. ", " Nichman, L. ", " Pet\u00e4j\\,\u0308 T. ", " Sarnela, N. ", " Schobesberger, S. ", " Simon, M. ", " Sipil\u00e4, M. ", " Stolzenburg, D. ", " Tom\u00e9, A. ", " Vogel, A. L. ", " Wagner, A. C. ", " Wagner, R. ", " Xiao, M. ", " Yan, C. ", " Ye, P. ", " Curtius, J. ", " Donahue, N. M. ", " Flagan, R. C. ", " Kulmala, M. ", " Worsnop, D. R. ", " Winkler, P. M. ", " Dommen, J. ", " Baltensperger, U."],
+			"ENTRYTYPE": "article",
+			"ID": "frege2018"
+		}, {
+			"keywords": "rank5",
+			"adsurl": "http://adsabs.harvard.edu/abs/2016EGUGA..1813410D",
+			"adsnote": "Provided by the SAO/NASA Astrophysics Data System",
+			"note": "Under publication",
+			"month": "July",
+			"year": "2018",
+			"booktitle": "23rd International Conference on Computing in High Energy and Nuclear Physics",
+			"title": "DAQBroker - A general purpose instrument monitoring framework",
+			"author": ["Dias, A. ", " Amorim, A. ", " Tom\u00e9, A."],
+			"ENTRYTYPE": "inproceedings",
+			"ID": "dias2018"
+		}
+	]
+}

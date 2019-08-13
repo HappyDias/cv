@@ -1,0 +1,146 @@
+{
+	"skills": {
+		"Operating Systems": [{
+			"name": "Linux",
+			"description": "General development platform for personal & professional projects"
+		}, {
+			"name": "Unix",
+			"description": "Specific distributions in specialized architectures"
+		}, {
+			"name": "Windows",
+			"description": "Platform for small and/or simple projects"
+		}],
+		"Programming": [{
+			"name": "C/C++",
+			"description": "Classic platform for highly performant applications and/or embeded systems"
+		}, {
+			"name": "Fortran",
+			"description": "Classic platform for performant modelling applications"
+		}, {
+			"name": "PHP",
+			"description": "Backend language for enterprise solutions of web page templating"
+		}, {
+			"name": "Bash scripting",
+			"description": "Scripts for startup/periodic small actions "
+		}, {
+			"name": "Python",
+			"description": "Scripting language for numerically heavy applications, also useful for quick REST APIs"
+		}, {
+			"name": "Javascript",
+			"description": "All-around performant single-threaded language for both front-end and back-end applications"
+		}],
+		"Scientific": [{
+			"name": "R",
+			"description": "Open source set of scientific programming tools with a strong emphasis on statistical analysis"
+		}, {
+			"name": "Matlab",
+			"description": "Enterprise scientific programming application with modules for interaction with several statistics packages"
+		}, {
+			"name": "LabVIEW",
+			"description": "National Instruments software for visual programming data acquisition"
+		}, {
+			"name": "AutoCAD",
+			"description": "Enterprise tool for computer generated engineering grade drawings"
+		}, {
+			"name": "Solid",
+			"description": "Enterprise tool for computer generated engineering grade drawings"
+		}, {
+			"name": "Latex",
+			"description": "Open source tool for programatic document generation"
+		}],
+		"Web Front End": [{
+			"name": "HTML",
+			"description": "Markup language for web pages"
+		}, {
+			"name": "CSS",
+			"description": "Style definitions for web pages"
+		}, {
+			"name": "Progressive Web Apps",
+			"description": "Design pattern providing offline-ready native app-like user experiences with web apps"
+		}, {
+			"name": "React",
+			"description": "Javascript framework for component-based single page applications (experience with class and function components)"
+		}, {
+			"name": "Vue",
+			"description": "Open source javascript framework for component-based single page applications"
+		}, {
+			"name": "Material UI",
+			"description": "Suite of frontend components for application building provided by Google"
+		}, {
+			"name": "jQuery",
+			"description": "Javascript framework for simplifying direct interactions with webpages"
+		}, {
+			"name": "Webpack",
+			"description": "Tool for javascript code bundling (size decrease, for download performance)"
+		}, {
+			"name": "Bootstrap",
+			"description": "Classic library for prototyping web user interfaces"
+		}, {
+			"name": "D3",
+			"description": "Javascript library for data-driven graphics visualizations"
+		}, {
+			"name": "webGL",
+			"description": "Javascript library for 2d and 3d graphics"
+		}, {
+			"name": "Internationalization",
+			"description": "Specifically i18next & vue-i18n, libraries for handling languages in web applications"
+		}],
+		"Web Back end": [{
+			"name": "Flask",
+			"description": "Python framework for generating simple server-side web applications (ex: REST API, DBMS connections)"
+		}, {
+			"name": "Django",
+			"description": "Python framework for generating enterprise-grade server-side web applications"
+		}, {
+			"name": "AioHTTP",
+			"description": "Python framework for generating single-threaded server-side web applications leveraging python's async module"
+		}, {
+			"name": "Websockets",
+			"description": "Full-stack construct that allows full duplex communication, making real-time web applications possible"
+		}, {
+			"name": "NodeJS",
+			"description": "Javascript runtime for server-side developmnent of web applications (ex: REST API, DBMS connections)"
+		}, {
+			"name": "Celery",
+			"description": "Task queue for distributed message/task management"
+		}, {
+			"name": "ZeroMQ",
+			"description": "Open source task queue for performant distributed message/task management"
+		}, {
+			"name": "HTTPS",
+			"description": "Secure HTTP communication between client and server"
+		}],
+		"Data Storage": [{
+			"name": "MySQL",
+			"description": "One of the most popular database management system to generate relational databases"
+		}, {
+			"name": "Postgres",
+			"description": "Popular open source database management system for relational databases"
+		}, {
+			"name": "Oracle",
+			"description": "Enterprise-grade database management system for relational databases"
+		}, {
+			"name": "Redis",
+			"description": "Popular in-memory key-value store for highly performant data throughput"
+		}, {
+			"name": "SQLite",
+			"description": "File based key-value store for simple applications"
+		}, {
+			"name": "FaunaDB",
+			"description": "Serverless NoSQL database for data storage in a serverless architecture"
+		}],
+		"Administation": [{
+			"name": "Apache",
+			"description": "Classic server application for file distribution, traffic shaping and reverse proxying of APIs"
+		}, {
+			"name": "Nginx",
+			"description": "Popular server application for file distribution, traffic shaping and reverse proxying of APIs"
+		}, {
+			"name": "JSON Web Tokens",
+			"description": "Authorization objects to share between server and client to authenticate users"
+		}, {
+			"name": "oAuth",
+			"description": "Authorization objects to authenticate a user on remote 3rd party applications"
+		}]
+	}
+}

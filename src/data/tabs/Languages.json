@@ -1,0 +1,38 @@
+{
+	"mother": "Portuguese",
+	"languages": {
+		"English": {
+			"understanding": {
+				"Listening": "C2 - Proficient",
+				"Reading": "C2 - Proficient"
+			},
+			"speaking": {
+				"Day-to-day": "C2 - Proficient",
+				"Profession": "C2 - Proficient"
+			},
+			"writing": "C2 - Proficient"
+		},
+		"French": {
+			"understanding": {
+				"Listening": "B2 - Independent",
+				"Reading": "B2 - Independent"
+			},
+			"speaking": {
+				"Day-to-day": "A2 - Basic",
+				"Profession": "A2 - Basic"
+			},
+			"writing": "A2 - Basic"
+		},
+		"Spanish": {
+			"understanding": {
+				"Listening": "B2 - Independent",
+				"Reading": "B2 - Independent"
+			},
+			"speaking": {
+				"Day-to-day": "B2 - Independent",
+				"Profession": "B2 - Independent"
+			},
+			"writing": "B2 - Independent"
+		}
+	}
+}

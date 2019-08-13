@@ -14,8 +14,8 @@
           <v-flex ma-2 xs3>
             <UserCard />
           </v-flex>
-          <v-flex ma-2 xs9>
-            <UserContent :content="this.tabs[this.tab]" />
+          <v-flex ma-2 xs9 v-if="this.tab>=0">
+            <UserContent :content="this.tabs[this.tab]" :fetching="this.fetchingTab" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -40,10 +40,11 @@ export default {
     }
   }),
   methods: {
-    ...mapActions("settings", ["set"])
+    ...mapActions("settings", ["set"]),
+    ...mapActions("tabs", ["getTabs"])
   },
   computed: {
-    ...mapState("tabs", ["tab", "tabs"]),
+    ...mapState("tabs", ["tab", "tabs", "fetching", "fetchingTab"]),
     show: {
       set(show){
         this.set({key: 'show', value: show})

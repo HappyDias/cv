@@ -4,7 +4,7 @@
   <div v-if="content.title === 'Interests'">
     <v-expansion-panels focusable>
       <v-expansion-panel
-        v-for="(interestObj, interest) in content.content"
+        v-for="(interestObj, interest) in content.content.interests"
         v-bind:key="interest"
       >
         <v-expansion-panel-header>
@@ -125,7 +125,7 @@
   <div v-else-if="content.title === 'Skills'">
     <v-expansion-panels focusable>
       <v-expansion-panel
-        v-for="(skillObj, skill) in content.skills"
+        v-for="(skillObj, skill) in content.content.skills"
         v-bind:key="skill"
       >
         <v-expansion-panel-header>
@@ -151,7 +151,7 @@
   <div v-else-if="content.title === 'Publications'">
     <v-expansion-panels focusable>
       <v-expansion-panel
-        v-for="pub in content.bibliography"
+        v-for="pub in content.content.bibliography"
         v-bind:key="pub.title"
       >
         <v-expansion-panel-header>

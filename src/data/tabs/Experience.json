@@ -1,0 +1,34 @@
+{
+	"events": [{
+		"title": "Marie Curie Fellow",
+		"department": "DAQ expert: CLOUD experiment",
+		"location": "Centre Européen pour la Recherche Nucléaire (CERN), Switzerland",
+		"date": "2013 - 2016",
+		"ref": null,
+		"extra": {}
+	}, {
+		"title": "Consultant",
+		"department": "DAQ: CLOUD experiment",
+		"location": "Centre Européen pour la Recherche Nucléaire (CERN), Switzerland",
+		"date": "2016 - 2017",
+		"ref": null,
+		"extra": {}
+	}, {
+		"title": "Full-stack developer",
+		"department": "DevOps & mentor",
+		"location": "Mov.AI, Portugal",
+		"date": "Jan-Jun 2019",
+		"ref": null,
+		"extra": {}
+	}, {
+		"title": "Developer",
+		"department": "Founder & main developer",
+		"location": "DAQBroker",
+		"date": "2015 - Today",
+		"ref": {
+			"href": "https://www.daqbroker.com/",
+			"text": "Site"
+		},
+		"extra": {}
+	}]
+}

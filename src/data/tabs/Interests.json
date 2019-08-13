@@ -1,0 +1,33 @@
+{
+	"interests": {
+		"Professional": [{
+			"title": "Plasma Physics",
+			"comment": "Anything related to the study of plasmas in the universe, but especially low energy plasmas"
+		}, {
+			"title": "Web applications",
+			"comment": "The use of web technologies to influence the flow of data that generates a user's experience, from conception to consumption"
+		}, {
+			"title": "Embeded systems",
+			"comment": "SoC devices provide solutions for remote sensing and actuation problems with scalibililty concerns"
+		}, {
+			"title": "Modeling",
+			"comment": "The prediction of the behavior of a system according to its physical properties when done correctly provides valuable insights for future implementations"
+		}],
+		"Personal": [{
+			"title": "Swimming",
+			"comment": "An all-rounded sport, soothing to the mind"
+		}, {
+			"title": "Team Sports",
+			"comment": "Football, Voleyball, Water Polo. They emphasise communication and reinforce bonds"
+		}, {
+			"title": "Scuba",
+			"comment": "Exploring places where the human body by itself cannot go is always a thrill"
+		}, {
+			"title": "Cooking",
+			"comment": "Fun activity that emphasises creativity"
+		}, {
+			"title": "Traveling",
+			"comment": "New cultures, ways of thinking. Aiming to visit every country in the world"
+		}]
+	}
+}

@@ -1,4 +1,8 @@
-import bibliography from '@/bib.json';
+//import bibliography from '@/data/bib.json';
+//import template from '@/data/tabs/index.js';
+
+import axios from "axios";
+import qs from 'qs';
 
 function orderByDate(a,b){
   if(a.year < b.year) return -1;
@@ -34,161 +38,33 @@ function homogenize(obj){
   return toReturn;
 }
 
+/*const tabs = Object.keys(template).map((key,idx) => ({
+  title: key,
+  content: {...template[key]}
+}));
+
+tabs.forEach((tab,idx)=>{
+  if(tab.title === 'Publications'){
+    tabs[idx].content.bibliography = tabs[idx].content.bibliography.map(homogenize).sort(orderByDate);
+  }
+})*/
+
+/*axios.get("/.netlify/functions/get_tabs")
+  .then(res => {
+    console.log("result", res);
+  })
+  .catch(error => {
+    console.log("error", error);
+  });*/
+
 export default {
   namespaced: true,
   state() {
     return {
-      tabs: [
-        {
-          title: "Interests",
-          content: {
-            Professional: [
-              {title: 'Plasma Physics', comment: 'Anything related to the study of plasmas in the universe, but especially low energy plasmas'},
-              {title: 'Web applications', comment: 'The use of web technologies to influence the flow of data that generates a user\'s experience, from conception to consumption'},
-              {title: 'Embeded systems', comment: 'SoC devices provide solutions for remote sensing and actuation problems with scalibililty concerns'},
-              {title: 'Modeling', comment: 'The prediction of the behavior of a system according to its physical properties when done correctly provides valuable insights for future implementations'}
-            ],
-            Personal: [
-              {title: 'Swimming', comment: 'An all-rounded sport, soothing to the mind'},
-              {title: 'Team Sports', comment: 'Football, Voleyball, Water Polo. They emphasise communication and reinforce bonds'},
-              {title: 'Scuba', comment: 'Exploring places where the human body by itself cannot go is always a thrill'},
-              {title: 'Cooking', comment: 'Fun activity that emphasises creativity'},
-              {title: 'Traveling', comment: 'New cultures, ways of thinking. Aiming to visit every country in the world'}
-            ]
-          }
-        },
-        {
-          title: "Education",
-          content: {
-            events: [
-               {title: 'Master Student', department: 'Physics Engineering', location: 'Instituto Superior Técnico, Lisbon, Portugal', 'date': '2007-2012', ref: null, extra: {} },
-               {title: 'Master Thesis', department: 'Physics Engineering', location: 'Instituto Superior Técnico, Lisbon, Portugal', 'date': 'November 2012', ref: {href: 'https://fenix.tecnico.ulisboa.pt/downloadFile/395144990230/disserta%C3%A7%C3%A3o.pdf', text: 'Source'}, extra: {Title: 'Modeling of Low Pressure Plasmas in CH4-H2 Mixtures', Supervisors: 'Luís Lemos Alves'}},
-               {title: 'PhD Student', department: 'Physics Engineering', location: 'Faculdade de Ciências, Lisbon, Portugal', 'date': '2014-Today', ref: null, extra: {} }
-            ]
-          }
-        },
-        {
-          title: "Experience",
-          content: {
-            events: [
-               {title: 'Marie Curie Fellow', department: 'DAQ expert: CLOUD experiment', location: 'Centre Européen pour la Recherche Nucléaire (CERN), Switzerland', 'date': '2013 - 2016', ref: null, extra: {} },
-               {title: 'Consultant', department: 'DAQ: CLOUD experiment', location: 'Centre Européen pour la Recherche Nucléaire (CERN), Switzerland', 'date': '2016 - 2017', ref: null, extra: {}},
-               {title: 'Full-stack developer', department: 'DevOps & mentor', location: 'Mov.AI, Portugal', 'date': 'Jan-Jun 2019', ref: null, extra: {} },
-               {title: 'Developer', department: 'Founder & main developer', location: 'DAQBroker', 'date': '2015 - Today', ref: {href:'https://www.daqbroker.com/', text: 'Site'}, extra: {} }
-            ]
-          }
-        },
-        {
-          title: "Skills",
-          skills: {
-            "Operating Systems" : [
-              {name: 'Linux', description: 'General development platform for personal & professional projects'},
-              {name: 'Unix', description: 'Specific distributions in specialized architectures'},
-              {name: 'Windows', description: 'Platform for small and/or simple projects'}
-            ],
-            Programming: [
-              {name: 'C/C++', description: 'Classic platform for highly performant applications and/or embeded systems'},
-              {name: 'Fortran', description: 'Classic platform for performant modelling applications'},
-              {name: 'PHP', description: 'Backend language for enterprise solutions of web page templating'},
-              {name: 'Bash scripting', description: 'Scripts for startup/periodic small actions '},
-              {name: 'Python', description: 'Scripting language for numerically heavy applications, also useful for quick REST APIs'},
-              {name: 'Javascript', description: 'All-around performant single-threaded language for both front-end and back-end applications'}
-            ],
-            Scientific: [
-              {name: 'R', description: 'Open source set of scientific programming tools with a strong emphasis on statistical analysis'},
-              {name: 'Matlab', description: 'Enterprise scientific programming application with modules for interaction with several statistics packages'},
-              {name: 'LabVIEW', description: 'National Instruments software for visual programming data acquisition'},
-              {name: 'AutoCAD', description: 'Enterprise tool for computer generated engineering grade drawings'},
-              {name: 'Solid', description: 'Enterprise tool for computer generated engineering grade drawings'},
-              {name: 'Latex', description: 'Open source tool for programatic document generation'}
-            ],
-            "Web Front End": [
-              {name: 'HTML', description: 'Markup language for web pages'},
-              {name: 'CSS', description: 'Style definitions for web pages'},
-              {name: 'Progressive Web Apps', description: 'Design pattern providing offline-ready native app-like user experiences with web apps'},
-              {name: 'React', description: 'Javascript framework for component-based single page applications (experience with class and function components)'},
-              {name: 'Vue', description: 'Open source javascript framework for component-based single page applications'},
-              {name: 'Material UI', description: 'Suite of frontend components for application building provided by Google'},
-              {name: 'jQuery', description: 'Javascript framework for simplifying direct interactions with webpages'},
-              {name: 'Webpack', description: 'Tool for javascript code bundling (size decrease, for download performance)'},
-              {name: 'Bootstrap', description: 'Classic library for prototyping web user interfaces'},
-              {name: 'D3', description: 'Javascript library for data-driven graphics visualizations'},
-              {name: 'webGL', description: 'Javascript library for 2d and 3d graphics'},
-              {name: 'Internationalization', description: 'Specifically i18next & vue-i18n, libraries for handling languages in web applications'}
-            ],
-            "Web Back end": [
-              {name: 'Flask', description: 'Python framework for generating simple server-side web applications (ex: REST API, DBMS connections)'},
-              {name: 'Django', description: 'Python framework for generating enterprise-grade server-side web applications'},
-              {name: 'AioHTTP', description: 'Python framework for generating single-threaded server-side web applications leveraging python\'s async module'},
-              {name: 'Websockets', description: 'Full-stack construct that allows full duplex communication, making real-time web applications possible'},
-              {name: 'NodeJS', description: 'Javascript runtime for server-side developmnent of web applications (ex: REST API, DBMS connections)'},
-              {name: 'Celery', description: 'Task queue for distributed message/task management'},
-              {name: 'ZeroMQ', description: 'Open source task queue for performant distributed message/task management'},
-              {name: 'HTTPS', description: 'Secure HTTP communication between client and server'}
-            ],
-            "Data Storage": [
-              {name: 'MySQL', description: 'One of the most popular database management system to generate relational databases'},
-              {name: 'Postgres', description: 'Popular open source database management system for relational databases'},
-              {name: 'Oracle', description: 'Enterprise-grade database management system for relational databases'},
-              {name: 'Redis', description: 'Popular in-memory key-value store for highly performant data throughput'},
-              {name: 'SQLite', description: 'File based key-value store for simple applications'},
-              {name: 'FaunaDB', description: 'Serverless NoSQL database for data storage in a serverless architecture'}
-            ],
-            "Administation": [
-              {name: 'Apache', description: 'Classic server application for file distribution, traffic shaping and reverse proxying of APIs'},
-              {name: 'Nginx', description: 'Popular server application for file distribution, traffic shaping and reverse proxying of APIs'},
-              {name: 'JSON Web Tokens', description: 'Authorization objects to share between server and client to authenticate users'},
-              {name: 'oAuth', description: 'Authorization objects to authenticate a user on remote 3rd party applications'}
-            ]
-          }
-        },
-        {
-          title: "Languages",
-          content: {
-            mother: 'Portuguese',
-            languages:{
-              English: {
-                understanding: {
-                  Listening: 'C2 - Proficient',
-                  Reading: 'C2 - Proficient'
-                },
-                speaking: {
-                  "Day-to-day": 'C2 - Proficient',
-                  Profession: 'C2 - Proficient'
-                },
-                writing: 'C2 - Proficient'
-              },
-              French: {
-                understanding: {
-                  Listening: 'B2 - Independent',
-                  Reading: 'B2 - Independent'
-                },
-                speaking: {
-                  "Day-to-day": 'A2 - Basic',
-                  Profession: 'A2 - Basic'
-                },
-                writing: 'A2 - Basic'
-              },
-              Spanish: {
-                understanding: {
-                  Listening: 'B2 - Independent',
-                  Reading: 'B2 - Independent'
-                },
-                speaking: {
-                  "Day-to-day": 'B2 - Independent',
-                  Profession: 'B2 - Independent'
-                },
-                writing: 'B2 - Independent'
-              }
-            }
-          }
-        },
-        {
-          title: "Publications",
-          bibliography : bibliography.map(homogenize).sort(orderByDate)
-        }
-      ],
-      tab: 0,
+      tabs: null,
+      tab: -1,
+      fetching: true,
+      fetchingTab: true,
       userInfo: [
       {
         icon: 'mdi-email',
@@ -226,11 +102,46 @@ export default {
   mutations: {
     set(state, { key, value }) {
       state[key] = value;
+    },
+    setTab(state, {idx, content}){
+      state.tabs[idx].content = content;
     }
   },
   actions: {
     set(context, payload) {
       context.commit("set", payload);
+    },
+    getTabs(context){
+      axios.get("/.netlify/functions/get_tabs")
+        .then(res => {
+          if(res.status === 200){
+            const tabs = res.data.map((key,idx) => ({
+              title: key,
+              content: null
+            }));
+            context.commit("set", {key: 'tab', value: 0});
+            context.commit("set", {key: 'tabs', value: tabs});
+          }
+          context.commit("set", {key: 'fetching', value: false});
+      })
+        .catch(error => {
+          console.log("error", error);
+          context.commit("set", {key: 'fetching', value: false});
+      });
+    },
+    getTabInfo(context, payload){
+      const {title, idx} = payload;
+      context.commit("set", {key: 'fetchingTab', value: true});
+      axios.get("/.netlify/functions/get_tab_info?title="+title)
+        .then(res=>{
+          if(res.status === 200){
+            context.commit("setTab", {idx, content: res.data.data});
+          }
+          context.commit("set", {key: 'fetchingTab', value: false});
+        })
+        .catch(error=>{
+          context.commit("set", {key: 'fetchingTab', value: false});
+        })
     }
   }
 };
