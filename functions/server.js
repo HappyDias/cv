@@ -81,18 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 230);
+/******/ 	return __webpack_require__(__webpack_require__.s = 309);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */,
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongoError = __webpack_require__(1).MongoError;
-const ReadPreference = __webpack_require__(1).ReadPreference;
+const MongoError = __webpack_require__(4).MongoError;
+const ReadPreference = __webpack_require__(4).ReadPreference;
 
 var shallowClone = function(obj) {
   var copy = {};
@@ -784,7 +786,7 @@ function deprecateOptions(config, fn) {
 const SUPPORTS = {};
 // Test asyncIterator support
 try {
-  __webpack_require__(81);
+  __webpack_require__(122);
   SUPPORTS.ASYNC_ITERATOR = true;
 } catch (e) {
   SUPPORTS.ASYNC_ITERATOR = false;
@@ -821,15 +823,21 @@ module.exports = {
 
 
 /***/ }),
-/* 1 */
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("util");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var BSON = __webpack_require__(140);
-var require_optional = __webpack_require__(104);
-const EJSON = __webpack_require__(14).retrieveEJSON();
+var BSON = __webpack_require__(209);
+var require_optional = __webpack_require__(154);
+const EJSON = __webpack_require__(21).retrieveEJSON();
 
 try {
   // Attempt to grab the native BSON parser
@@ -843,48 +851,42 @@ try {
 
 module.exports = {
   // Errors
-  MongoError: __webpack_require__(3).MongoError,
-  MongoNetworkError: __webpack_require__(3).MongoNetworkError,
-  MongoParseError: __webpack_require__(3).MongoParseError,
-  MongoTimeoutError: __webpack_require__(3).MongoTimeoutError,
-  MongoWriteConcernError: __webpack_require__(3).MongoWriteConcernError,
-  mongoErrorContextSymbol: __webpack_require__(3).mongoErrorContextSymbol,
+  MongoError: __webpack_require__(5).MongoError,
+  MongoNetworkError: __webpack_require__(5).MongoNetworkError,
+  MongoParseError: __webpack_require__(5).MongoParseError,
+  MongoTimeoutError: __webpack_require__(5).MongoTimeoutError,
+  MongoWriteConcernError: __webpack_require__(5).MongoWriteConcernError,
+  mongoErrorContextSymbol: __webpack_require__(5).mongoErrorContextSymbol,
   // Core
-  Connection: __webpack_require__(142),
-  Server: __webpack_require__(106),
-  ReplSet: __webpack_require__(287),
-  Mongos: __webpack_require__(289),
-  Logger: __webpack_require__(24),
-  Cursor: __webpack_require__(46),
-  ReadPreference: __webpack_require__(18),
-  Sessions: __webpack_require__(78),
+  Connection: __webpack_require__(210),
+  Server: __webpack_require__(156),
+  ReplSet: __webpack_require__(375),
+  Mongos: __webpack_require__(377),
+  Logger: __webpack_require__(40),
+  Cursor: __webpack_require__(80),
+  ReadPreference: __webpack_require__(31),
+  Sessions: __webpack_require__(119),
   BSON: BSON,
   EJSON: EJSON,
-  Topology: __webpack_require__(290),
+  Topology: __webpack_require__(378),
   // Raw operations
-  Query: __webpack_require__(23).Query,
+  Query: __webpack_require__(39).Query,
   // Auth mechanisms
-  MongoCredentials: __webpack_require__(292).MongoCredentials,
-  defaultAuthProviders: __webpack_require__(145).defaultAuthProviders,
-  MongoCR: __webpack_require__(146),
-  X509: __webpack_require__(147),
-  Plain: __webpack_require__(148),
-  GSSAPI: __webpack_require__(149),
-  ScramSHA1: __webpack_require__(77).ScramSHA1,
-  ScramSHA256: __webpack_require__(77).ScramSHA256,
+  MongoCredentials: __webpack_require__(380).MongoCredentials,
+  defaultAuthProviders: __webpack_require__(213).defaultAuthProviders,
+  MongoCR: __webpack_require__(214),
+  X509: __webpack_require__(215),
+  Plain: __webpack_require__(216),
+  GSSAPI: __webpack_require__(217),
+  ScramSHA1: __webpack_require__(118).ScramSHA1,
+  ScramSHA256: __webpack_require__(118).ScramSHA256,
   // Utilities
-  parseConnectionString: __webpack_require__(293)
+  parseConnectionString: __webpack_require__(381)
 };
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("util");
-
-/***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1054,7 +1056,8 @@ module.exports = {
 
 
 /***/ }),
-/* 4 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1064,17 +1067,17 @@ module.exports = {
  * Module dependencies.
  */
 
-const Decimal = __webpack_require__(51);
-const ObjectId = __webpack_require__(34);
-const PopulateOptions = __webpack_require__(306);
-const PromiseProvider = __webpack_require__(85);
-const cloneRegExp = __webpack_require__(165);
-const get = __webpack_require__(8);
-const sliced = __webpack_require__(84);
-const mpath = __webpack_require__(52);
-const ms = __webpack_require__(349);
-const symbols = __webpack_require__(6);
-const Buffer = __webpack_require__(19).Buffer;
+const Decimal = __webpack_require__(85);
+const ObjectId = __webpack_require__(53);
+const PopulateOptions = __webpack_require__(394);
+const PromiseProvider = __webpack_require__(126);
+const cloneRegExp = __webpack_require__(232);
+const get = __webpack_require__(15);
+const sliced = __webpack_require__(125);
+const mpath = __webpack_require__(86);
+const ms = __webpack_require__(437);
+const symbols = __webpack_require__(10);
+const Buffer = __webpack_require__(28).Buffer;
 
 const emittedSymbol = Symbol.for('mongoose:emitted');
 
@@ -1498,7 +1501,7 @@ exports.merge = function merge(to, from, options, path) {
  */
 
 exports.toObject = function toObject(obj) {
-  Document || (Document = __webpack_require__(15));
+  Document || (Document = __webpack_require__(22));
   let ret;
 
   if (obj == null) {
@@ -1668,9 +1671,9 @@ exports.isMongooseType = function(v) {
  */
 
 exports.isMongooseObject = function(v) {
-  Document || (Document = __webpack_require__(15));
-  MongooseArray || (MongooseArray = __webpack_require__(57).Array);
-  MongooseBuffer || (MongooseBuffer = __webpack_require__(57).Buffer);
+  Document || (Document = __webpack_require__(22));
+  MongooseArray || (MongooseArray = __webpack_require__(91).Array);
+  MongooseBuffer || (MongooseBuffer = __webpack_require__(91).Buffer);
 
   if (v == null) {
     return false;
@@ -2140,45 +2143,46 @@ exports.noop = function() {};
 
 
 /***/ }),
-/* 5 */
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
-const applyRetryableWrites = __webpack_require__(0).applyRetryableWrites;
-const checkCollectionName = __webpack_require__(0).checkCollectionName;
-const Code = __webpack_require__(1).BSON.Code;
-const createIndexDb = __webpack_require__(7).createIndex;
-const decorateCommand = __webpack_require__(0).decorateCommand;
-const decorateWithCollation = __webpack_require__(0).decorateWithCollation;
-const decorateWithReadConcern = __webpack_require__(0).decorateWithReadConcern;
-const ensureIndexDb = __webpack_require__(7).ensureIndex;
-const evaluate = __webpack_require__(7).evaluate;
-const executeCommand = __webpack_require__(7).executeCommand;
-const executeDbAdminCommand = __webpack_require__(7).executeDbAdminCommand;
-const formattedOrderClause = __webpack_require__(0).formattedOrderClause;
-const resolveReadPreference = __webpack_require__(0).resolveReadPreference;
-const handleCallback = __webpack_require__(0).handleCallback;
-const indexInformationDb = __webpack_require__(7).indexInformation;
-const isObject = __webpack_require__(0).isObject;
-const Long = __webpack_require__(1).BSON.Long;
-const MongoError = __webpack_require__(1).MongoError;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const toError = __webpack_require__(0).toError;
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
+const applyRetryableWrites = __webpack_require__(2).applyRetryableWrites;
+const checkCollectionName = __webpack_require__(2).checkCollectionName;
+const Code = __webpack_require__(4).BSON.Code;
+const createIndexDb = __webpack_require__(12).createIndex;
+const decorateCommand = __webpack_require__(2).decorateCommand;
+const decorateWithCollation = __webpack_require__(2).decorateWithCollation;
+const decorateWithReadConcern = __webpack_require__(2).decorateWithReadConcern;
+const ensureIndexDb = __webpack_require__(12).ensureIndex;
+const evaluate = __webpack_require__(12).evaluate;
+const executeCommand = __webpack_require__(12).executeCommand;
+const executeDbAdminCommand = __webpack_require__(12).executeDbAdminCommand;
+const formattedOrderClause = __webpack_require__(2).formattedOrderClause;
+const resolveReadPreference = __webpack_require__(2).resolveReadPreference;
+const handleCallback = __webpack_require__(2).handleCallback;
+const indexInformationDb = __webpack_require__(12).indexInformation;
+const isObject = __webpack_require__(2).isObject;
+const Long = __webpack_require__(4).BSON.Long;
+const MongoError = __webpack_require__(4).MongoError;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const toError = __webpack_require__(2).toError;
 
 let collection;
 function loadCollection() {
   if (!collection) {
-    collection = __webpack_require__(47);
+    collection = __webpack_require__(81);
   }
   return collection;
 }
 let db;
 function loadDb() {
   if (!db) {
-    db = __webpack_require__(49);
+    db = __webpack_require__(83);
   }
   return db;
 }
@@ -3693,7 +3697,7 @@ module.exports = {
 
 
 /***/ }),
-/* 6 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3713,40 +3717,41 @@ exports.schemaTypeSymbol = Symbol('mongoose#schemaType');
 exports.validatorErrorSymbol = Symbol('mongoose:validatorError');
 
 /***/ }),
-/* 7 */
+/* 11 */,
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
-const Code = __webpack_require__(1).BSON.Code;
-const resolveReadPreference = __webpack_require__(0).resolveReadPreference;
-const crypto = __webpack_require__(38);
-const debugOptions = __webpack_require__(0).debugOptions;
-const handleCallback = __webpack_require__(0).handleCallback;
-const MongoError = __webpack_require__(1).MongoError;
-const parseIndexOptions = __webpack_require__(0).parseIndexOptions;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const toError = __webpack_require__(0).toError;
-const CONSTANTS = __webpack_require__(154);
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
+const Code = __webpack_require__(4).BSON.Code;
+const resolveReadPreference = __webpack_require__(2).resolveReadPreference;
+const crypto = __webpack_require__(42);
+const debugOptions = __webpack_require__(2).debugOptions;
+const handleCallback = __webpack_require__(2).handleCallback;
+const MongoError = __webpack_require__(4).MongoError;
+const parseIndexOptions = __webpack_require__(2).parseIndexOptions;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const toError = __webpack_require__(2).toError;
+const CONSTANTS = __webpack_require__(221);
 
-const count = __webpack_require__(5).count;
-const findOne = __webpack_require__(5).findOne;
-const remove = __webpack_require__(5).remove;
-const updateOne = __webpack_require__(5).updateOne;
+const count = __webpack_require__(9).count;
+const findOne = __webpack_require__(9).findOne;
+const remove = __webpack_require__(9).remove;
+const updateOne = __webpack_require__(9).updateOne;
 
 let collection;
 function loadCollection() {
   if (!collection) {
-    collection = __webpack_require__(47);
+    collection = __webpack_require__(81);
   }
   return collection;
 }
 let db;
 function loadDb() {
   if (!db) {
-    db = __webpack_require__(49);
+    db = __webpack_require__(83);
   }
   return db;
 }
@@ -4726,7 +4731,14 @@ module.exports = {
 
 
 /***/ }),
-/* 8 */
+/* 13 */,
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("events");
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4771,12 +4783,12 @@ function getProperty(obj, prop) {
 }
 
 /***/ }),
-/* 9 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var es5 = __webpack_require__(41);
+var es5 = __webpack_require__(64);
 var canEvaluate = typeof navigator == "undefined";
 
 var errorObj = {e: {}};
@@ -5158,23 +5170,17 @@ module.exports = ret;
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = require("events");
-
-/***/ }),
-/* 11 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const os = __webpack_require__(107);
-const f = __webpack_require__(2).format;
-const ReadPreference = __webpack_require__(18);
-const Buffer = __webpack_require__(19).Buffer;
-const TopologyType = __webpack_require__(44).TopologyType;
+const os = __webpack_require__(98);
+const f = __webpack_require__(3).format;
+const ReadPreference = __webpack_require__(31);
+const Buffer = __webpack_require__(28).Buffer;
+const TopologyType = __webpack_require__(78).TopologyType;
 
 /**
  * Emit event if it exists
@@ -5187,7 +5193,7 @@ function emitSDAMEvent(self, event, description) {
 }
 
 // Get package.json variable
-var driverVersion = __webpack_require__(277).version;
+var driverVersion = __webpack_require__(365).version;
 var nodejsversion = f('Node.js %s, %s', process.version, os.endianness());
 var type = os.type();
 var name = process.platform;
@@ -5624,16 +5630,16 @@ module.exports.isRetryableWritesSupported = isRetryableWritesSupported;
 
 
 /***/ }),
-/* 12 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const ReadPreference = __webpack_require__(18);
-const MongoError = __webpack_require__(3).MongoError;
-const ServerType = __webpack_require__(25).ServerType;
-const TopologyDescription = __webpack_require__(44).TopologyDescription;
+const ReadPreference = __webpack_require__(31);
+const MongoError = __webpack_require__(5).MongoError;
+const ServerType = __webpack_require__(43).ServerType;
+const TopologyDescription = __webpack_require__(78).TopologyDescription;
 
 const MESSAGE_HEADER_SIZE = 16;
 const COMPRESSION_DETAILS_SIZE = 9; // originalOpcode + uncompressedSize, compressorID
@@ -5746,7 +5752,7 @@ module.exports = {
 
 
 /***/ }),
-/* 13 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5768,7 +5774,7 @@ module.exports = {
  * @inherits Error https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error
  */
 
-const MongooseError = __webpack_require__(53);
+const MongooseError = __webpack_require__(87);
 
 /**
  * The name of the error. The name uniquely identifies this Mongoose error. The
@@ -5811,7 +5817,7 @@ module.exports = exports = MongooseError;
  * @static messages
  */
 
-MongooseError.messages = __webpack_require__(352);
+MongooseError.messages = __webpack_require__(440);
 
 // backward compat
 MongooseError.Messages = MongooseError.messages;
@@ -5828,7 +5834,7 @@ MongooseError.Messages = MongooseError.messages;
  * @static DocumentNotFoundError
  */
 
-MongooseError.DocumentNotFoundError = __webpack_require__(114);
+MongooseError.DocumentNotFoundError = __webpack_require__(163);
 
 /**
  * An instance of this error class will be returned when mongoose failed to
@@ -5839,7 +5845,7 @@ MongooseError.DocumentNotFoundError = __webpack_require__(114);
  * @static CastError
  */
 
-MongooseError.CastError = __webpack_require__(21);
+MongooseError.CastError = __webpack_require__(34);
 
 /**
  * An instance of this error class will be returned when [validation](/docs/validation.html) failed.
@@ -5851,7 +5857,7 @@ MongooseError.CastError = __webpack_require__(21);
  * @static ValidationError
  */
 
-MongooseError.ValidationError = __webpack_require__(115);
+MongooseError.ValidationError = __webpack_require__(164);
 
 /**
  * A `ValidationError` has a hash of `errors` that contain individual `ValidatorError` instances
@@ -5861,7 +5867,7 @@ MongooseError.ValidationError = __webpack_require__(115);
  * @static ValidatorError
  */
 
-MongooseError.ValidatorError = __webpack_require__(353);
+MongooseError.ValidatorError = __webpack_require__(441);
 
 /**
  * An instance of this error class will be returned when you call `save()` after
@@ -5873,7 +5879,7 @@ MongooseError.ValidatorError = __webpack_require__(353);
  * @static VersionError
  */
 
-MongooseError.VersionError = __webpack_require__(170);
+MongooseError.VersionError = __webpack_require__(237);
 
 /**
  * An instance of this error class will be returned when you call `save()` multiple
@@ -5885,7 +5891,7 @@ MongooseError.VersionError = __webpack_require__(170);
  * @static ParallelSaveError
  */
 
-MongooseError.ParallelSaveError = __webpack_require__(171);
+MongooseError.ParallelSaveError = __webpack_require__(238);
 
 /**
  * Thrown when a model with the given name was already registered on the connection.
@@ -5896,7 +5902,7 @@ MongooseError.ParallelSaveError = __webpack_require__(171);
  * @static OverwriteModelError
  */
 
-MongooseError.OverwriteModelError = __webpack_require__(172);
+MongooseError.OverwriteModelError = __webpack_require__(239);
 
 /**
  * Thrown when you try to access a model that has not been registered yet
@@ -5906,7 +5912,7 @@ MongooseError.OverwriteModelError = __webpack_require__(172);
  * @static MissingSchemaError
  */
 
-MongooseError.MissingSchemaError = __webpack_require__(354);
+MongooseError.MissingSchemaError = __webpack_require__(442);
 
 /**
  * An instance of this error will be returned if you used an array projection
@@ -5917,18 +5923,24 @@ MongooseError.MissingSchemaError = __webpack_require__(354);
  * @static DivergentArrayError
  */
 
-MongooseError.DivergentArrayError = __webpack_require__(173);
+MongooseError.DivergentArrayError = __webpack_require__(240);
 
 
 /***/ }),
-/* 14 */
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = require("stream");
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const crypto = __webpack_require__(38);
-const requireOptional = __webpack_require__(104);
+const crypto = __webpack_require__(42);
+const requireOptional = __webpack_require__(154);
 
 /**
  * Generate a UUIDv4
@@ -6056,7 +6068,7 @@ module.exports = {
 
 
 /***/ }),
-/* 15 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6066,39 +6078,39 @@ module.exports = {
  * Module dependencies.
  */
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const InternalCache = __webpack_require__(350);
-const MongooseError = __webpack_require__(13);
-const MixedSchema = __webpack_require__(42);
-const ObjectExpectedError = __webpack_require__(175);
-const ObjectParameterError = __webpack_require__(176);
-const StrictModeError = __webpack_require__(88);
-const ValidatorError = __webpack_require__(17).ValidatorError;
-const VirtualType = __webpack_require__(118);
-const cleanModifiedSubpaths = __webpack_require__(177);
-const compile = __webpack_require__(119).compile;
-const defineKey = __webpack_require__(119).defineKey;
-const flatten = __webpack_require__(54).flatten;
-const get = __webpack_require__(8);
-const getEmbeddedDiscriminatorPath = __webpack_require__(356);
-const idGetter = __webpack_require__(357);
-const isDefiningProjection = __webpack_require__(55);
-const isExclusive = __webpack_require__(358);
-const inspect = __webpack_require__(2).inspect;
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const mpath = __webpack_require__(52);
-const utils = __webpack_require__(4);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const InternalCache = __webpack_require__(438);
+const MongooseError = __webpack_require__(19);
+const MixedSchema = __webpack_require__(65);
+const ObjectExpectedError = __webpack_require__(242);
+const ObjectParameterError = __webpack_require__(243);
+const StrictModeError = __webpack_require__(129);
+const ValidatorError = __webpack_require__(27).ValidatorError;
+const VirtualType = __webpack_require__(167);
+const cleanModifiedSubpaths = __webpack_require__(244);
+const compile = __webpack_require__(168).compile;
+const defineKey = __webpack_require__(168).defineKey;
+const flatten = __webpack_require__(88).flatten;
+const get = __webpack_require__(15);
+const getEmbeddedDiscriminatorPath = __webpack_require__(444);
+const idGetter = __webpack_require__(445);
+const isDefiningProjection = __webpack_require__(89);
+const isExclusive = __webpack_require__(446);
+const inspect = __webpack_require__(3).inspect;
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const mpath = __webpack_require__(86);
+const utils = __webpack_require__(7);
 
 const ValidationError = MongooseError.ValidationError;
 const clone = utils.clone;
 const deepEqual = utils.deepEqual;
 const isMongooseObject = utils.isMongooseObject;
 
-const arrayAtomicsSymbol = __webpack_require__(6).arrayAtomicsSymbol;
-const documentArrayParent = __webpack_require__(6).documentArrayParent;
-const documentSchemaSymbol = __webpack_require__(6).documentSchemaSymbol;
-const getSymbol = __webpack_require__(6).getSymbol;
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const arrayAtomicsSymbol = __webpack_require__(10).arrayAtomicsSymbol;
+const documentArrayParent = __webpack_require__(10).documentArrayParent;
+const documentSchemaSymbol = __webpack_require__(10).documentSchemaSymbol;
+const getSymbol = __webpack_require__(10).getSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 let DocumentArray;
 let MongooseArray;
@@ -7291,7 +7303,7 @@ Document.prototype.$__shouldModify = function(pathToMark, path, constructing, pa
  */
 
 Document.prototype.$__set = function(pathToMark, path, constructing, parts, schema, val, priorVal) {
-  Embedded = Embedded || __webpack_require__(56);
+  Embedded = Embedded || __webpack_require__(90);
 
   const shouldModify = this.$__shouldModify(pathToMark, path, constructing, parts,
     schema, val, priorVal);
@@ -7301,7 +7313,7 @@ Document.prototype.$__set = function(pathToMark, path, constructing, parts, sche
     this.markModified(pathToMark);
 
     // handle directly setting arrays (gh-1126)
-    MongooseArray || (MongooseArray = __webpack_require__(188));
+    MongooseArray || (MongooseArray = __webpack_require__(255));
     if (val && val.isMongooseArray) {
       val._registerAtomic('$set', val);
 
@@ -8480,7 +8492,7 @@ Document.prototype.$isValid = function(path) {
 
 Document.prototype.$__reset = function reset() {
   let _this = this;
-  DocumentArray || (DocumentArray = __webpack_require__(36));
+  DocumentArray || (DocumentArray = __webpack_require__(55));
 
   this.$__.activePaths
     .map('init', 'modify', function(i) {
@@ -8640,7 +8652,7 @@ Document.prototype.$__setSchema = function(schema) {
  */
 
 Document.prototype.$__getArrayPathsToValidate = function() {
-  DocumentArray || (DocumentArray = __webpack_require__(36));
+  DocumentArray || (DocumentArray = __webpack_require__(55));
 
   // validate all document arrays.
   return this.$__.activePaths
@@ -8668,8 +8680,8 @@ Document.prototype.$__getArrayPathsToValidate = function() {
  */
 
 Document.prototype.$__getAllSubdocs = function() {
-  DocumentArray || (DocumentArray = __webpack_require__(36));
-  Embedded = Embedded || __webpack_require__(56);
+  DocumentArray || (DocumentArray = __webpack_require__(55));
+  Embedded = Embedded || __webpack_require__(90);
 
   function docReducer(doc, seed, path) {
     let val = doc;
@@ -9516,13 +9528,16 @@ module.exports = exports = Document;
 
 
 /***/ }),
-/* 16 */
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const require_optional = __webpack_require__(104);
+const require_optional = __webpack_require__(154);
 
 function debugOptions(debugFields, options) {
   var finaloptions = {};
@@ -9534,7 +9549,7 @@ function debugOptions(debugFields, options) {
 }
 
 function retrieveBSON() {
-  var BSON = __webpack_require__(140);
+  var BSON = __webpack_require__(209);
   BSON.native = false;
 
   try {
@@ -9580,7 +9595,7 @@ module.exports = {
 
 
 /***/ }),
-/* 17 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9590,16 +9605,16 @@ module.exports = {
  * Module dependencies.
  */
 
-const MongooseError = __webpack_require__(13);
-const $exists = __webpack_require__(116);
-const $type = __webpack_require__(174);
-const get = __webpack_require__(8);
-const handleImmutable = __webpack_require__(355);
-const immediate = __webpack_require__(50);
-const schemaTypeSymbol = __webpack_require__(6).schemaTypeSymbol;
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
-const validatorErrorSymbol = __webpack_require__(6).validatorErrorSymbol;
+const MongooseError = __webpack_require__(19);
+const $exists = __webpack_require__(165);
+const $type = __webpack_require__(241);
+const get = __webpack_require__(15);
+const handleImmutable = __webpack_require__(443);
+const immediate = __webpack_require__(84);
+const schemaTypeSymbol = __webpack_require__(10).schemaTypeSymbol;
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
+const validatorErrorSymbol = __webpack_require__(10).validatorErrorSymbol;
 
 const CastError = MongooseError.CastError;
 const ValidatorError = MongooseError.ValidatorError;
@@ -11007,7 +11022,77 @@ exports.ValidatorError = ValidatorError;
 
 
 /***/ }),
-/* 18 */
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* eslint-disable node/no-deprecated-api */
+var buffer = __webpack_require__(190)
+var Buffer = buffer.Buffer
+
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
+if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
+  module.exports = buffer
+} else {
+  // Copy properties from require('buffer')
+  copyProps(buffer, exports)
+  exports.Buffer = SafeBuffer
+}
+
+function SafeBuffer (arg, encodingOrOffset, length) {
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+// Copy static methods from Buffer
+copyProps(Buffer, SafeBuffer)
+
+SafeBuffer.from = function (arg, encodingOrOffset, length) {
+  if (typeof arg === 'number') {
+    throw new TypeError('Argument must not be a number')
+  }
+  return Buffer(arg, encodingOrOffset, length)
+}
+
+SafeBuffer.alloc = function (size, fill, encoding) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  var buf = Buffer(size)
+  if (fill !== undefined) {
+    if (typeof encoding === 'string') {
+      buf.fill(fill, encoding)
+    } else {
+      buf.fill(fill)
+    }
+  } else {
+    buf.fill(0)
+  }
+  return buf
+}
+
+SafeBuffer.allocUnsafe = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return Buffer(size)
+}
+
+SafeBuffer.allocUnsafeSlow = function (size) {
+  if (typeof size !== 'number') {
+    throw new TypeError('Argument must be a number')
+  }
+  return buffer.SlowBuffer(size)
+}
+
+
+/***/ }),
+/* 29 */,
+/* 30 */,
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11207,81 +11292,9 @@ module.exports = ReadPreference;
 
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* eslint-disable node/no-deprecated-api */
-var buffer = __webpack_require__(141)
-var Buffer = buffer.Buffer
-
-// alternative to using Object.keys for old browsers
-function copyProps (src, dst) {
-  for (var key in src) {
-    dst[key] = src[key]
-  }
-}
-if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
-  module.exports = buffer
-} else {
-  // Copy properties from require('buffer')
-  copyProps(buffer, exports)
-  exports.Buffer = SafeBuffer
-}
-
-function SafeBuffer (arg, encodingOrOffset, length) {
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-// Copy static methods from Buffer
-copyProps(Buffer, SafeBuffer)
-
-SafeBuffer.from = function (arg, encodingOrOffset, length) {
-  if (typeof arg === 'number') {
-    throw new TypeError('Argument must not be a number')
-  }
-  return Buffer(arg, encodingOrOffset, length)
-}
-
-SafeBuffer.alloc = function (size, fill, encoding) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  var buf = Buffer(size)
-  if (fill !== undefined) {
-    if (typeof encoding === 'string') {
-      buf.fill(fill, encoding)
-    } else {
-      buf.fill(fill)
-    }
-  } else {
-    buf.fill(0)
-  }
-  return buf
-}
-
-SafeBuffer.allocUnsafe = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return Buffer(size)
-}
-
-SafeBuffer.allocUnsafeSlow = function (size) {
-  if (typeof size !== 'number') {
-    throw new TypeError('Argument must be a number')
-  }
-  return buffer.SlowBuffer(size)
-}
-
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports) {
-
-module.exports = require("stream");
-
-/***/ }),
-/* 21 */
+/* 32 */,
+/* 33 */,
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11291,8 +11304,8 @@ module.exports = require("stream");
  * Module dependencies.
  */
 
-const MongooseError = __webpack_require__(53);
-const util = __webpack_require__(2);
+const MongooseError = __webpack_require__(87);
+const util = __webpack_require__(3);
 
 /**
  * Casting Error constructor.
@@ -11350,7 +11363,8 @@ module.exports = CastError;
 
 
 /***/ }),
-/* 22 */
+/* 35 */,
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11372,22 +11386,24 @@ module.exports.set = function(v) {
 
 
 /***/ }),
-/* 23 */
+/* 37 */,
+/* 38 */,
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var retrieveBSON = __webpack_require__(16).retrieveBSON;
+var retrieveBSON = __webpack_require__(26).retrieveBSON;
 var BSON = retrieveBSON();
 var Long = BSON.Long;
-const Buffer = __webpack_require__(19).Buffer;
+const Buffer = __webpack_require__(28).Buffer;
 
 // Incrementing request id
 var _requestId = 0;
 
 // Wire command operation ids
-var opcodes = __webpack_require__(12).opcodes;
+var opcodes = __webpack_require__(18).opcodes;
 
 // Query flags
 var OPTS_TAILABLE_CURSOR = 2;
@@ -11886,14 +11902,14 @@ module.exports = {
 
 
 /***/ }),
-/* 24 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var f = __webpack_require__(2).format,
-  MongoError = __webpack_require__(3).MongoError;
+var f = __webpack_require__(3).format,
+  MongoError = __webpack_require__(5).MongoError;
 
 // Filters for classes
 var classFilters = {};
@@ -12139,7 +12155,14 @@ module.exports = Logger;
 
 
 /***/ }),
-/* 25 */
+/* 41 */,
+/* 42 */
+/***/ (function(module, exports) {
+
+module.exports = require("crypto");
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12295,7 +12318,7 @@ module.exports = {
 
 
 /***/ }),
-/* 26 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12303,22 +12326,22 @@ module.exports = {
 
 const Transform = __webpack_require__(20).Transform;
 const PassThrough = __webpack_require__(20).PassThrough;
-const inherits = __webpack_require__(2).inherits;
-const deprecate = __webpack_require__(2).deprecate;
-const handleCallback = __webpack_require__(0).handleCallback;
-const SUPPORTS = __webpack_require__(0).SUPPORTS;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const MongoError = __webpack_require__(1).MongoError;
+const inherits = __webpack_require__(3).inherits;
+const deprecate = __webpack_require__(3).deprecate;
+const handleCallback = __webpack_require__(2).handleCallback;
+const SUPPORTS = __webpack_require__(2).SUPPORTS;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const MongoError = __webpack_require__(4).MongoError;
 const Readable = __webpack_require__(20).Readable;
-const CoreCursor = __webpack_require__(1).Cursor;
-const Map = __webpack_require__(1).BSON.Map;
-const executeOperation = __webpack_require__(0).executeOperation;
+const CoreCursor = __webpack_require__(4).Cursor;
+const Map = __webpack_require__(4).BSON.Map;
+const executeOperation = __webpack_require__(2).executeOperation;
 
-const count = __webpack_require__(48).count;
-const each = __webpack_require__(48).each;
-const hasNext = __webpack_require__(48).hasNext;
-const next = __webpack_require__(48).next;
-const toArray = __webpack_require__(48).toArray;
+const count = __webpack_require__(82).count;
+const each = __webpack_require__(82).each;
+const hasNext = __webpack_require__(82).hasNext;
+const next = __webpack_require__(82).next;
+const toArray = __webpack_require__(82).toArray;
 
 /**
  * @fileOverview The **Cursor** class is an internal class that embodies a cursor on MongoDB
@@ -12506,7 +12529,7 @@ function Cursor(bson, ns, cmd, options, topology, topologyOptions) {
 inherits(Cursor, Readable);
 
 if (SUPPORTS.ASYNC_ITERATOR) {
-  Cursor.prototype[Symbol.asyncIterator] = __webpack_require__(81).asyncIterator;
+  Cursor.prototype[Symbol.asyncIterator] = __webpack_require__(122).asyncIterator;
 }
 
 // Map core cursor _next method so we can apply mapping
@@ -13459,14 +13482,14 @@ module.exports = Cursor;
 
 
 /***/ }),
-/* 27 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var es5 = __webpack_require__(41);
+var es5 = __webpack_require__(64);
 var Objectfreeze = es5.freeze;
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var inherits = util.inherits;
 var notEnumerableProp = util.notEnumerableProp;
 
@@ -13582,7 +13605,7 @@ module.exports = {
 
 
 /***/ }),
-/* 28 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13593,10 +13616,10 @@ module.exports = {
  */
 
 const checkEmbeddedDiscriminatorKeyProjection =
-  __webpack_require__(367);
-const get = __webpack_require__(8);
-const isDefiningProjection = __webpack_require__(55);
-const utils = __webpack_require__(4);
+  __webpack_require__(455);
+const get = __webpack_require__(15);
+const isDefiningProjection = __webpack_require__(89);
+const utils = __webpack_require__(7);
 
 /*!
  * Prepare a set of path options for query population.
@@ -13920,44 +13943,55 @@ exports.handleDeleteWriteOpResult = function handleDeleteWriteOpResult(callback)
 
 
 /***/ }),
-/* 29 */,
-/* 30 */,
-/* 31 */
+/* 47 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports) {
+
+module.exports = require("zlib");
+
+/***/ }),
+/* 49 */,
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // Core module
-const core = __webpack_require__(1);
-const Instrumentation = __webpack_require__(295);
+const core = __webpack_require__(4);
+const Instrumentation = __webpack_require__(383);
 
 // Set up the connect function
-const connect = __webpack_require__(80).connect;
+const connect = __webpack_require__(121).connect;
 
 // Expose error class
 connect.MongoError = core.MongoError;
 connect.MongoNetworkError = core.MongoNetworkError;
 
 // Actual driver classes exported
-connect.Admin = __webpack_require__(157);
-connect.MongoClient = __webpack_require__(80);
-connect.Db = __webpack_require__(49);
-connect.Collection = __webpack_require__(47);
-connect.Server = __webpack_require__(82);
-connect.ReplSet = __webpack_require__(160);
-connect.Mongos = __webpack_require__(159);
-connect.ReadPreference = __webpack_require__(1).ReadPreference;
-connect.GridStore = __webpack_require__(302);
-connect.Chunk = __webpack_require__(161);
+connect.Admin = __webpack_require__(224);
+connect.MongoClient = __webpack_require__(121);
+connect.Db = __webpack_require__(83);
+connect.Collection = __webpack_require__(81);
+connect.Server = __webpack_require__(123);
+connect.ReplSet = __webpack_require__(227);
+connect.Mongos = __webpack_require__(226);
+connect.ReadPreference = __webpack_require__(4).ReadPreference;
+connect.GridStore = __webpack_require__(390);
+connect.Chunk = __webpack_require__(228);
 connect.Logger = core.Logger;
-connect.AggregationCursor = __webpack_require__(156);
-connect.CommandCursor = __webpack_require__(110);
-connect.Cursor = __webpack_require__(26);
-connect.GridFSBucket = __webpack_require__(303);
+connect.AggregationCursor = __webpack_require__(223);
+connect.CommandCursor = __webpack_require__(159);
+connect.Cursor = __webpack_require__(44);
+connect.GridFSBucket = __webpack_require__(391);
 // Exported to be used in tests not to be used anywhere else
-connect.CoreServer = __webpack_require__(1).Server;
-connect.CoreConnection = __webpack_require__(1).Connection;
+connect.CoreServer = __webpack_require__(4).Server;
+connect.CoreConnection = __webpack_require__(4).Connection;
 
 // BSON types exported
 connect.Binary = core.BSON.Binary;
@@ -13996,7 +14030,7 @@ module.exports = connect;
 
 
 /***/ }),
-/* 32 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14031,18 +14065,18 @@ module.exports = {
 
 
 /***/ }),
-/* 33 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const EventEmitter = __webpack_require__(10),
-  MongoError = __webpack_require__(1).MongoError,
-  f = __webpack_require__(2).format,
-  os = __webpack_require__(107),
-  translateReadPreference = __webpack_require__(0).translateReadPreference,
-  ClientSession = __webpack_require__(1).Sessions.ClientSession;
+const EventEmitter = __webpack_require__(14),
+  MongoError = __webpack_require__(4).MongoError,
+  f = __webpack_require__(3).format,
+  os = __webpack_require__(98),
+  translateReadPreference = __webpack_require__(2).translateReadPreference,
+  ClientSession = __webpack_require__(4).Sessions.ClientSession;
 
 // The store of ops
 var Store = function(topology, storeOptions) {
@@ -14292,7 +14326,7 @@ var ServerCapabilities = function(ismaster) {
 };
 
 // Get package.json variable
-const driverVersion = __webpack_require__(299).version,
+const driverVersion = __webpack_require__(387).version,
   nodejsversion = f('Node.js %s, %s', process.version, os.endianness()),
   type = os.type(),
   name = process.platform,
@@ -14477,7 +14511,7 @@ exports.TopologyBase = TopologyBase;
 
 
 /***/ }),
-/* 34 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14493,8 +14527,8 @@ exports.TopologyBase = TopologyBase;
 
 
 
-const ObjectId = __webpack_require__(22).get().ObjectId;
-const objectIdSymbol = __webpack_require__(6).objectIdSymbol;
+const ObjectId = __webpack_require__(36).get().ObjectId;
+const objectIdSymbol = __webpack_require__(10).objectIdSymbol;
 
 /*!
  * Getter for convenience with populate, see gh-6115
@@ -14514,7 +14548,7 @@ module.exports = ObjectId;
 
 
 /***/ }),
-/* 35 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14535,7 +14569,7 @@ exports.internalToObjectOptions = {
 
 
 /***/ }),
-/* 36 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14545,20 +14579,20 @@ exports.internalToObjectOptions = {
  * Module dependencies.
  */
 
-const CoreMongooseArray = __webpack_require__(189);
-const Document = __webpack_require__(15);
-const ObjectId = __webpack_require__(34);
-const castObjectId = __webpack_require__(190);
-const getDiscriminatorByValue = __webpack_require__(28).getDiscriminatorByValue;
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const CoreMongooseArray = __webpack_require__(256);
+const Document = __webpack_require__(22);
+const ObjectId = __webpack_require__(53);
+const castObjectId = __webpack_require__(257);
+const getDiscriminatorByValue = __webpack_require__(46).getDiscriminatorByValue;
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
-const arrayAtomicsSymbol = __webpack_require__(6).arrayAtomicsSymbol;
-const arrayParentSymbol = __webpack_require__(6).arrayParentSymbol;
-const arrayPathSymbol = __webpack_require__(6).arrayPathSymbol;
-const arraySchemaSymbol = __webpack_require__(6).arraySchemaSymbol;
-const documentArrayParent = __webpack_require__(6).documentArrayParent;
+const arrayAtomicsSymbol = __webpack_require__(10).arrayAtomicsSymbol;
+const arrayParentSymbol = __webpack_require__(10).arrayParentSymbol;
+const arrayPathSymbol = __webpack_require__(10).arrayPathSymbol;
+const arraySchemaSymbol = __webpack_require__(10).arraySchemaSymbol;
+const documentArrayParent = __webpack_require__(10).documentArrayParent;
 
 const _basePush = Array.prototype.push;
 
@@ -14889,7 +14923,17 @@ module.exports = MongooseDocumentArray;
 
 
 /***/ }),
-/* 37 */
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 60 */,
+/* 61 */
 /***/ (function(module, exports) {
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -15746,19 +15790,13 @@ module.exports.Long = Long;
 
 
 /***/ }),
-/* 38 */
-/***/ (function(module, exports) {
-
-module.exports = require("crypto");
-
-/***/ }),
-/* 39 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongoError = __webpack_require__(3).MongoError;
+const MongoError = __webpack_require__(5).MongoError;
 
 /**
  * Creates a new AuthProvider, which dictates how to authenticate for a given
@@ -15917,13 +15955,13 @@ module.exports = { AuthProvider };
 
 
 /***/ }),
-/* 40 */
+/* 63 */
 /***/ (function(module, exports) {
 
 module.exports = require("assert");
 
 /***/ }),
-/* 41 */
+/* 64 */
 /***/ (function(module, exports) {
 
 var isES5 = (function(){
@@ -16009,7 +16047,7 @@ if (isES5) {
 
 
 /***/ }),
-/* 42 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16019,9 +16057,9 @@ if (isES5) {
 
 
 
-const SchemaType = __webpack_require__(17);
-const symbols = __webpack_require__(87);
-const utils = __webpack_require__(4);
+const SchemaType = __webpack_require__(27);
+const symbols = __webpack_require__(128);
+const utils = __webpack_require__(7);
 
 /**
  * Mixed SchemaType constructor.
@@ -16121,7 +16159,23 @@ module.exports = Mixed;
 
 
 /***/ }),
-/* 43 */
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -16132,10 +16186,10 @@ module.exports = Mixed;
 // Test if we're in Node via presence of "global" not absence of "window"
 // to support hybrid environments like Electron
 if (typeof global !== 'undefined') {
-  var Buffer = __webpack_require__(141).Buffer; // TODO just use global Buffer
+  var Buffer = __webpack_require__(190).Buffer; // TODO just use global Buffer
 }
 
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(51);
 
 /**
  * A class representation of the BSON Binary type.
@@ -16511,15 +16565,15 @@ module.exports.Binary = Binary;
 
 
 /***/ }),
-/* 44 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const ServerType = __webpack_require__(25).ServerType;
-const ServerDescription = __webpack_require__(25).ServerDescription;
-const ReadPreference = __webpack_require__(18);
-const WIRE_CONSTANTS = __webpack_require__(143);
+const ServerType = __webpack_require__(43).ServerType;
+const ServerDescription = __webpack_require__(43).ServerDescription;
+const ReadPreference = __webpack_require__(31);
+const WIRE_CONSTANTS = __webpack_require__(211);
 
 // contstants related to compatability checks
 const MIN_SUPPORTED_SERVER_VERSION = WIRE_CONSTANTS.MIN_SUPPORTED_SERVER_VERSION;
@@ -16899,20 +16953,20 @@ module.exports = {
 
 
 /***/ }),
-/* 45 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Query = __webpack_require__(23).Query;
-const Msg = __webpack_require__(76).Msg;
-const MongoError = __webpack_require__(3).MongoError;
-const getReadPreference = __webpack_require__(12).getReadPreference;
-const isSharded = __webpack_require__(12).isSharded;
-const databaseNamespace = __webpack_require__(12).databaseNamespace;
-const isTransactionCommand = __webpack_require__(79).isTransactionCommand;
-const applySession = __webpack_require__(78).applySession;
+const Query = __webpack_require__(39).Query;
+const Msg = __webpack_require__(117).Msg;
+const MongoError = __webpack_require__(5).MongoError;
+const getReadPreference = __webpack_require__(18).getReadPreference;
+const isSharded = __webpack_require__(18).isSharded;
+const databaseNamespace = __webpack_require__(18).databaseNamespace;
+const isTransactionCommand = __webpack_require__(120).isTransactionCommand;
+const applySession = __webpack_require__(119).applySession;
 
 function command(server, ns, cmd, options, callback) {
   if (typeof options === 'function') (callback = options), (options = {});
@@ -17027,20 +17081,20 @@ module.exports = command;
 
 
 /***/ }),
-/* 46 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Logger = __webpack_require__(24);
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const MongoError = __webpack_require__(3).MongoError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const mongoErrorContextSymbol = __webpack_require__(3).mongoErrorContextSymbol;
-const f = __webpack_require__(2).format;
-const collationNotSupported = __webpack_require__(14).collationNotSupported;
-const wireProtocol = __webpack_require__(108);
+const Logger = __webpack_require__(40);
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const MongoError = __webpack_require__(5).MongoError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const mongoErrorContextSymbol = __webpack_require__(5).mongoErrorContextSymbol;
+const f = __webpack_require__(3).format;
+const collationNotSupported = __webpack_require__(21).collationNotSupported;
+const wireProtocol = __webpack_require__(157);
 const BSON = retrieveBSON();
 const Long = BSON.Long;
 
@@ -17803,72 +17857,72 @@ module.exports = Cursor;
 
 
 /***/ }),
-/* 47 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const deprecate = __webpack_require__(2).deprecate;
-const deprecateOptions = __webpack_require__(0).deprecateOptions;
-const checkCollectionName = __webpack_require__(0).checkCollectionName;
-const ObjectID = __webpack_require__(1).BSON.ObjectID;
-const MongoError = __webpack_require__(1).MongoError;
-const toError = __webpack_require__(0).toError;
-const normalizeHintField = __webpack_require__(0).normalizeHintField;
-const handleCallback = __webpack_require__(0).handleCallback;
-const decorateCommand = __webpack_require__(0).decorateCommand;
-const decorateWithCollation = __webpack_require__(0).decorateWithCollation;
-const decorateWithReadConcern = __webpack_require__(0).decorateWithReadConcern;
-const formattedOrderClause = __webpack_require__(0).formattedOrderClause;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const CommandCursor = __webpack_require__(110);
-const unordered = __webpack_require__(297);
-const ordered = __webpack_require__(298);
-const ChangeStream = __webpack_require__(109);
-const executeOperation = __webpack_require__(0).executeOperation;
-const resolveReadPreference = __webpack_require__(0).resolveReadPreference;
+const deprecate = __webpack_require__(3).deprecate;
+const deprecateOptions = __webpack_require__(2).deprecateOptions;
+const checkCollectionName = __webpack_require__(2).checkCollectionName;
+const ObjectID = __webpack_require__(4).BSON.ObjectID;
+const MongoError = __webpack_require__(4).MongoError;
+const toError = __webpack_require__(2).toError;
+const normalizeHintField = __webpack_require__(2).normalizeHintField;
+const handleCallback = __webpack_require__(2).handleCallback;
+const decorateCommand = __webpack_require__(2).decorateCommand;
+const decorateWithCollation = __webpack_require__(2).decorateWithCollation;
+const decorateWithReadConcern = __webpack_require__(2).decorateWithReadConcern;
+const formattedOrderClause = __webpack_require__(2).formattedOrderClause;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const CommandCursor = __webpack_require__(159);
+const unordered = __webpack_require__(385);
+const ordered = __webpack_require__(386);
+const ChangeStream = __webpack_require__(158);
+const executeOperation = __webpack_require__(2).executeOperation;
+const resolveReadPreference = __webpack_require__(2).resolveReadPreference;
 
 // Operations
-const aggregate = __webpack_require__(155).aggregate;
-const bulkWrite = __webpack_require__(5).bulkWrite;
-const checkForAtomicOperators = __webpack_require__(5).checkForAtomicOperators;
-const count = __webpack_require__(5).count;
-const countDocuments = __webpack_require__(5).countDocuments;
-const createIndex = __webpack_require__(5).createIndex;
-const createIndexes = __webpack_require__(5).createIndexes;
-const deleteMany = __webpack_require__(5).deleteMany;
-const deleteOne = __webpack_require__(5).deleteOne;
-const distinct = __webpack_require__(5).distinct;
-const dropIndex = __webpack_require__(5).dropIndex;
-const dropIndexes = __webpack_require__(5).dropIndexes;
-const ensureIndex = __webpack_require__(5).ensureIndex;
-const findAndModify = __webpack_require__(5).findAndModify;
-const findAndRemove = __webpack_require__(5).findAndRemove;
-const findOne = __webpack_require__(5).findOne;
-const findOneAndDelete = __webpack_require__(5).findOneAndDelete;
-const findOneAndReplace = __webpack_require__(5).findOneAndReplace;
-const findOneAndUpdate = __webpack_require__(5).findOneAndUpdate;
-const geoHaystackSearch = __webpack_require__(5).geoHaystackSearch;
-const group = __webpack_require__(5).group;
-const indexes = __webpack_require__(5).indexes;
-const indexExists = __webpack_require__(5).indexExists;
-const indexInformation = __webpack_require__(5).indexInformation;
-const insertMany = __webpack_require__(5).insertMany;
-const insertOne = __webpack_require__(5).insertOne;
-const isCapped = __webpack_require__(5).isCapped;
-const mapReduce = __webpack_require__(5).mapReduce;
-const optionsOp = __webpack_require__(5).optionsOp;
-const parallelCollectionScan = __webpack_require__(5).parallelCollectionScan;
-const reIndex = __webpack_require__(5).reIndex;
-const removeDocuments = __webpack_require__(5).removeDocuments;
-const rename = __webpack_require__(5).rename;
-const replaceOne = __webpack_require__(5).replaceOne;
-const save = __webpack_require__(5).save;
-const stats = __webpack_require__(5).stats;
-const updateDocuments = __webpack_require__(5).updateDocuments;
-const updateMany = __webpack_require__(5).updateMany;
-const updateOne = __webpack_require__(5).updateOne;
+const aggregate = __webpack_require__(222).aggregate;
+const bulkWrite = __webpack_require__(9).bulkWrite;
+const checkForAtomicOperators = __webpack_require__(9).checkForAtomicOperators;
+const count = __webpack_require__(9).count;
+const countDocuments = __webpack_require__(9).countDocuments;
+const createIndex = __webpack_require__(9).createIndex;
+const createIndexes = __webpack_require__(9).createIndexes;
+const deleteMany = __webpack_require__(9).deleteMany;
+const deleteOne = __webpack_require__(9).deleteOne;
+const distinct = __webpack_require__(9).distinct;
+const dropIndex = __webpack_require__(9).dropIndex;
+const dropIndexes = __webpack_require__(9).dropIndexes;
+const ensureIndex = __webpack_require__(9).ensureIndex;
+const findAndModify = __webpack_require__(9).findAndModify;
+const findAndRemove = __webpack_require__(9).findAndRemove;
+const findOne = __webpack_require__(9).findOne;
+const findOneAndDelete = __webpack_require__(9).findOneAndDelete;
+const findOneAndReplace = __webpack_require__(9).findOneAndReplace;
+const findOneAndUpdate = __webpack_require__(9).findOneAndUpdate;
+const geoHaystackSearch = __webpack_require__(9).geoHaystackSearch;
+const group = __webpack_require__(9).group;
+const indexes = __webpack_require__(9).indexes;
+const indexExists = __webpack_require__(9).indexExists;
+const indexInformation = __webpack_require__(9).indexInformation;
+const insertMany = __webpack_require__(9).insertMany;
+const insertOne = __webpack_require__(9).insertOne;
+const isCapped = __webpack_require__(9).isCapped;
+const mapReduce = __webpack_require__(9).mapReduce;
+const optionsOp = __webpack_require__(9).optionsOp;
+const parallelCollectionScan = __webpack_require__(9).parallelCollectionScan;
+const reIndex = __webpack_require__(9).reIndex;
+const removeDocuments = __webpack_require__(9).removeDocuments;
+const rename = __webpack_require__(9).rename;
+const replaceOne = __webpack_require__(9).replaceOne;
+const save = __webpack_require__(9).save;
+const stats = __webpack_require__(9).stats;
+const updateDocuments = __webpack_require__(9).updateDocuments;
+const updateMany = __webpack_require__(9).updateMany;
+const updateOne = __webpack_require__(9).updateOne;
 
 /**
  * @fileOverview The **Collection** class is an internal class that embodies a MongoDB collection
@@ -19795,22 +19849,22 @@ module.exports = Collection;
 
 
 /***/ }),
-/* 48 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const buildCountCommand = __webpack_require__(5).buildCountCommand;
-const formattedOrderClause = __webpack_require__(0).formattedOrderClause;
-const handleCallback = __webpack_require__(0).handleCallback;
-const MongoError = __webpack_require__(1).MongoError;
+const buildCountCommand = __webpack_require__(9).buildCountCommand;
+const formattedOrderClause = __webpack_require__(2).formattedOrderClause;
+const handleCallback = __webpack_require__(2).handleCallback;
+const MongoError = __webpack_require__(4).MongoError;
 const push = Array.prototype.push;
 
 let cursor;
 function loadCursor() {
   if (!cursor) {
-    cursor = __webpack_require__(26);
+    cursor = __webpack_require__(44);
   }
   return cursor;
 }
@@ -20052,53 +20106,53 @@ module.exports = { count, each, hasNext, next, toArray };
 
 
 /***/ }),
-/* 49 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const inherits = __webpack_require__(2).inherits;
-const getSingleProperty = __webpack_require__(0).getSingleProperty;
-const CommandCursor = __webpack_require__(110);
-const handleCallback = __webpack_require__(0).handleCallback;
-const filterOptions = __webpack_require__(0).filterOptions;
-const toError = __webpack_require__(0).toError;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const MongoError = __webpack_require__(1).MongoError;
-const ObjectID = __webpack_require__(1).ObjectID;
-const Logger = __webpack_require__(1).Logger;
-const Collection = __webpack_require__(47);
-const mergeOptionsAndWriteConcern = __webpack_require__(0).mergeOptionsAndWriteConcern;
-const executeOperation = __webpack_require__(0).executeOperation;
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
-const resolveReadPreference = __webpack_require__(0).resolveReadPreference;
-const ChangeStream = __webpack_require__(109);
-const deprecate = __webpack_require__(2).deprecate;
-const deprecateOptions = __webpack_require__(0).deprecateOptions;
-const CONSTANTS = __webpack_require__(154);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const inherits = __webpack_require__(3).inherits;
+const getSingleProperty = __webpack_require__(2).getSingleProperty;
+const CommandCursor = __webpack_require__(159);
+const handleCallback = __webpack_require__(2).handleCallback;
+const filterOptions = __webpack_require__(2).filterOptions;
+const toError = __webpack_require__(2).toError;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const MongoError = __webpack_require__(4).MongoError;
+const ObjectID = __webpack_require__(4).ObjectID;
+const Logger = __webpack_require__(4).Logger;
+const Collection = __webpack_require__(81);
+const mergeOptionsAndWriteConcern = __webpack_require__(2).mergeOptionsAndWriteConcern;
+const executeOperation = __webpack_require__(2).executeOperation;
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
+const resolveReadPreference = __webpack_require__(2).resolveReadPreference;
+const ChangeStream = __webpack_require__(158);
+const deprecate = __webpack_require__(3).deprecate;
+const deprecateOptions = __webpack_require__(2).deprecateOptions;
+const CONSTANTS = __webpack_require__(221);
 
 // Operations
-const addUser = __webpack_require__(7).addUser;
-const aggregate = __webpack_require__(155).aggregate;
-const collections = __webpack_require__(7).collections;
-const createCollection = __webpack_require__(7).createCollection;
-const createIndex = __webpack_require__(7).createIndex;
-const createListener = __webpack_require__(7).createListener;
-const dropCollection = __webpack_require__(7).dropCollection;
-const dropDatabase = __webpack_require__(7).dropDatabase;
-const ensureIndex = __webpack_require__(7).ensureIndex;
-const evaluate = __webpack_require__(7).evaluate;
-const executeCommand = __webpack_require__(7).executeCommand;
-const executeDbAdminCommand = __webpack_require__(7).executeDbAdminCommand;
-const indexInformation = __webpack_require__(7).indexInformation;
-const listCollectionsTransforms = __webpack_require__(7).listCollectionsTransforms;
-const profilingInfo = __webpack_require__(7).profilingInfo;
-const profilingLevel = __webpack_require__(7).profilingLevel;
-const removeUser = __webpack_require__(7).removeUser;
-const setProfilingLevel = __webpack_require__(7).setProfilingLevel;
-const validateDatabaseName = __webpack_require__(7).validateDatabaseName;
+const addUser = __webpack_require__(12).addUser;
+const aggregate = __webpack_require__(222).aggregate;
+const collections = __webpack_require__(12).collections;
+const createCollection = __webpack_require__(12).createCollection;
+const createIndex = __webpack_require__(12).createIndex;
+const createListener = __webpack_require__(12).createListener;
+const dropCollection = __webpack_require__(12).dropCollection;
+const dropDatabase = __webpack_require__(12).dropDatabase;
+const ensureIndex = __webpack_require__(12).ensureIndex;
+const evaluate = __webpack_require__(12).evaluate;
+const executeCommand = __webpack_require__(12).executeCommand;
+const executeDbAdminCommand = __webpack_require__(12).executeDbAdminCommand;
+const indexInformation = __webpack_require__(12).indexInformation;
+const listCollectionsTransforms = __webpack_require__(12).listCollectionsTransforms;
+const profilingInfo = __webpack_require__(12).profilingInfo;
+const profilingLevel = __webpack_require__(12).profilingLevel;
+const removeUser = __webpack_require__(12).removeUser;
+const setProfilingLevel = __webpack_require__(12).setProfilingLevel;
+const validateDatabaseName = __webpack_require__(12).validateDatabaseName;
 
 /**
  * @fileOverview The **Db** class is a class that represents a MongoDB Database.
@@ -20366,7 +20420,7 @@ Db.prototype.aggregate = function(pipeline, options, callback) {
  * @return {Admin} return the new Admin db instance
  */
 Db.prototype.admin = function() {
-  const Admin = __webpack_require__(157);
+  const Admin = __webpack_require__(224);
 
   return new Admin(this, this.s.topology, this.s.promiseLibrary);
 };
@@ -21090,7 +21144,7 @@ module.exports = Db;
 
 
 /***/ }),
-/* 50 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21109,7 +21163,7 @@ module.exports = function immediate(cb) {
 
 
 /***/ }),
-/* 51 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21125,18 +21179,18 @@ module.exports = function immediate(cb) {
 
 
 
-module.exports = __webpack_require__(22).get().Decimal128;
+module.exports = __webpack_require__(36).get().Decimal128;
 
 
 /***/ }),
-/* 52 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = exports = __webpack_require__(348);
+module.exports = exports = __webpack_require__(436);
 
 
 /***/ }),
-/* 53 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21167,7 +21221,7 @@ MongooseError.prototype.constructor = Error;
 module.exports = MongooseError;
 
 /***/ }),
-/* 54 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21177,9 +21231,9 @@ module.exports = MongooseError;
  * Module dependencies.
  */
 
-const Decimal128 = __webpack_require__(51);
-const ObjectId = __webpack_require__(34);
-const utils = __webpack_require__(4);
+const Decimal128 = __webpack_require__(85);
+const ObjectId = __webpack_require__(53);
+const utils = __webpack_require__(7);
 
 exports.flatten = flatten;
 exports.modifiedPaths = modifiedPaths;
@@ -21263,7 +21317,7 @@ function shouldFlatten(val) {
 
 
 /***/ }),
-/* 55 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21288,7 +21342,7 @@ module.exports = function isDefiningProjection(val) {
 
 
 /***/ }),
-/* 56 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21300,16 +21354,16 @@ module.exports = function isDefiningProjection(val) {
 
 
 
-const Document = __webpack_require__(178)();
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const immediate = __webpack_require__(50);
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const get = __webpack_require__(8);
-const utils = __webpack_require__(4);
-const util = __webpack_require__(2);
+const Document = __webpack_require__(245)();
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const immediate = __webpack_require__(84);
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const get = __webpack_require__(15);
+const utils = __webpack_require__(7);
+const util = __webpack_require__(3);
 
-const documentArrayParent = __webpack_require__(6).documentArrayParent;
-const validatorErrorSymbol = __webpack_require__(6).validatorErrorSymbol;
+const documentArrayParent = __webpack_require__(10).documentArrayParent;
+const validatorErrorSymbol = __webpack_require__(10).validatorErrorSymbol;
 
 /**
  * EmbeddedDocument constructor.
@@ -21739,7 +21793,7 @@ module.exports = EmbeddedDocument;
 
 
 /***/ }),
-/* 57 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21750,25 +21804,62 @@ module.exports = EmbeddedDocument;
 
 
 
-exports.Array = __webpack_require__(188);
-exports.Buffer = __webpack_require__(123);
+exports.Array = __webpack_require__(255);
+exports.Buffer = __webpack_require__(172);
 
 exports.Document = // @deprecate
-exports.Embedded = __webpack_require__(56);
+exports.Embedded = __webpack_require__(90);
 
-exports.DocumentArray = __webpack_require__(36);
-exports.Decimal128 = __webpack_require__(51);
-exports.ObjectId = __webpack_require__(34);
+exports.DocumentArray = __webpack_require__(55);
+exports.Decimal128 = __webpack_require__(85);
+exports.ObjectId = __webpack_require__(53);
 
-exports.Map = __webpack_require__(191);
+exports.Map = __webpack_require__(258);
 
-exports.Subdocument = __webpack_require__(192);
+exports.Subdocument = __webpack_require__(259);
 
 
 /***/ }),
-/* 58 */,
-/* 59 */,
-/* 60 */
+/* 92 */,
+/* 93 */,
+/* 94 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */
+/***/ (function(module, exports) {
+
+module.exports = require("os");
+
+/***/ }),
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21780,12 +21871,17 @@ exports.Subdocument = __webpack_require__(192);
 
 
 
-module.exports = __webpack_require__(259);
+module.exports = __webpack_require__(350);
 
 
 /***/ }),
-/* 61 */,
-/* 62 */
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /***/ (function(module, exports) {
 
 /**
@@ -21824,7 +21920,7 @@ module.exports.Double = Double;
 
 
 /***/ }),
-/* 63 */
+/* 107 */
 /***/ (function(module, exports) {
 
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22684,13 +22780,13 @@ module.exports.Timestamp = Timestamp;
 
 
 /***/ }),
-/* 64 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Custom inspect property name / symbol.
 var inspect = 'inspect';
 
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(51);
 
 /**
  * Machine id.
@@ -22709,7 +22805,7 @@ var checkForHexRegExp = new RegExp('^[0-9a-fA-F]{24}$');
 try {
   if (Buffer && Buffer.from) {
     var hasBufferType = true;
-    inspect = __webpack_require__(2).inspect.custom || 'inspect';
+    inspect = __webpack_require__(3).inspect.custom || 'inspect';
   }
 } catch (err) {
   hasBufferType = false;
@@ -23079,7 +23175,7 @@ module.exports.ObjectId = ObjectID;
 
 
 /***/ }),
-/* 65 */
+/* 109 */
 /***/ (function(module, exports) {
 
 /**
@@ -23118,11 +23214,11 @@ module.exports.BSONRegExp = BSONRegExp;
 
 
 /***/ }),
-/* 66 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Custom inspect property name / symbol.
-var inspect = Buffer ? __webpack_require__(2).inspect.custom || 'inspect' : 'inspect';
+var inspect = Buffer ? __webpack_require__(3).inspect.custom || 'inspect' : 'inspect';
 
 /**
  * A class representation of the BSON Symbol type.
@@ -23174,7 +23270,7 @@ module.exports.Symbol = Symbol;
 
 
 /***/ }),
-/* 67 */
+/* 111 */
 /***/ (function(module, exports) {
 
 /**
@@ -23204,13 +23300,13 @@ module.exports.Code = Code;
 
 
 /***/ }),
-/* 68 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Long = __webpack_require__(37);
+var Long = __webpack_require__(61);
 
 var PARSE_STRING_REGEXP = /^(\+|-)?(\d+|(\d*\.\d*))?(E|e)?([-+])?(\d+)?$/;
 var PARSE_INF_REGEXP = /^(\+|-)?(Infinity|inf)$/i;
@@ -23280,7 +23376,7 @@ var INF_POSITIVE_BUFFER = [
 
 var EXPONENT_REGEX = /^([-+])?(\d+)?$/;
 
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(51);
 
 // Detect if the value is a digit
 var isDigit = function(value) {
@@ -24031,7 +24127,7 @@ module.exports.Decimal128 = Decimal128;
 
 
 /***/ }),
-/* 69 */
+/* 113 */
 /***/ (function(module, exports) {
 
 /**
@@ -24051,7 +24147,7 @@ module.exports.MinKey = MinKey;
 
 
 /***/ }),
-/* 70 */
+/* 114 */
 /***/ (function(module, exports) {
 
 /**
@@ -24071,7 +24167,7 @@ module.exports.MaxKey = MaxKey;
 
 
 /***/ }),
-/* 71 */
+/* 115 */
 /***/ (function(module, exports) {
 
 /**
@@ -24109,54 +24205,14 @@ module.exports.DBRef = DBRef;
 
 
 /***/ }),
-/* 72 */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports) {
-
-module.exports = require("path");
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-/* 75 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Snappy = __webpack_require__(16).retrieveSnappy(),
-  zlib = __webpack_require__(271);
+var Snappy = __webpack_require__(26).retrieveSnappy(),
+  zlib = __webpack_require__(48);
 
 var compressorIDs = {
   snappy: 1,
@@ -24229,7 +24285,7 @@ module.exports = {
 
 
 /***/ }),
-/* 76 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24262,9 +24318,9 @@ module.exports = {
 //   [uint32     checksum;]
 // };
 
-const opcodes = __webpack_require__(12).opcodes;
-const databaseNamespace = __webpack_require__(12).databaseNamespace;
-const ReadPreference = __webpack_require__(18);
+const opcodes = __webpack_require__(18).opcodes;
+const databaseNamespace = __webpack_require__(18).databaseNamespace;
+const ReadPreference = __webpack_require__(31);
 
 // Incrementing request id
 let _requestId = 0;
@@ -24455,24 +24511,24 @@ module.exports = { Msg, BinMsg };
 
 
 /***/ }),
-/* 77 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const crypto = __webpack_require__(38);
-const Buffer = __webpack_require__(19).Buffer;
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const MongoError = __webpack_require__(3).MongoError;
-const AuthProvider = __webpack_require__(39).AuthProvider;
+const crypto = __webpack_require__(42);
+const Buffer = __webpack_require__(28).Buffer;
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const MongoError = __webpack_require__(5).MongoError;
+const AuthProvider = __webpack_require__(62).AuthProvider;
 
 const BSON = retrieveBSON();
 const Binary = BSON.Binary;
 
 let saslprep;
 try {
-  saslprep = __webpack_require__(279);
+  saslprep = __webpack_require__(367);
 } catch (e) {
   // don't do anything;
 }
@@ -24755,27 +24811,27 @@ module.exports = { ScramSHA1, ScramSHA256 };
 
 
 /***/ }),
-/* 78 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const EventEmitter = __webpack_require__(10);
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const EventEmitter = __webpack_require__(14);
 const BSON = retrieveBSON();
 const Binary = BSON.Binary;
-const uuidV4 = __webpack_require__(14).uuidV4;
-const MongoError = __webpack_require__(3).MongoError;
-const isRetryableError = __webpack_require__(3).isRetryableError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const MongoWriteConcernError = __webpack_require__(3).MongoWriteConcernError;
-const Transaction = __webpack_require__(79).Transaction;
-const TxnState = __webpack_require__(79).TxnState;
-const isPromiseLike = __webpack_require__(14).isPromiseLike;
-const ReadPreference = __webpack_require__(18);
-const isTransactionCommand = __webpack_require__(79).isTransactionCommand;
-const resolveClusterTime = __webpack_require__(11).resolveClusterTime;
+const uuidV4 = __webpack_require__(21).uuidV4;
+const MongoError = __webpack_require__(5).MongoError;
+const isRetryableError = __webpack_require__(5).isRetryableError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const MongoWriteConcernError = __webpack_require__(5).MongoWriteConcernError;
+const Transaction = __webpack_require__(120).Transaction;
+const TxnState = __webpack_require__(120).TxnState;
+const isPromiseLike = __webpack_require__(21).isPromiseLike;
+const ReadPreference = __webpack_require__(31);
+const isTransactionCommand = __webpack_require__(120).isTransactionCommand;
+const resolveClusterTime = __webpack_require__(17).resolveClusterTime;
 
 function assertAlive(session, callback) {
   if (session.serverSession == null) {
@@ -25464,12 +25520,12 @@ module.exports = {
 
 
 /***/ }),
-/* 79 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const MongoError = __webpack_require__(3).MongoError;
+const MongoError = __webpack_require__(5).MongoError;
 
 let TxnState;
 let stateMachine;
@@ -25638,24 +25694,24 @@ module.exports = { TxnState, Transaction, isTransactionCommand };
 
 
 /***/ }),
-/* 80 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const ChangeStream = __webpack_require__(109);
-const Db = __webpack_require__(49);
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const executeOperation = __webpack_require__(0).executeOperation;
-const inherits = __webpack_require__(2).inherits;
-const MongoError = __webpack_require__(1).MongoError;
-const deprecate = __webpack_require__(2).deprecate;
+const ChangeStream = __webpack_require__(158);
+const Db = __webpack_require__(83);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const executeOperation = __webpack_require__(2).executeOperation;
+const inherits = __webpack_require__(3).inherits;
+const MongoError = __webpack_require__(4).MongoError;
+const deprecate = __webpack_require__(3).deprecate;
 
 // Operations
-const connectOp = __webpack_require__(112).connectOp;
-const validOptions = __webpack_require__(112).validOptions;
-const closeOperation = __webpack_require__(112).closeOperation;
+const connectOp = __webpack_require__(161).connectOp;
+const validOptions = __webpack_require__(161).validOptions;
+const closeOperation = __webpack_require__(161).closeOperation;
 
 /**
  * @fileOverview The **MongoClient** class is a class that allows for making Connections to MongoDB.
@@ -26086,7 +26142,7 @@ module.exports = MongoClient;
 
 
 /***/ }),
-/* 81 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26126,21 +26182,21 @@ exports.asyncIterator = asyncIterator;
 
 
 /***/ }),
-/* 82 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const CServer = __webpack_require__(1).Server;
-const Cursor = __webpack_require__(26);
-const TopologyBase = __webpack_require__(33).TopologyBase;
-const Store = __webpack_require__(33).Store;
-const MongoError = __webpack_require__(1).MongoError;
-const MAX_JS_INT = __webpack_require__(0).MAX_JS_INT;
-const translateOptions = __webpack_require__(0).translateOptions;
-const filterOptions = __webpack_require__(0).filterOptions;
-const mergeOptions = __webpack_require__(0).mergeOptions;
+const CServer = __webpack_require__(4).Server;
+const Cursor = __webpack_require__(44);
+const TopologyBase = __webpack_require__(52).TopologyBase;
+const Store = __webpack_require__(52).Store;
+const MongoError = __webpack_require__(4).MongoError;
+const MAX_JS_INT = __webpack_require__(2).MAX_JS_INT;
+const translateOptions = __webpack_require__(2).translateOptions;
+const filterOptions = __webpack_require__(2).filterOptions;
+const mergeOptions = __webpack_require__(2).mergeOptions;
 
 /**
  * @fileOverview The **Server** class is a class that represents a single server topology and is
@@ -26588,7 +26644,7 @@ module.exports = Server;
 
 
 /***/ }),
-/* 83 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26621,7 +26677,7 @@ STATES[uninitialized] = 99;
 
 
 /***/ }),
-/* 84 */
+/* 125 */
 /***/ (function(module, exports) {
 
 
@@ -26660,7 +26716,7 @@ module.exports = function (args, slice, sliceEnd) {
 
 
 /***/ }),
-/* 85 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26670,8 +26726,8 @@ module.exports = function (args, slice, sliceEnd) {
 
 
 
-const assert = __webpack_require__(40);
-const mquery = __webpack_require__(113);
+const assert = __webpack_require__(63);
+const mquery = __webpack_require__(162);
 
 /**
  * Helper for multiplexing promise implementations
@@ -26716,7 +26772,7 @@ module.exports = store;
 
 
 /***/ }),
-/* 86 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26769,7 +26825,7 @@ function notImplemented(method) {
 
 
 /***/ }),
-/* 87 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26780,7 +26836,7 @@ exports.schemaMixedSymbol = Symbol.for('mongoose:schema_mixed');
 exports.builtInMiddleware = Symbol.for('mongoose:built-in-middleware');
 
 /***/ }),
-/* 88 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26790,7 +26846,7 @@ exports.builtInMiddleware = Symbol.for('mongoose:built-in-middleware');
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * Strict mode error constructor
@@ -26825,7 +26881,7 @@ module.exports = StrictModeError;
 
 
 /***/ }),
-/* 89 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26835,28 +26891,28 @@ module.exports = StrictModeError;
  * Module dependencies.
  */
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const Kareem = __webpack_require__(179);
-const SchemaType = __webpack_require__(17);
-const VirtualType = __webpack_require__(118);
-const applyTimestampsToChildren = __webpack_require__(180);
-const applyTimestampsToUpdate = __webpack_require__(182);
-const get = __webpack_require__(8);
-const getIndexes = __webpack_require__(360);
-const handleTimestampOption = __webpack_require__(181);
-const merge = __webpack_require__(361);
-const mpath = __webpack_require__(52);
-const readPref = __webpack_require__(22).get().ReadPreference;
-const symbols = __webpack_require__(87);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
-const validateRef = __webpack_require__(362);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const Kareem = __webpack_require__(246);
+const SchemaType = __webpack_require__(27);
+const VirtualType = __webpack_require__(167);
+const applyTimestampsToChildren = __webpack_require__(247);
+const applyTimestampsToUpdate = __webpack_require__(249);
+const get = __webpack_require__(15);
+const getIndexes = __webpack_require__(448);
+const handleTimestampOption = __webpack_require__(248);
+const merge = __webpack_require__(449);
+const mpath = __webpack_require__(86);
+const readPref = __webpack_require__(36).get().ReadPreference;
+const symbols = __webpack_require__(128);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
+const validateRef = __webpack_require__(450);
 
 let MongooseTypes;
 
-const queryHooks = __webpack_require__(120).
+const queryHooks = __webpack_require__(169).
   middlewareFunctions;
-const documentHooks = __webpack_require__(121).middlewareFunctions;
+const documentHooks = __webpack_require__(170).middlewareFunctions;
 const hookNames = queryHooks.concat(documentHooks).
   reduce((s, hook) => s.add(hook), new Set());
 
@@ -28883,7 +28939,7 @@ module.exports = exports = Schema;
  * @api public
  */
 
-Schema.Types = MongooseTypes = __webpack_require__(91);
+Schema.Types = MongooseTypes = __webpack_require__(132);
 
 /*!
  * ignore
@@ -28893,7 +28949,7 @@ exports.ObjectId = MongooseTypes.ObjectId;
 
 
 /***/ }),
-/* 90 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28911,7 +28967,7 @@ module.exports = function cleanPositionalOperators(path) {
 };
 
 /***/ }),
-/* 91 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28922,29 +28978,29 @@ module.exports = function cleanPositionalOperators(path) {
 
 
 
-exports.String = __webpack_require__(363);
+exports.String = __webpack_require__(451);
 
-exports.Number = __webpack_require__(184);
+exports.Number = __webpack_require__(251);
 
-exports.Boolean = __webpack_require__(364);
+exports.Boolean = __webpack_require__(452);
 
-exports.DocumentArray = __webpack_require__(365);
+exports.DocumentArray = __webpack_require__(453);
 
-exports.Embedded = __webpack_require__(368);
+exports.Embedded = __webpack_require__(456);
 
-exports.Array = __webpack_require__(122);
+exports.Array = __webpack_require__(171);
 
-exports.Buffer = __webpack_require__(369);
+exports.Buffer = __webpack_require__(457);
 
-exports.Date = __webpack_require__(370);
+exports.Date = __webpack_require__(458);
 
-exports.ObjectId = __webpack_require__(372);
+exports.ObjectId = __webpack_require__(460);
 
-exports.Mixed = __webpack_require__(42);
+exports.Mixed = __webpack_require__(65);
 
-exports.Decimal128 = exports.Decimal = __webpack_require__(373);
+exports.Decimal128 = exports.Decimal = __webpack_require__(461);
 
-exports.Map = __webpack_require__(375);
+exports.Map = __webpack_require__(463);
 
 // alias
 
@@ -28955,7 +29011,7 @@ exports.ObjectID = exports.ObjectId;
 
 
 /***/ }),
-/* 92 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28965,12 +29021,12 @@ exports.ObjectID = exports.ObjectId;
  * Module dependencies.
  */
 
-const StrictModeError = __webpack_require__(88);
-const Types = __webpack_require__(91);
-const castTextSearch = __webpack_require__(366);
-const get = __webpack_require__(8);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const StrictModeError = __webpack_require__(129);
+const Types = __webpack_require__(132);
+const castTextSearch = __webpack_require__(454);
+const get = __webpack_require__(15);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
 const ALLOWED_GEOWITHIN_GEOJSON_TYPES = ['Polygon', 'MultiPolygon'];
 
@@ -29301,7 +29357,7 @@ function _cast(val, numbertype, context) {
 }
 
 /***/ }),
-/* 93 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29311,7 +29367,7 @@ function _cast(val, numbertype, context) {
  * Module requirements.
  */
 
-const SchemaNumber = __webpack_require__(184);
+const SchemaNumber = __webpack_require__(251);
 
 /*!
  * @ignore
@@ -29340,11 +29396,11 @@ function castArraysOfNumbers(arr, self) {
 
 
 /***/ }),
-/* 94 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(391),
-    isLength = __webpack_require__(206);
+var isFunction = __webpack_require__(479),
+    isLength = __webpack_require__(273);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -29379,7 +29435,7 @@ module.exports = isArrayLike;
 
 
 /***/ }),
-/* 95 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29390,7 +29446,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.isAsync = undefined;
 
-var _asyncify = __webpack_require__(414);
+var _asyncify = __webpack_require__(502);
 
 var _asyncify2 = _interopRequireDefault(_asyncify);
 
@@ -29410,13 +29466,22 @@ exports.default = wrapAsync;
 exports.isAsync = isAsync;
 
 /***/ }),
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29551,7 +29616,7 @@ if (typeof global.Map !== 'undefined') {
 
 
 /***/ }),
-/* 103 */
+/* 153 */
 /***/ (function(module, exports) {
 
 /**
@@ -29590,14 +29655,14 @@ module.exports.Int32 = Int32;
 
 
 /***/ }),
-/* 104 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var path = __webpack_require__(73),
-  fs = __webpack_require__(74),
-  f = __webpack_require__(2).format,
-  resolveFrom = __webpack_require__(268),
-  semver = __webpack_require__(270);
+/* WEBPACK VAR INJECTION */(function(module) {var path = __webpack_require__(72),
+  fs = __webpack_require__(47),
+  f = __webpack_require__(3).format,
+  resolveFrom = __webpack_require__(359),
+  semver = __webpack_require__(361);
 
 var exists = fs.existsSync || path.existsSync;
 
@@ -29674,7 +29739,7 @@ var require_optional = function(name, options) {
 
   try {
     // Validate if it's possible to read the module
-    moduleEntry = __webpack_require__(105)(moduleEntryFile);
+    moduleEntry = __webpack_require__(155)(moduleEntryFile);
   } catch(err) {
     // Attempt to resolve in top level package
     try {
@@ -29682,14 +29747,14 @@ var require_optional = function(name, options) {
       moduleEntryFile = resolveFrom(process.cwd(), name);
       if(moduleEntryFile == null) return undefined;
       // Attempt to resolve the module
-      moduleEntry = __webpack_require__(105)(moduleEntryFile);
+      moduleEntry = __webpack_require__(155)(moduleEntryFile);
     } catch(err) {
       if(err.code === 'MODULE_NOT_FOUND') return undefined;
     }
   }
 
   // Resolve the location of the module's package.json file
-  var location = find_package_json(/*require.resolve*/(__webpack_require__(105).resolve(moduleEntryFile)));
+  var location = find_package_json(/*require.resolve*/(__webpack_require__(155).resolve(moduleEntryFile)));
   if(!location) {
     throw new Error('package.json can not be located');
   }
@@ -29722,10 +29787,10 @@ require_optional.exists = function(name) {
 
 module.exports = require_optional;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(94)(module)))
 
 /***/ }),
-/* 105 */
+/* 155 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -29736,35 +29801,35 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 105;
+webpackEmptyContext.id = 155;
 
 /***/ }),
-/* 106 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var inherits = __webpack_require__(2).inherits,
-  f = __webpack_require__(2).format,
-  EventEmitter = __webpack_require__(10).EventEmitter,
-  ReadPreference = __webpack_require__(18),
-  Logger = __webpack_require__(24),
-  debugOptions = __webpack_require__(16).debugOptions,
-  retrieveBSON = __webpack_require__(16).retrieveBSON,
-  Pool = __webpack_require__(144),
-  MongoError = __webpack_require__(3).MongoError,
-  MongoNetworkError = __webpack_require__(3).MongoNetworkError,
-  wireProtocol = __webpack_require__(108),
-  BasicCursor = __webpack_require__(46),
-  sdam = __webpack_require__(11),
-  createClientInfo = __webpack_require__(11).createClientInfo,
-  createCompressionInfo = __webpack_require__(11).createCompressionInfo,
-  resolveClusterTime = __webpack_require__(11).resolveClusterTime,
-  SessionMixins = __webpack_require__(11).SessionMixins,
-  relayEvents = __webpack_require__(14).relayEvents;
+var inherits = __webpack_require__(3).inherits,
+  f = __webpack_require__(3).format,
+  EventEmitter = __webpack_require__(14).EventEmitter,
+  ReadPreference = __webpack_require__(31),
+  Logger = __webpack_require__(40),
+  debugOptions = __webpack_require__(26).debugOptions,
+  retrieveBSON = __webpack_require__(26).retrieveBSON,
+  Pool = __webpack_require__(212),
+  MongoError = __webpack_require__(5).MongoError,
+  MongoNetworkError = __webpack_require__(5).MongoNetworkError,
+  wireProtocol = __webpack_require__(157),
+  BasicCursor = __webpack_require__(80),
+  sdam = __webpack_require__(17),
+  createClientInfo = __webpack_require__(17).createClientInfo,
+  createCompressionInfo = __webpack_require__(17).createCompressionInfo,
+  resolveClusterTime = __webpack_require__(17).resolveClusterTime,
+  SessionMixins = __webpack_require__(17).SessionMixins,
+  relayEvents = __webpack_require__(21).relayEvents;
 
-const collationNotSupported = __webpack_require__(14).collationNotSupported;
+const collationNotSupported = __webpack_require__(21).collationNotSupported;
 
 // Used for filtering out fields for loggin
 var debugFields = [
@@ -30695,18 +30760,12 @@ module.exports = Server;
 
 
 /***/ }),
-/* 107 */
-/***/ (function(module, exports) {
-
-module.exports = require("os");
-
-/***/ }),
-/* 108 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const writeCommand = __webpack_require__(283);
+const writeCommand = __webpack_require__(371);
 
 module.exports = {
   insert: function insert(server, ns, ops, options, callback) {
@@ -30718,23 +30777,23 @@ module.exports = {
   remove: function remove(server, ns, ops, options, callback) {
     writeCommand(server, 'delete', 'deletes', ns, ops, options, callback);
   },
-  killCursors: __webpack_require__(284),
-  getMore: __webpack_require__(285),
-  query: __webpack_require__(286),
-  command: __webpack_require__(45)
+  killCursors: __webpack_require__(372),
+  getMore: __webpack_require__(373),
+  query: __webpack_require__(374),
+  command: __webpack_require__(79)
 };
 
 
 /***/ }),
-/* 109 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const EventEmitter = __webpack_require__(10);
-const isResumableError = __webpack_require__(296).isResumableError;
-const MongoError = __webpack_require__(1).MongoError;
+const EventEmitter = __webpack_require__(14);
+const isResumableError = __webpack_require__(384).isResumableError;
+const MongoError = __webpack_require__(4).MongoError;
 
 var cursorOptionNames = ['maxAwaitTimeMS', 'collation', 'readPreference'];
 
@@ -30767,9 +30826,9 @@ const CHANGE_DOMAIN_TYPES = {
 class ChangeStream extends EventEmitter {
   constructor(changeDomain, pipeline, options) {
     super();
-    const Collection = __webpack_require__(47);
-    const Db = __webpack_require__(49);
-    const MongoClient = __webpack_require__(80);
+    const Collection = __webpack_require__(81);
+    const Db = __webpack_require__(83);
+    const MongoClient = __webpack_require__(121);
 
     this.pipeline = pipeline || [];
     this.options = options || {};
@@ -31202,18 +31261,18 @@ module.exports = ChangeStream;
 
 
 /***/ }),
-/* 110 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const inherits = __webpack_require__(2).inherits;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const MongoError = __webpack_require__(1).MongoError;
+const inherits = __webpack_require__(3).inherits;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const MongoError = __webpack_require__(4).MongoError;
 const Readable = __webpack_require__(20).Readable;
-const CoreCursor = __webpack_require__(26);
-const SUPPORTS = __webpack_require__(0).SUPPORTS;
+const CoreCursor = __webpack_require__(44);
+const SUPPORTS = __webpack_require__(2).SUPPORTS;
 
 /**
  * @fileOverview The **CommandCursor** class is an internal class that embodies a
@@ -31366,7 +31425,7 @@ for (var i = 0; i < methodsToInherit.length; i++) {
 }
 
 if (SUPPORTS.ASYNC_ITERATOR) {
-  CommandCursor.prototype[Symbol.asyncIterator] = __webpack_require__(81).asyncIterator;
+  CommandCursor.prototype[Symbol.asyncIterator] = __webpack_require__(122).asyncIterator;
 }
 
 /**
@@ -31548,14 +31607,14 @@ module.exports = CommandCursor;
 
 
 /***/ }),
-/* 111 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const executeCommand = __webpack_require__(7).executeCommand;
-const executeDbAdminCommand = __webpack_require__(7).executeDbAdminCommand;
+const executeCommand = __webpack_require__(12).executeCommand;
+const executeDbAdminCommand = __webpack_require__(12).executeDbAdminCommand;
 
 /**
  * Get ReplicaSet status
@@ -31617,28 +31676,28 @@ module.exports = { replSetGetStatus, serverStatus, validateCollection };
 
 
 /***/ }),
-/* 112 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const deprecate = __webpack_require__(2).deprecate;
-const Logger = __webpack_require__(1).Logger;
-const MongoError = __webpack_require__(1).MongoError;
-const Mongos = __webpack_require__(159);
-const parse = __webpack_require__(1).parseConnectionString;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const ReplSet = __webpack_require__(160);
-const Server = __webpack_require__(82);
-const ServerSessionPool = __webpack_require__(1).Sessions.ServerSessionPool;
-const NativeTopology = __webpack_require__(300);
-const MongoCredentials = __webpack_require__(1).MongoCredentials;
+const deprecate = __webpack_require__(3).deprecate;
+const Logger = __webpack_require__(4).Logger;
+const MongoError = __webpack_require__(4).MongoError;
+const Mongos = __webpack_require__(226);
+const parse = __webpack_require__(4).parseConnectionString;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const ReplSet = __webpack_require__(227);
+const Server = __webpack_require__(123);
+const ServerSessionPool = __webpack_require__(4).Sessions.ServerSessionPool;
+const NativeTopology = __webpack_require__(388);
+const MongoCredentials = __webpack_require__(4).MongoCredentials;
 
 let client;
 function loadClient() {
   if (!client) {
-    client = __webpack_require__(80);
+    client = __webpack_require__(121);
   }
   return client;
 }
@@ -31669,7 +31728,7 @@ const monitoringEvents = [
 const ignoreOptionNames = ['native_parser'];
 const legacyOptionNames = ['server', 'replset', 'replSet', 'mongos', 'db'];
 const legacyParse = deprecate(
-  __webpack_require__(301),
+  __webpack_require__(389),
   'current URL string parser is deprecated, and will be removed in a future version. ' +
     'To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.'
 );
@@ -32312,7 +32371,7 @@ module.exports = { connectOp, validOptions, closeOperation };
 
 
 /***/ }),
-/* 113 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32322,11 +32381,11 @@ module.exports = { connectOp, validOptions, closeOperation };
  * Dependencies
  */
 
-var slice = __webpack_require__(84);
-var assert = __webpack_require__(40);
-var util = __webpack_require__(2);
-var utils = __webpack_require__(164);
-var debug = __webpack_require__(307)('mquery');
+var slice = __webpack_require__(125);
+var assert = __webpack_require__(63);
+var util = __webpack_require__(3);
+var utils = __webpack_require__(231);
+var debug = __webpack_require__(395)('mquery');
 
 /* global Map */
 
@@ -35504,7 +35563,7 @@ Query.prototype._ensurePath = function(method) {
  * Permissions
  */
 
-Query.permissions = __webpack_require__(314);
+Query.permissions = __webpack_require__(402);
 
 Query._isPermitted = function(a, b) {
   var denied = Query.permissions[b];
@@ -35561,10 +35620,10 @@ Query.setGlobalTraceFunction = function(traceFunction) {
  */
 
 Query.utils = utils;
-Query.env = __webpack_require__(167);
-Query.Collection = __webpack_require__(315);
-Query.BaseCollection = __webpack_require__(86);
-Query.Promise = __webpack_require__(317);
+Query.env = __webpack_require__(234);
+Query.Collection = __webpack_require__(403);
+Query.BaseCollection = __webpack_require__(127);
+Query.Promise = __webpack_require__(405);
 module.exports = exports = Query;
 
 // TODO
@@ -35572,7 +35631,7 @@ module.exports = exports = Query;
 
 
 /***/ }),
-/* 114 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35582,8 +35641,8 @@ module.exports = exports = Query;
  * Module dependencies.
  */
 
-const MongooseError = __webpack_require__(13);
-const util = __webpack_require__(2);
+const MongooseError = __webpack_require__(19);
+const util = __webpack_require__(3);
 
 /*!
  * OverwriteModel Error constructor.
@@ -35634,7 +35693,7 @@ module.exports = DocumentNotFoundError;
 
 
 /***/ }),
-/* 115 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35644,8 +35703,8 @@ module.exports = DocumentNotFoundError;
 
 
 
-const MongooseError = __webpack_require__(13);
-const util = __webpack_require__(2);
+const MongooseError = __webpack_require__(19);
+const util = __webpack_require__(3);
 
 /**
  * Document Validation Error
@@ -35753,13 +35812,13 @@ module.exports = exports = ValidationError;
 
 
 /***/ }),
-/* 116 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const castBoolean = __webpack_require__(117);
+const castBoolean = __webpack_require__(166);
 
 /*!
  * ignore
@@ -35772,13 +35831,13 @@ module.exports = function(val) {
 
 
 /***/ }),
-/* 117 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const CastError = __webpack_require__(21);
+const CastError = __webpack_require__(34);
 
 /*!
  * Given a value, cast it to a boolean, or throw a `CastError` if the value
@@ -35810,7 +35869,7 @@ module.exports.convertToFalse = new Set([false, 'false', 0, '0', 'no']);
 
 
 /***/ }),
-/* 118 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35980,16 +36039,16 @@ module.exports = VirtualType;
 
 
 /***/ }),
-/* 119 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const documentSchemaSymbol = __webpack_require__(6).documentSchemaSymbol;
-const get = __webpack_require__(8);
-const getSymbol = __webpack_require__(6).getSymbol;
-const utils = __webpack_require__(4);
+const documentSchemaSymbol = __webpack_require__(10).documentSchemaSymbol;
+const get = __webpack_require__(15);
+const getSymbol = __webpack_require__(10).getSymbol;
+const utils = __webpack_require__(7);
 
 let Document;
 
@@ -36005,7 +36064,7 @@ exports.defineKey = defineKey;
  */
 
 function compile(tree, proto, prefix, options) {
-  Document = Document || __webpack_require__(15);
+  Document = Document || __webpack_require__(22);
   const keys = Object.keys(tree);
   const len = keys.length;
   let limb;
@@ -36028,7 +36087,7 @@ function compile(tree, proto, prefix, options) {
  */
 
 function defineKey(prop, subprops, prototype, prefix, keys, options) {
-  Document = Document || __webpack_require__(15);
+  Document = Document || __webpack_require__(22);
   const path = (prefix ? prefix + '.' : '') + prop;
   prefix = prefix || '';
 
@@ -36157,7 +36216,7 @@ function getOwnPropertyDescriptors(object) {
 
 
 /***/ }),
-/* 120 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36234,14 +36293,14 @@ function applyQueryMiddleware(Query, model) {
 
 
 /***/ }),
-/* 121 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const symbols = __webpack_require__(87);
-const utils = __webpack_require__(4);
+const symbols = __webpack_require__(128);
+const utils = __webpack_require__(7);
 
 /*!
  * ignore
@@ -36378,7 +36437,7 @@ function applyHooks(model, schema, options) {
 
 
 /***/ }),
-/* 122 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36388,19 +36447,19 @@ function applyHooks(model, schema, options) {
  * Module dependencies.
  */
 
-const $exists = __webpack_require__(116);
-const $type = __webpack_require__(174);
-const MongooseError = __webpack_require__(53);
-const SchemaType = __webpack_require__(17);
+const $exists = __webpack_require__(165);
+const $type = __webpack_require__(241);
+const MongooseError = __webpack_require__(87);
+const SchemaType = __webpack_require__(27);
 const CastError = SchemaType.CastError;
-const Mixed = __webpack_require__(42);
-const cast = __webpack_require__(92);
-const get = __webpack_require__(8);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
-const castToNumber = __webpack_require__(93).castToNumber;
-const geospatial = __webpack_require__(187);
-const getDiscriminatorByValue = __webpack_require__(28).getDiscriminatorByValue;
+const Mixed = __webpack_require__(65);
+const cast = __webpack_require__(133);
+const get = __webpack_require__(15);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
+const castToNumber = __webpack_require__(134).castToNumber;
+const geospatial = __webpack_require__(254);
+const getDiscriminatorByValue = __webpack_require__(46).getDiscriminatorByValue;
 
 let MongooseArray;
 let EmbeddedDoc;
@@ -36417,7 +36476,7 @@ let EmbeddedDoc;
 
 function SchemaArray(key, cast, options, schemaOptions) {
   // lazy load
-  EmbeddedDoc || (EmbeddedDoc = __webpack_require__(57).Embedded);
+  EmbeddedDoc || (EmbeddedDoc = __webpack_require__(91).Embedded);
 
   let typeKey = 'type';
   if (schemaOptions && schemaOptions.typeKey) {
@@ -36448,7 +36507,7 @@ function SchemaArray(key, cast, options, schemaOptions) {
       ? cast
       : utils.getFunctionName(cast);
 
-    const Types = __webpack_require__(91);
+    const Types = __webpack_require__(132);
     const caster = Types.hasOwnProperty(name) ? Types[name] : cast;
 
     this.casterConstructor = caster;
@@ -36622,7 +36681,7 @@ SchemaArray.prototype.applyGetters = function(value, scope) {
 
 SchemaArray.prototype.cast = function(value, doc, init) {
   // lazy load
-  MongooseArray || (MongooseArray = __webpack_require__(57).Array);
+  MongooseArray || (MongooseArray = __webpack_require__(91).Array);
 
   let i;
   let l;
@@ -36884,7 +36943,7 @@ module.exports = SchemaArray;
 
 
 /***/ }),
-/* 123 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36894,9 +36953,9 @@ module.exports = SchemaArray;
 
 
 
-const Binary = __webpack_require__(22).get().Binary;
-const utils = __webpack_require__(4);
-const Buffer = __webpack_require__(19).Buffer;
+const Binary = __webpack_require__(36).get().Binary;
+const utils = __webpack_require__(7);
+const Buffer = __webpack_require__(28).Buffer;
 
 // Yes this is weird. See https://github.com/feross/safe-buffer/pull/23
 const proto = Buffer.from('').constructor.prototype;
@@ -37170,15 +37229,15 @@ module.exports = MongooseBuffer;
 
 
 /***/ }),
-/* 124 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const defineKey = __webpack_require__(119).defineKey;
-const get = __webpack_require__(8);
-const utils = __webpack_require__(4);
+const defineKey = __webpack_require__(168).defineKey;
+const get = __webpack_require__(15);
+const utils = __webpack_require__(7);
 
 const CUSTOMIZABLE_DISCRIMINATOR_OPTIONS = {
   toJSON: true,
@@ -37365,7 +37424,7 @@ module.exports = function discriminator(model, name, schema, tiedValue, applyPlu
 
 
 /***/ }),
-/* 125 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37375,31 +37434,31 @@ module.exports = function discriminator(model, name, schema, tiedValue, applyPlu
  * Module dependencies.
  */
 
-const CastError = __webpack_require__(21);
-const DocumentNotFoundError = __webpack_require__(114);
-const Kareem = __webpack_require__(179);
-const MongooseError = __webpack_require__(53);
-const ObjectParameterError = __webpack_require__(176);
-const QueryCursor = __webpack_require__(379);
-const ReadPreference = __webpack_require__(22).get().ReadPreference;
-const applyGlobalMaxTimeMS = __webpack_require__(195);
-const applyWriteConcern = __webpack_require__(196);
-const cast = __webpack_require__(92);
-const castArrayFilters = __webpack_require__(381);
-const castUpdate = __webpack_require__(198);
-const completeMany = __webpack_require__(386);
-const get = __webpack_require__(8);
-const hasDollarKeys = __webpack_require__(387);
-const helpers = __webpack_require__(28);
-const isInclusive = __webpack_require__(388);
-const mquery = __webpack_require__(113);
-const selectPopulatedFields = __webpack_require__(389);
-const setDefaultsOnInsert = __webpack_require__(199);
-const slice = __webpack_require__(84);
-const updateValidators = __webpack_require__(390);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
-const wrapThunk = __webpack_require__(418);
+const CastError = __webpack_require__(34);
+const DocumentNotFoundError = __webpack_require__(163);
+const Kareem = __webpack_require__(246);
+const MongooseError = __webpack_require__(87);
+const ObjectParameterError = __webpack_require__(243);
+const QueryCursor = __webpack_require__(467);
+const ReadPreference = __webpack_require__(36).get().ReadPreference;
+const applyGlobalMaxTimeMS = __webpack_require__(262);
+const applyWriteConcern = __webpack_require__(263);
+const cast = __webpack_require__(133);
+const castArrayFilters = __webpack_require__(469);
+const castUpdate = __webpack_require__(265);
+const completeMany = __webpack_require__(474);
+const get = __webpack_require__(15);
+const hasDollarKeys = __webpack_require__(475);
+const helpers = __webpack_require__(46);
+const isInclusive = __webpack_require__(476);
+const mquery = __webpack_require__(162);
+const selectPopulatedFields = __webpack_require__(477);
+const setDefaultsOnInsert = __webpack_require__(266);
+const slice = __webpack_require__(125);
+const updateValidators = __webpack_require__(478);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
+const wrapThunk = __webpack_require__(506);
 
 /**
  * Query constructor used for building queries. You do not need
@@ -42614,12 +42673,12 @@ module.exports = Query;
 
 
 /***/ }),
-/* 126 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(202),
-    getRawTag = __webpack_require__(392),
-    objectToString = __webpack_require__(393);
+var Symbol = __webpack_require__(269),
+    getRawTag = __webpack_require__(480),
+    objectToString = __webpack_require__(481);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -42648,7 +42707,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 127 */
+/* 176 */
 /***/ (function(module, exports) {
 
 /**
@@ -42671,7 +42730,7 @@ module.exports = noop;
 
 
 /***/ }),
-/* 128 */
+/* 177 */
 /***/ (function(module, exports) {
 
 /**
@@ -42706,7 +42765,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 129 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42728,7 +42787,7 @@ function slice(arrayLike, start) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 130 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42741,33 +42800,58 @@ module.exports = exports["default"];
 module.exports = new WeakMap();
 
 /***/ }),
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */
+/***/ (function(module, exports) {
+
+module.exports = require("buffer");
+
+/***/ }),
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BSON = __webpack_require__(263),
-  Binary = __webpack_require__(43),
-  Code = __webpack_require__(67),
-  DBRef = __webpack_require__(71),
-  Decimal128 = __webpack_require__(68),
-  Double = __webpack_require__(62),
-  Int32 = __webpack_require__(103),
-  Long = __webpack_require__(37),
-  Map = __webpack_require__(102),
-  MaxKey = __webpack_require__(70),
-  MinKey = __webpack_require__(69),
-  ObjectId = __webpack_require__(64),
-  BSONRegExp = __webpack_require__(65),
-  Symbol = __webpack_require__(66),
-  Timestamp = __webpack_require__(63);
+var BSON = __webpack_require__(354),
+  Binary = __webpack_require__(77),
+  Code = __webpack_require__(111),
+  DBRef = __webpack_require__(115),
+  Decimal128 = __webpack_require__(112),
+  Double = __webpack_require__(106),
+  Int32 = __webpack_require__(153),
+  Long = __webpack_require__(61),
+  Map = __webpack_require__(152),
+  MaxKey = __webpack_require__(114),
+  MinKey = __webpack_require__(113),
+  ObjectId = __webpack_require__(108),
+  BSONRegExp = __webpack_require__(109),
+  Symbol = __webpack_require__(110),
+  Timestamp = __webpack_require__(107);
 
 // BSON MAX VALUES
 BSON.BSON_INT32_MAX = 0x7fffffff;
@@ -42802,32 +42886,26 @@ module.exports = BSON;
 
 
 /***/ }),
-/* 141 */
-/***/ (function(module, exports) {
-
-module.exports = require("buffer");
-
-/***/ }),
-/* 142 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const crypto = __webpack_require__(38);
-const debugOptions = __webpack_require__(16).debugOptions;
-const parseHeader = __webpack_require__(12).parseHeader;
-const decompress = __webpack_require__(75).decompress;
-const Response = __webpack_require__(23).Response;
-const BinMsg = __webpack_require__(76).BinMsg;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const MongoError = __webpack_require__(3).MongoError;
-const Logger = __webpack_require__(24);
-const OP_COMPRESSED = __webpack_require__(12).opcodes.OP_COMPRESSED;
-const OP_MSG = __webpack_require__(12).opcodes.OP_MSG;
-const MESSAGE_HEADER_SIZE = __webpack_require__(12).MESSAGE_HEADER_SIZE;
-const Buffer = __webpack_require__(19).Buffer;
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const crypto = __webpack_require__(42);
+const debugOptions = __webpack_require__(26).debugOptions;
+const parseHeader = __webpack_require__(18).parseHeader;
+const decompress = __webpack_require__(116).decompress;
+const Response = __webpack_require__(39).Response;
+const BinMsg = __webpack_require__(117).BinMsg;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const MongoError = __webpack_require__(5).MongoError;
+const Logger = __webpack_require__(40);
+const OP_COMPRESSED = __webpack_require__(18).opcodes.OP_COMPRESSED;
+const OP_MSG = __webpack_require__(18).opcodes.OP_MSG;
+const MESSAGE_HEADER_SIZE = __webpack_require__(18).MESSAGE_HEADER_SIZE;
+const Buffer = __webpack_require__(28).Buffer;
 
 let _id = 0;
 
@@ -43439,7 +43517,7 @@ module.exports = Connection;
 
 
 /***/ }),
-/* 143 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43459,31 +43537,31 @@ module.exports = {
 
 
 /***/ }),
-/* 144 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const inherits = __webpack_require__(2).inherits;
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const MongoError = __webpack_require__(3).MongoError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const MongoWriteConcernError = __webpack_require__(3).MongoWriteConcernError;
-const Logger = __webpack_require__(24);
-const f = __webpack_require__(2).format;
-const Msg = __webpack_require__(76).Msg;
-const CommandResult = __webpack_require__(272);
-const MESSAGE_HEADER_SIZE = __webpack_require__(12).MESSAGE_HEADER_SIZE;
-const COMPRESSION_DETAILS_SIZE = __webpack_require__(12).COMPRESSION_DETAILS_SIZE;
-const opcodes = __webpack_require__(12).opcodes;
-const compress = __webpack_require__(75).compress;
-const compressorIDs = __webpack_require__(75).compressorIDs;
-const uncompressibleCommands = __webpack_require__(75).uncompressibleCommands;
-const apm = __webpack_require__(273);
-const Buffer = __webpack_require__(19).Buffer;
-const connect = __webpack_require__(274);
-const updateSessionFromResponse = __webpack_require__(78).updateSessionFromResponse;
+const inherits = __webpack_require__(3).inherits;
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const MongoError = __webpack_require__(5).MongoError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const MongoWriteConcernError = __webpack_require__(5).MongoWriteConcernError;
+const Logger = __webpack_require__(40);
+const f = __webpack_require__(3).format;
+const Msg = __webpack_require__(117).Msg;
+const CommandResult = __webpack_require__(362);
+const MESSAGE_HEADER_SIZE = __webpack_require__(18).MESSAGE_HEADER_SIZE;
+const COMPRESSION_DETAILS_SIZE = __webpack_require__(18).COMPRESSION_DETAILS_SIZE;
+const opcodes = __webpack_require__(18).opcodes;
+const compress = __webpack_require__(116).compress;
+const compressorIDs = __webpack_require__(116).compressorIDs;
+const uncompressibleCommands = __webpack_require__(116).uncompressibleCommands;
+const apm = __webpack_require__(363);
+const Buffer = __webpack_require__(28).Buffer;
+const connect = __webpack_require__(364);
+const updateSessionFromResponse = __webpack_require__(119).updateSessionFromResponse;
 
 var DISCONNECTED = 'disconnected';
 var CONNECTING = 'connecting';
@@ -44727,19 +44805,19 @@ module.exports = Pool;
 
 
 /***/ }),
-/* 145 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongoCR = __webpack_require__(146);
-const X509 = __webpack_require__(147);
-const Plain = __webpack_require__(148);
-const GSSAPI = __webpack_require__(149);
-const SSPI = __webpack_require__(278);
-const ScramSHA1 = __webpack_require__(77).ScramSHA1;
-const ScramSHA256 = __webpack_require__(77).ScramSHA256;
+const MongoCR = __webpack_require__(214);
+const X509 = __webpack_require__(215);
+const Plain = __webpack_require__(216);
+const GSSAPI = __webpack_require__(217);
+const SSPI = __webpack_require__(366);
+const ScramSHA1 = __webpack_require__(118).ScramSHA1;
+const ScramSHA256 = __webpack_require__(118).ScramSHA256;
 
 /**
  * Returns the default authentication providers.
@@ -44763,14 +44841,14 @@ module.exports = { defaultAuthProviders };
 
 
 /***/ }),
-/* 146 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const crypto = __webpack_require__(38);
-const AuthProvider = __webpack_require__(39).AuthProvider;
+const crypto = __webpack_require__(42);
+const AuthProvider = __webpack_require__(62).AuthProvider;
 
 /**
  * Creates a new MongoCR authentication mechanism
@@ -44821,13 +44899,13 @@ module.exports = MongoCR;
 
 
 /***/ }),
-/* 147 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const AuthProvider = __webpack_require__(39).AuthProvider;
+const AuthProvider = __webpack_require__(62).AuthProvider;
 
 /**
  * Creates a new X509 authentication mechanism
@@ -44854,14 +44932,14 @@ module.exports = X509;
 
 
 /***/ }),
-/* 148 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const AuthProvider = __webpack_require__(39).AuthProvider;
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const AuthProvider = __webpack_require__(62).AuthProvider;
 
 // TODO: can we get the Binary type from this.bson instead?
 const BSON = retrieveBSON();
@@ -44896,14 +44974,14 @@ module.exports = Plain;
 
 
 /***/ }),
-/* 149 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const AuthProvider = __webpack_require__(39).AuthProvider;
-const retrieveKerberos = __webpack_require__(14).retrieveKerberos;
+const AuthProvider = __webpack_require__(62).AuthProvider;
+const retrieveKerberos = __webpack_require__(21).retrieveKerberos;
 let kerberos;
 
 /**
@@ -45144,14 +45222,14 @@ module.exports = GSSAPI;
 
 
 /***/ }),
-/* 150 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const ServerDescription = __webpack_require__(25).ServerDescription;
-const calculateDurationInMs = __webpack_require__(14).calculateDurationInMs;
+const ServerDescription = __webpack_require__(43).ServerDescription;
+const calculateDurationInMs = __webpack_require__(21).calculateDurationInMs;
 
 /**
  * Published when server description changes, but does NOT include changes to the RTT.
@@ -45379,15 +45457,15 @@ module.exports = {
 
 
 /***/ }),
-/* 151 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const ServerType = __webpack_require__(25).ServerType;
-const TopologyType = __webpack_require__(44).TopologyType;
-const ReadPreference = __webpack_require__(18);
-const MongoError = __webpack_require__(3).MongoError;
+const ServerType = __webpack_require__(43).ServerType;
+const TopologyType = __webpack_require__(78).TopologyType;
+const ReadPreference = __webpack_require__(31);
+const MongoError = __webpack_require__(5).MongoError;
 
 // max staleness constants
 const IDLE_WRITE_PERIOD = 10000;
@@ -45630,19 +45708,13 @@ module.exports = {
 
 
 /***/ }),
-/* 152 */
-/***/ (function(module, exports) {
-
-module.exports = require("url");
-
-/***/ }),
-/* 153 */
+/* 220 */
 /***/ (function(module, exports) {
 
 module.exports = require("dns");
 
 /***/ }),
-/* 154 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45659,20 +45731,20 @@ module.exports = {
 
 
 /***/ }),
-/* 155 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const AggregationCursor = __webpack_require__(156);
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
-const decorateWithCollation = __webpack_require__(0).decorateWithCollation;
-const decorateWithReadConcern = __webpack_require__(0).decorateWithReadConcern;
-const handleCallback = __webpack_require__(0).handleCallback;
-const MongoError = __webpack_require__(1).MongoError;
-const resolveReadPreference = __webpack_require__(0).resolveReadPreference;
-const toError = __webpack_require__(0).toError;
+const AggregationCursor = __webpack_require__(223);
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
+const decorateWithCollation = __webpack_require__(2).decorateWithCollation;
+const decorateWithReadConcern = __webpack_require__(2).decorateWithReadConcern;
+const handleCallback = __webpack_require__(2).handleCallback;
+const MongoError = __webpack_require__(4).MongoError;
+const resolveReadPreference = __webpack_require__(2).resolveReadPreference;
+const toError = __webpack_require__(2).toError;
 
 const DB_AGGREGATE_COLLECTION = 1;
 
@@ -45787,18 +45859,18 @@ module.exports = {
 
 
 /***/ }),
-/* 156 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const inherits = __webpack_require__(2).inherits;
-const MongoError = __webpack_require__(1).MongoError;
+const inherits = __webpack_require__(3).inherits;
+const MongoError = __webpack_require__(4).MongoError;
 const Readable = __webpack_require__(20).Readable;
-const CoreCursor = __webpack_require__(26);
-const deprecate = __webpack_require__(2).deprecate;
-const SUPPORTS = __webpack_require__(0).SUPPORTS;
+const CoreCursor = __webpack_require__(44);
+const deprecate = __webpack_require__(3).deprecate;
+const SUPPORTS = __webpack_require__(2).SUPPORTS;
 
 /**
  * @fileOverview The **AggregationCursor** class is an internal class that embodies an aggregation cursor on MongoDB
@@ -45927,7 +45999,7 @@ for (var name in CoreCursor.prototype) {
 if (SUPPORTS.ASYNC_ITERATOR) {
   AggregationCursor.prototype[
     Symbol.asyncIterator
-  ] = __webpack_require__(81).asyncIterator;
+  ] = __webpack_require__(122).asyncIterator;
 }
 
 /**
@@ -46208,21 +46280,21 @@ module.exports = AggregationCursor;
 
 
 /***/ }),
-/* 157 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const executeOperation = __webpack_require__(0).executeOperation;
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
+const executeOperation = __webpack_require__(2).executeOperation;
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
 
-const addUser = __webpack_require__(7).addUser;
-const executeDbAdminCommand = __webpack_require__(7).executeDbAdminCommand;
-const removeUser = __webpack_require__(7).removeUser;
-const replSetGetStatus = __webpack_require__(111).replSetGetStatus;
-const serverStatus = __webpack_require__(111).serverStatus;
-const validateCollection = __webpack_require__(111).validateCollection;
+const addUser = __webpack_require__(12).addUser;
+const executeDbAdminCommand = __webpack_require__(12).executeDbAdminCommand;
+const removeUser = __webpack_require__(12).removeUser;
+const replSetGetStatus = __webpack_require__(160).replSetGetStatus;
+const serverStatus = __webpack_require__(160).serverStatus;
+const validateCollection = __webpack_require__(160).validateCollection;
 
 /**
  * @fileOverview The **Admin** class is an internal class that allows convenient access to
@@ -46508,23 +46580,23 @@ module.exports = Admin;
 
 
 /***/ }),
-/* 158 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Long = __webpack_require__(1).BSON.Long;
-const MongoError = __webpack_require__(1).MongoError;
-const ObjectID = __webpack_require__(1).BSON.ObjectID;
-const BSON = __webpack_require__(1).BSON;
-const MongoWriteConcernError = __webpack_require__(1).MongoWriteConcernError;
-const toError = __webpack_require__(0).toError;
-const handleCallback = __webpack_require__(0).handleCallback;
-const applyRetryableWrites = __webpack_require__(0).applyRetryableWrites;
-const applyWriteConcern = __webpack_require__(0).applyWriteConcern;
-const executeOperation = __webpack_require__(0).executeOperation;
-const isPromiseLike = __webpack_require__(0).isPromiseLike;
+const Long = __webpack_require__(4).BSON.Long;
+const MongoError = __webpack_require__(4).MongoError;
+const ObjectID = __webpack_require__(4).BSON.ObjectID;
+const BSON = __webpack_require__(4).BSON;
+const MongoWriteConcernError = __webpack_require__(4).MongoWriteConcernError;
+const toError = __webpack_require__(2).toError;
+const handleCallback = __webpack_require__(2).handleCallback;
+const applyRetryableWrites = __webpack_require__(2).applyRetryableWrites;
+const applyWriteConcern = __webpack_require__(2).applyWriteConcern;
+const executeOperation = __webpack_require__(2).executeOperation;
+const isPromiseLike = __webpack_require__(2).isPromiseLike;
 
 // Error codes
 const WRITE_CONCERN_ERROR = 64;
@@ -47672,22 +47744,22 @@ module.exports = {
 
 
 /***/ }),
-/* 159 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const TopologyBase = __webpack_require__(33).TopologyBase;
-const MongoError = __webpack_require__(1).MongoError;
-const CMongos = __webpack_require__(1).Mongos;
-const Cursor = __webpack_require__(26);
-const Server = __webpack_require__(82);
-const Store = __webpack_require__(33).Store;
-const MAX_JS_INT = __webpack_require__(0).MAX_JS_INT;
-const translateOptions = __webpack_require__(0).translateOptions;
-const filterOptions = __webpack_require__(0).filterOptions;
-const mergeOptions = __webpack_require__(0).mergeOptions;
+const TopologyBase = __webpack_require__(52).TopologyBase;
+const MongoError = __webpack_require__(4).MongoError;
+const CMongos = __webpack_require__(4).Mongos;
+const Cursor = __webpack_require__(44);
+const Server = __webpack_require__(123);
+const Store = __webpack_require__(52).Store;
+const MAX_JS_INT = __webpack_require__(2).MAX_JS_INT;
+const translateOptions = __webpack_require__(2).translateOptions;
+const filterOptions = __webpack_require__(2).filterOptions;
+const mergeOptions = __webpack_require__(2).mergeOptions;
 
 /**
  * @fileOverview The **Mongos** class is a class that represents a Mongos Proxy topology and is
@@ -48131,22 +48203,22 @@ module.exports = Mongos;
 
 
 /***/ }),
-/* 160 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Server = __webpack_require__(82);
-const Cursor = __webpack_require__(26);
-const MongoError = __webpack_require__(1).MongoError;
-const TopologyBase = __webpack_require__(33).TopologyBase;
-const Store = __webpack_require__(33).Store;
-const CReplSet = __webpack_require__(1).ReplSet;
-const MAX_JS_INT = __webpack_require__(0).MAX_JS_INT;
-const translateOptions = __webpack_require__(0).translateOptions;
-const filterOptions = __webpack_require__(0).filterOptions;
-const mergeOptions = __webpack_require__(0).mergeOptions;
+const Server = __webpack_require__(123);
+const Cursor = __webpack_require__(44);
+const MongoError = __webpack_require__(4).MongoError;
+const TopologyBase = __webpack_require__(52).TopologyBase;
+const Store = __webpack_require__(52).Store;
+const CReplSet = __webpack_require__(4).ReplSet;
+const MAX_JS_INT = __webpack_require__(2).MAX_JS_INT;
+const translateOptions = __webpack_require__(2).translateOptions;
+const filterOptions = __webpack_require__(2).filterOptions;
+const mergeOptions = __webpack_require__(2).mergeOptions;
 
 /**
  * @fileOverview The **ReplSet** class is a class that represents a Replicaset topology and is
@@ -48634,16 +48706,16 @@ module.exports = ReplSet;
 
 
 /***/ }),
-/* 161 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Binary = __webpack_require__(1).BSON.Binary,
-  ObjectID = __webpack_require__(1).BSON.ObjectID;
+var Binary = __webpack_require__(4).BSON.Binary,
+  ObjectID = __webpack_require__(4).BSON.ObjectID;
 
-var Buffer = __webpack_require__(19).Buffer;
+var Buffer = __webpack_require__(28).Buffer;
 
 /**
  * Class for representing a single chunk in GridFS.
@@ -48877,7 +48949,7 @@ module.exports = Chunk;
 
 
 /***/ }),
-/* 162 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48887,12 +48959,12 @@ module.exports = Chunk;
  * Module dependencies.
  */
 
-const MongooseCollection = __webpack_require__(163);
-const Collection = __webpack_require__(31).Collection;
-const get = __webpack_require__(8);
-const sliced = __webpack_require__(84);
+const MongooseCollection = __webpack_require__(230);
+const Collection = __webpack_require__(50).Collection;
+const get = __webpack_require__(15);
+const sliced = __webpack_require__(125);
 const stream = __webpack_require__(20);
-const util = __webpack_require__(2);
+const util = __webpack_require__(3);
 
 /**
  * A [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) collection implementation.
@@ -49150,7 +49222,7 @@ function format(obj, sub, color) {
     return obj;
   }
 
-  let x = __webpack_require__(4).clone(obj, {transform: false});
+  let x = __webpack_require__(7).clone(obj, {transform: false});
 
   if (x.constructor.name === 'Binary') {
     x = 'BinData(' + x.sub_type + ', "' + x.toString('base64') + '")';
@@ -49228,7 +49300,7 @@ module.exports = NativeCollection;
 
 
 /***/ }),
-/* 163 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49238,9 +49310,9 @@ module.exports = NativeCollection;
  * Module dependencies.
  */
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const STATES = __webpack_require__(83);
-const immediate = __webpack_require__(50);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const STATES = __webpack_require__(124);
+const immediate = __webpack_require__(84);
 
 /**
  * Abstract Collection constructor
@@ -49504,7 +49576,7 @@ module.exports = Collection;
 
 
 /***/ }),
-/* 164 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49514,8 +49586,8 @@ module.exports = Collection;
  * Module dependencies.
  */
 
-var Buffer = __webpack_require__(19).Buffer;
-var RegExpClone = __webpack_require__(165);
+var Buffer = __webpack_require__(28).Buffer;
+var RegExpClone = __webpack_require__(232);
 
 /**
  * Clones objects
@@ -49867,7 +49939,7 @@ exports.isArgumentsObject = function(v) {
 
 
 /***/ }),
-/* 165 */
+/* 232 */
 /***/ (function(module, exports) {
 
 
@@ -49900,7 +49972,7 @@ module.exports = exports = function (regexp) {
 
 
 /***/ }),
-/* 166 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -49916,7 +49988,7 @@ exports.coerce = coerce;
 exports.disable = disable;
 exports.enable = enable;
 exports.enabled = enabled;
-exports.humanize = __webpack_require__(309);
+exports.humanize = __webpack_require__(397);
 
 /**
  * Active `debug` instances.
@@ -50131,7 +50203,7 @@ function coerce(val) {
 
 
 /***/ }),
-/* 167 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50160,14 +50232,14 @@ exports.type = exports.isNode ? 'node'
 
 
 /***/ }),
-/* 168 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(NEXT_FILTER) {
-var util = __webpack_require__(9);
-var getKeys = __webpack_require__(41).keys;
+var util = __webpack_require__(16);
+var getKeys = __webpack_require__(64).keys;
 var tryCatch = util.tryCatch;
 var errorObj = util.errorObj;
 
@@ -50209,16 +50281,16 @@ return catchFilter;
 
 
 /***/ }),
-/* 169 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var maybeWrapAsError = util.maybeWrapAsError;
-var errors = __webpack_require__(27);
+var errors = __webpack_require__(45);
 var OperationalError = errors.OperationalError;
-var es5 = __webpack_require__(41);
+var es5 = __webpack_require__(64);
 
 function isUntypedError(obj) {
     return obj instanceof Error &&
@@ -50267,7 +50339,7 @@ module.exports = nodebackForPromise;
 
 
 /***/ }),
-/* 170 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50277,7 +50349,7 @@ module.exports = nodebackForPromise;
  * Module dependencies.
  */
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * Version Error constructor.
@@ -50310,7 +50382,7 @@ module.exports = VersionError;
 
 
 /***/ }),
-/* 171 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50320,7 +50392,7 @@ module.exports = VersionError;
  * Module dependencies.
  */
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * ParallelSave Error constructor.
@@ -50350,7 +50422,7 @@ module.exports = ParallelSaveError;
 
 
 /***/ }),
-/* 172 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50361,7 +50433,7 @@ module.exports = ParallelSaveError;
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /*!
  * OverwriteModel Error constructor.
@@ -50394,7 +50466,7 @@ module.exports = OverwriteModelError;
 
 
 /***/ }),
-/* 173 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50405,7 +50477,7 @@ module.exports = OverwriteModelError;
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /*!
  * DivergentArrayError constructor.
@@ -50449,7 +50521,7 @@ module.exports = DivergentArrayError;
 
 
 /***/ }),
-/* 174 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50469,7 +50541,7 @@ module.exports = function(val) {
 
 
 /***/ }),
-/* 175 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50479,7 +50551,7 @@ module.exports = function(val) {
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * Strict mode error constructor
@@ -50514,7 +50586,7 @@ module.exports = ObjectExpectedError;
 
 
 /***/ }),
-/* 176 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50524,7 +50596,7 @@ module.exports = ObjectExpectedError;
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * Constructor for errors that happen when a parameter that's expected to be
@@ -50559,7 +50631,7 @@ module.exports = ObjectParameterError;
 
 
 /***/ }),
-/* 177 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50594,7 +50666,7 @@ module.exports = function cleanModifiedSubpaths(doc, path, options) {
 
 
 /***/ }),
-/* 178 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50605,8 +50677,8 @@ module.exports = function cleanModifiedSubpaths(doc, path, options) {
 /*!
  * Module dependencies.
  */
-const Document = __webpack_require__(15);
-const BrowserDocument = __webpack_require__(359);
+const Document = __webpack_require__(22);
+const BrowserDocument = __webpack_require__(447);
 
 let isBrowser = false;
 
@@ -50631,7 +50703,7 @@ module.exports.setBrowser = function(flag) {
 
 
 /***/ }),
-/* 179 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51141,14 +51213,14 @@ module.exports = Kareem;
 
 
 /***/ }),
-/* 180 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const cleanPositionalOperators = __webpack_require__(90);
-const handleTimestampOption = __webpack_require__(181);
+const cleanPositionalOperators = __webpack_require__(131);
+const handleTimestampOption = __webpack_require__(248);
 
 module.exports = applyTimestampsToChildren;
 
@@ -51327,7 +51399,7 @@ function applyTimestampsToSingleNested(subdoc, schematype, now) {
 }
 
 /***/ }),
-/* 181 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51357,7 +51429,7 @@ function handleTimestampOption(arg, prop) {
 }
 
 /***/ }),
-/* 182 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51367,7 +51439,7 @@ function handleTimestampOption(arg, prop) {
  * ignore
  */
 
-const get = __webpack_require__(8);
+const get = __webpack_require__(15);
 
 module.exports = applyTimestampsToUpdate;
 
@@ -51429,13 +51501,13 @@ function applyTimestampsToUpdate(now, createdAt, updatedAt, currentUpdate, optio
 
 
 /***/ }),
-/* 183 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const CastError = __webpack_require__(21);
+const CastError = __webpack_require__(34);
 
 /*!
  * Given a value, cast it to a string, or throw a `CastError` if the value
@@ -51473,7 +51545,7 @@ module.exports = function castString(value, path) {
 
 
 /***/ }),
-/* 184 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51483,13 +51555,13 @@ module.exports = function castString(value, path) {
  * Module requirements.
  */
 
-const MongooseError = __webpack_require__(13);
-const SchemaType = __webpack_require__(17);
-const castNumber = __webpack_require__(185);
-const handleBitwiseOperator = __webpack_require__(186);
-const utils = __webpack_require__(4);
+const MongooseError = __webpack_require__(19);
+const SchemaType = __webpack_require__(27);
+const castNumber = __webpack_require__(252);
+const handleBitwiseOperator = __webpack_require__(253);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 const CastError = SchemaType.CastError;
 let Document;
@@ -51754,7 +51826,7 @@ SchemaNumber.prototype.cast = function(value, doc, init) {
     }
 
     // lazy load
-    Document || (Document = __webpack_require__(15));
+    Document || (Document = __webpack_require__(22));
 
     if (value instanceof Document) {
       value.$__.wasPopulated = true;
@@ -51853,13 +51925,13 @@ module.exports = SchemaNumber;
 
 
 /***/ }),
-/* 185 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const assert = __webpack_require__(40);
+const assert = __webpack_require__(63);
 
 /*!
  * Given a value, cast it to a number, or throw a `CastError` if the value
@@ -51905,7 +51977,7 @@ module.exports = function castNumber(val) {
 
 
 /***/ }),
-/* 186 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51915,7 +51987,7 @@ module.exports = function castNumber(val) {
 
 
 
-const CastError = __webpack_require__(21);
+const CastError = __webpack_require__(34);
 
 /*!
  * ignore
@@ -51950,7 +52022,7 @@ module.exports = handleBitwiseOperator;
 
 
 /***/ }),
-/* 187 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51960,8 +52032,8 @@ module.exports = handleBitwiseOperator;
 
 
 
-const castArraysOfNumbers = __webpack_require__(93).castArraysOfNumbers;
-const castToNumber = __webpack_require__(93).castToNumber;
+const castArraysOfNumbers = __webpack_require__(134).castArraysOfNumbers;
+const castToNumber = __webpack_require__(134).castToNumber;
 
 /*!
  * ignore
@@ -51972,7 +52044,7 @@ exports.cast$near = cast$near;
 exports.cast$within = cast$within;
 
 function cast$near(val) {
-  const SchemaArray = __webpack_require__(122);
+  const SchemaArray = __webpack_require__(171);
 
   if (Array.isArray(val)) {
     castArraysOfNumbers(val, this);
@@ -52059,7 +52131,7 @@ function _castMinMaxDistance(self, val) {
 
 
 /***/ }),
-/* 188 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52069,13 +52141,13 @@ function _castMinMaxDistance(self, val) {
 
 
 
-const CoreMongooseArray = __webpack_require__(189);
-const Document = __webpack_require__(15);
+const CoreMongooseArray = __webpack_require__(256);
+const Document = __webpack_require__(22);
 
-const arrayAtomicsSymbol = __webpack_require__(6).arrayAtomicsSymbol;
-const arrayParentSymbol = __webpack_require__(6).arrayParentSymbol;
-const arrayPathSymbol = __webpack_require__(6).arrayPathSymbol;
-const arraySchemaSymbol = __webpack_require__(6).arraySchemaSymbol;
+const arrayAtomicsSymbol = __webpack_require__(10).arrayAtomicsSymbol;
+const arrayParentSymbol = __webpack_require__(10).arrayParentSymbol;
+const arrayPathSymbol = __webpack_require__(10).arrayPathSymbol;
+const arraySchemaSymbol = __webpack_require__(10).arraySchemaSymbol;
 
 const _basePush = Array.prototype.push;
 
@@ -52132,26 +52204,26 @@ module.exports = exports = MongooseArray;
 
 
 /***/ }),
-/* 189 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Document = __webpack_require__(15);
-const EmbeddedDocument = __webpack_require__(56);
-const ObjectId = __webpack_require__(34);
-const cleanModifiedSubpaths = __webpack_require__(177);
-const get = __webpack_require__(8);
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const utils = __webpack_require__(4);
-const util = __webpack_require__(2);
+const Document = __webpack_require__(22);
+const EmbeddedDocument = __webpack_require__(90);
+const ObjectId = __webpack_require__(53);
+const cleanModifiedSubpaths = __webpack_require__(244);
+const get = __webpack_require__(15);
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const utils = __webpack_require__(7);
+const util = __webpack_require__(3);
 
-const arrayAtomicsSymbol = __webpack_require__(6).arrayAtomicsSymbol;
-const arrayParentSymbol = __webpack_require__(6).arrayParentSymbol;
-const arrayPathSymbol = __webpack_require__(6).arrayPathSymbol;
-const arraySchemaSymbol = __webpack_require__(6).arraySchemaSymbol;
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const arrayAtomicsSymbol = __webpack_require__(10).arrayAtomicsSymbol;
+const arrayParentSymbol = __webpack_require__(10).arrayParentSymbol;
+const arrayPathSymbol = __webpack_require__(10).arrayPathSymbol;
+const arraySchemaSymbol = __webpack_require__(10).arraySchemaSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 const _basePush = Array.prototype.push;
 
@@ -53001,14 +53073,14 @@ function _checkManualPopulation(arr, docs) {
 module.exports = CoreMongooseArray;
 
 /***/ }),
-/* 190 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const ObjectId = __webpack_require__(22).get().ObjectId;
-const assert = __webpack_require__(40);
+const ObjectId = __webpack_require__(36).get().ObjectId;
+const assert = __webpack_require__(63);
 
 module.exports = function castObjectId(value) {
   if (value == null) {
@@ -53036,18 +53108,18 @@ module.exports = function castObjectId(value) {
 };
 
 /***/ }),
-/* 191 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Mixed = __webpack_require__(42);
-const get = __webpack_require__(8);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const Mixed = __webpack_require__(65);
+const get = __webpack_require__(15);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 /*!
  * ignore
@@ -53246,18 +53318,18 @@ module.exports = MongooseMap;
 
 
 /***/ }),
-/* 192 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Document = __webpack_require__(15);
-const immediate = __webpack_require__(50);
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const utils = __webpack_require__(4);
+const Document = __webpack_require__(22);
+const immediate = __webpack_require__(84);
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const utils = __webpack_require__(7);
 
-const documentArrayParent = __webpack_require__(6).documentArrayParent;
+const documentArrayParent = __webpack_require__(10).documentArrayParent;
 
 module.exports = Subdocument;
 
@@ -53515,13 +53587,13 @@ function registerRemoveListener(sub) {
 
 
 /***/ }),
-/* 193 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const getDiscriminatorByValue = __webpack_require__(28).getDiscriminatorByValue;
+const getDiscriminatorByValue = __webpack_require__(46).getDiscriminatorByValue;
 
 /*!
  * Find the correct constructor, taking into account discriminators
@@ -53546,7 +53618,7 @@ module.exports = function getConstructor(Constructor, value) {
 };
 
 /***/ }),
-/* 194 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53556,8 +53628,8 @@ module.exports = function getConstructor(Constructor, value) {
  * Module dependencies.
  */
 
-const async = __webpack_require__(380);
-const utils = __webpack_require__(4);
+const async = __webpack_require__(468);
+const utils = __webpack_require__(7);
 
 /**
  * Execute `fn` for every document in the cursor. If `fn` returns a promise,
@@ -53624,13 +53696,13 @@ module.exports = function eachAsync(next, fn, options, callback) {
 
 
 /***/ }),
-/* 195 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const utils = __webpack_require__(4);
+const utils = __webpack_require__(7);
 
 module.exports = function applyGlobalMaxTimeMS(options, model) {
   if (utils.hasUserDefinedProperty(options, 'maxTimeMS')) {
@@ -53645,13 +53717,13 @@ module.exports = function applyGlobalMaxTimeMS(options, model) {
 };
 
 /***/ }),
-/* 196 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const get = __webpack_require__(8);
+const get = __webpack_require__(15);
 
 module.exports = function applyWriteConcern(schema, options) {
   const writeConcern = get(schema, 'options.writeConcern', {});
@@ -53668,13 +53740,13 @@ module.exports = function applyWriteConcern(schema, options) {
 
 
 /***/ }),
-/* 197 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const _modifiedPaths = __webpack_require__(54).modifiedPaths;
+const _modifiedPaths = __webpack_require__(88).modifiedPaths;
 
 /**
  * Given an update document with potential update operators (`$set`, etc.)
@@ -53708,19 +53780,19 @@ module.exports = function modifiedPaths(update) {
 
 
 /***/ }),
-/* 198 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const CastError = __webpack_require__(21);
-const StrictModeError = __webpack_require__(88);
-const ValidationError = __webpack_require__(115);
-const castNumber = __webpack_require__(185);
-const getEmbeddedDiscriminatorPath = __webpack_require__(384);
-const handleImmutable = __webpack_require__(385);
-const utils = __webpack_require__(4);
+const CastError = __webpack_require__(34);
+const StrictModeError = __webpack_require__(129);
+const ValidationError = __webpack_require__(164);
+const castNumber = __webpack_require__(252);
+const getEmbeddedDiscriminatorPath = __webpack_require__(472);
+const handleImmutable = __webpack_require__(473);
+const utils = __webpack_require__(7);
 
 /*!
  * Casts an update op based on the given schema
@@ -54174,13 +54246,13 @@ function castUpdateVal(schema, val, op, $conditional, context, path) {
 
 
 /***/ }),
-/* 199 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const modifiedPaths = __webpack_require__(54).modifiedPaths;
+const modifiedPaths = __webpack_require__(88).modifiedPaths;
 
 /**
  * Applies defaults to update and findOneAndUpdate operations.
@@ -54301,7 +54373,7 @@ function isModified(modified, path) {
 
 
 /***/ }),
-/* 200 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54312,11 +54384,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = parallelLimit;
 
-var _eachOf = __webpack_require__(201);
+var _eachOf = __webpack_require__(268);
 
 var _eachOf2 = _interopRequireDefault(_eachOf);
 
-var _parallel = __webpack_require__(211);
+var _parallel = __webpack_require__(278);
 
 var _parallel2 = _interopRequireDefault(_parallel);
 
@@ -54397,7 +54469,7 @@ function parallelLimit(tasks, callback) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 201 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54412,35 +54484,35 @@ exports.default = function (coll, iteratee, callback) {
     eachOfImplementation(coll, (0, _wrapAsync2.default)(iteratee), callback);
 };
 
-var _isArrayLike = __webpack_require__(94);
+var _isArrayLike = __webpack_require__(135);
 
 var _isArrayLike2 = _interopRequireDefault(_isArrayLike);
 
-var _breakLoop = __webpack_require__(207);
+var _breakLoop = __webpack_require__(274);
 
 var _breakLoop2 = _interopRequireDefault(_breakLoop);
 
-var _eachOfLimit = __webpack_require__(394);
+var _eachOfLimit = __webpack_require__(482);
 
 var _eachOfLimit2 = _interopRequireDefault(_eachOfLimit);
 
-var _doLimit = __webpack_require__(417);
+var _doLimit = __webpack_require__(505);
 
 var _doLimit2 = _interopRequireDefault(_doLimit);
 
-var _noop = __webpack_require__(127);
+var _noop = __webpack_require__(176);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _once = __webpack_require__(209);
+var _once = __webpack_require__(276);
 
 var _once2 = _interopRequireDefault(_once);
 
-var _onlyOnce = __webpack_require__(210);
+var _onlyOnce = __webpack_require__(277);
 
 var _onlyOnce2 = _interopRequireDefault(_onlyOnce);
 
-var _wrapAsync = __webpack_require__(95);
+var _wrapAsync = __webpack_require__(136);
 
 var _wrapAsync2 = _interopRequireDefault(_wrapAsync);
 
@@ -54514,10 +54586,10 @@ var eachOfGeneric = (0, _doLimit2.default)(_eachOfLimit2.default, Infinity);
 module.exports = exports['default'];
 
 /***/ }),
-/* 202 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(203);
+var root = __webpack_require__(270);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -54526,10 +54598,10 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 203 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(204);
+var freeGlobal = __webpack_require__(271);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -54541,7 +54613,7 @@ module.exports = root;
 
 
 /***/ }),
-/* 204 */
+/* 271 */
 /***/ (function(module, exports) {
 
 /** Detect free variable `global` from Node.js. */
@@ -54551,7 +54623,7 @@ module.exports = freeGlobal;
 
 
 /***/ }),
-/* 205 */
+/* 272 */
 /***/ (function(module, exports) {
 
 /**
@@ -54588,7 +54660,7 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 206 */
+/* 273 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -54629,7 +54701,7 @@ module.exports = isLength;
 
 
 /***/ }),
-/* 207 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54644,7 +54716,7 @@ exports.default = {};
 module.exports = exports["default"];
 
 /***/ }),
-/* 208 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54655,23 +54727,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _eachOfLimit;
 
-var _noop = __webpack_require__(127);
+var _noop = __webpack_require__(176);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _once = __webpack_require__(209);
+var _once = __webpack_require__(276);
 
 var _once2 = _interopRequireDefault(_once);
 
-var _iterator = __webpack_require__(395);
+var _iterator = __webpack_require__(483);
 
 var _iterator2 = _interopRequireDefault(_iterator);
 
-var _onlyOnce = __webpack_require__(210);
+var _onlyOnce = __webpack_require__(277);
 
 var _onlyOnce2 = _interopRequireDefault(_onlyOnce);
 
-var _breakLoop = __webpack_require__(207);
+var _breakLoop = __webpack_require__(274);
 
 var _breakLoop2 = _interopRequireDefault(_breakLoop);
 
@@ -54724,7 +54796,7 @@ function _eachOfLimit(limit) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 209 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54745,7 +54817,7 @@ function once(fn) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 210 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54766,7 +54838,7 @@ function onlyOnce(fn) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 211 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54777,19 +54849,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _parallel;
 
-var _noop = __webpack_require__(127);
+var _noop = __webpack_require__(176);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _isArrayLike = __webpack_require__(94);
+var _isArrayLike = __webpack_require__(135);
 
 var _isArrayLike2 = _interopRequireDefault(_isArrayLike);
 
-var _slice = __webpack_require__(129);
+var _slice = __webpack_require__(178);
 
 var _slice2 = _interopRequireDefault(_slice);
 
-var _wrapAsync = __webpack_require__(95);
+var _wrapAsync = __webpack_require__(136);
 
 var _wrapAsync2 = _interopRequireDefault(_wrapAsync);
 
@@ -54814,7 +54886,7 @@ function _parallel(eachfn, tasks, callback) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 212 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54824,11 +54896,11 @@ module.exports = exports['default'];
  * Module dependencies
  */
 
-const AggregationCursor = __webpack_require__(420);
-const Query = __webpack_require__(125);
-const applyGlobalMaxTimeMS = __webpack_require__(195);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const AggregationCursor = __webpack_require__(508);
+const Query = __webpack_require__(174);
+const applyGlobalMaxTimeMS = __webpack_require__(262);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 const read = Query.prototype.read;
 const readConcern = Query.prototype.readConcern;
 
@@ -55933,7 +56005,7 @@ module.exports = Aggregate;
 
 
 /***/ }),
-/* 213 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56001,7 +56073,7 @@ function getVirtual(schema, name) {
 
 
 /***/ }),
-/* 214 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56052,7 +56124,7 @@ module.exports = function applyPlugins(schema, plugins, options, cacheKey) {
 };
 
 /***/ }),
-/* 215 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56063,15 +56135,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = eachLimit;
 
-var _eachOf = __webpack_require__(201);
+var _eachOf = __webpack_require__(268);
 
 var _eachOf2 = _interopRequireDefault(_eachOf);
 
-var _withoutIndex = __webpack_require__(440);
+var _withoutIndex = __webpack_require__(528);
 
 var _withoutIndex2 = _interopRequireDefault(_withoutIndex);
 
-var _wrapAsync = __webpack_require__(95);
+var _wrapAsync = __webpack_require__(136);
 
 var _wrapAsync2 = _interopRequireDefault(_wrapAsync);
 
@@ -56140,7 +56212,7 @@ function eachLimit(coll, iteratee, callback) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 216 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -56150,18 +56222,18 @@ module.exports = exports['default'];
  * Module dependencies.
  */
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const Schema = __webpack_require__(89);
-const Collection = __webpack_require__(22).get().Collection;
-const STATES = __webpack_require__(83);
-const MongooseError = __webpack_require__(13);
-const PromiseProvider = __webpack_require__(85);
-const applyPlugins = __webpack_require__(214);
-const get = __webpack_require__(8);
-const mongodb = __webpack_require__(31);
-const utils = __webpack_require__(4);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const Schema = __webpack_require__(130);
+const Collection = __webpack_require__(36).get().Collection;
+const STATES = __webpack_require__(124);
+const MongooseError = __webpack_require__(19);
+const PromiseProvider = __webpack_require__(126);
+const applyPlugins = __webpack_require__(281);
+const get = __webpack_require__(15);
+const mongodb = __webpack_require__(50);
+const utils = __webpack_require__(7);
 
-const parseConnectionString = __webpack_require__(1).parseConnectionString;
+const parseConnectionString = __webpack_require__(4).parseConnectionString;
 
 /*!
  * A list of authentication mechanisms that don't require a password for authentication.
@@ -57230,30 +57302,52 @@ module.exports = Connection;
 
 
 /***/ }),
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */
+/***/ (function(module, exports) {
+
+module.exports = require("net");
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports) {
+
+module.exports = require("tls");
+
+/***/ }),
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60);
+/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(99);
 /* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);
 // server.js
 
 
-var dotenv = __webpack_require__(448).config(); // Initialize connection to database
+var dotenv = __webpack_require__(536).config(); // Initialize connection to database
 
 
 console.log("CONNECTING", "mongodb+srv://antonio:Omaior234CV2020@cluster0-nzetq.mongodb.net/test0");
@@ -57270,35 +57364,47 @@ conn.on('error', console.error.bind(console, 'MongoDB connection error:'));
 /* harmony default export */ __webpack_exports__["default"] = (conn);
 
 /***/ }),
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -57311,40 +57417,40 @@ conn.on('error', console.error.bind(console, 'MongoDB connection error:'));
 if (global.MONGOOSE_DRIVER_PATH) {
   const deprecationWarning = 'The `MONGOOSE_DRIVER_PATH` global property is ' +
     'deprecated. Use `mongoose.driver.set()` instead.';
-  const setDriver = __webpack_require__(2).deprecate(function() {
-    __webpack_require__(22).set(__webpack_require__(260)(global.MONGOOSE_DRIVER_PATH));
+  const setDriver = __webpack_require__(3).deprecate(function() {
+    __webpack_require__(36).set(__webpack_require__(351)(global.MONGOOSE_DRIVER_PATH));
   }, deprecationWarning);
   setDriver();
 } else {
-  __webpack_require__(22).set(__webpack_require__(261));
+  __webpack_require__(36).set(__webpack_require__(352));
 }
 
-const Schema = __webpack_require__(89);
-const SchemaType = __webpack_require__(17);
-const SchemaTypes = __webpack_require__(91);
-const VirtualType = __webpack_require__(118);
-const STATES = __webpack_require__(83);
-const Types = __webpack_require__(57);
-const Query = __webpack_require__(125);
-const Model = __webpack_require__(419);
-const Document = __webpack_require__(15);
-const applyPlugins = __webpack_require__(214);
-const get = __webpack_require__(8);
-const legacyPluralize = __webpack_require__(437);
-const utils = __webpack_require__(4);
-const pkg = __webpack_require__(438);
-const cast = __webpack_require__(92);
-const removeSubdocs = __webpack_require__(439);
-const saveSubdocs = __webpack_require__(441);
-const validateBeforeSave = __webpack_require__(442);
+const Schema = __webpack_require__(130);
+const SchemaType = __webpack_require__(27);
+const SchemaTypes = __webpack_require__(132);
+const VirtualType = __webpack_require__(167);
+const STATES = __webpack_require__(124);
+const Types = __webpack_require__(91);
+const Query = __webpack_require__(174);
+const Model = __webpack_require__(507);
+const Document = __webpack_require__(22);
+const applyPlugins = __webpack_require__(281);
+const get = __webpack_require__(15);
+const legacyPluralize = __webpack_require__(525);
+const utils = __webpack_require__(7);
+const pkg = __webpack_require__(526);
+const cast = __webpack_require__(133);
+const removeSubdocs = __webpack_require__(527);
+const saveSubdocs = __webpack_require__(529);
+const validateBeforeSave = __webpack_require__(530);
 
-const Aggregate = __webpack_require__(212);
-const PromiseProvider = __webpack_require__(85);
-const shardingPlugin = __webpack_require__(443);
+const Aggregate = __webpack_require__(279);
+const PromiseProvider = __webpack_require__(126);
+const shardingPlugin = __webpack_require__(531);
 
 const defaultMongooseSymbol = Symbol.for('mongoose:default');
 
-__webpack_require__(444);
+__webpack_require__(532);
 
 /**
  * Mongoose constructor.
@@ -57429,7 +57535,7 @@ Mongoose.prototype.STATES = STATES;
  * @api public
  */
 
-Mongoose.prototype.driver = __webpack_require__(22);
+Mongoose.prototype.driver = __webpack_require__(36);
 
 /**
  * Sets mongoose options
@@ -58009,13 +58115,13 @@ const driver = global.MONGOOSE_DRIVER_PATH || './drivers/node-mongodb-native';
  * Connection
  */
 
-const Connection = __webpack_require__(445)(driver + "/connection");
+const Connection = __webpack_require__(533)(driver + "/connection");
 
 /*!
  * Collection
  */
 
-const Collection = __webpack_require__(447)(driver + "/collection");
+const Collection = __webpack_require__(535)(driver + "/collection");
 
 /**
  * The Mongoose Aggregate constructor
@@ -58211,7 +58317,7 @@ Mongoose.prototype.Document = Document;
  * @api public
  */
 
-Mongoose.prototype.DocumentProvider = __webpack_require__(178);
+Mongoose.prototype.DocumentProvider = __webpack_require__(245);
 
 /**
  * The Mongoose ObjectId [SchemaType](/docs/schematypes.html). Used for
@@ -58285,7 +58391,7 @@ Mongoose.prototype.Number = SchemaTypes.Number;
  * @api public
  */
 
-Mongoose.prototype.Error = __webpack_require__(13);
+Mongoose.prototype.Error = __webpack_require__(19);
 
 /**
  * Mongoose uses this function to get the current time when setting
@@ -58310,7 +58416,7 @@ Mongoose.prototype.now = function now() { return new Date(); };
  * @api public
  */
 
-Mongoose.prototype.CastError = __webpack_require__(21);
+Mongoose.prototype.CastError = __webpack_require__(34);
 
 /**
  * The [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) driver Mongoose uses.
@@ -58319,7 +58425,7 @@ Mongoose.prototype.CastError = __webpack_require__(21);
  * @api public
  */
 
-Mongoose.prototype.mongo = __webpack_require__(31);
+Mongoose.prototype.mongo = __webpack_require__(50);
 
 /**
  * The [mquery](https://github.com/aheckmann/mquery) query builder Mongoose uses.
@@ -58328,7 +58434,7 @@ Mongoose.prototype.mongo = __webpack_require__(31);
  * @api public
  */
 
-Mongoose.prototype.mquery = __webpack_require__(113);
+Mongoose.prototype.mquery = __webpack_require__(162);
 
 /*!
  * The exports object is an instance of Mongoose.
@@ -58342,7 +58448,7 @@ const mongoose = module.exports = exports = new Mongoose({
 
 
 /***/ }),
-/* 260 */
+/* 351 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -58353,10 +58459,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 260;
+webpackEmptyContext.id = 351;
 
 /***/ }),
-/* 261 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58366,14 +58472,14 @@ webpackEmptyContext.id = 260;
 
 
 
-exports.Binary = __webpack_require__(262);
-exports.Collection = __webpack_require__(162);
-exports.Decimal128 = __webpack_require__(376);
-exports.ObjectId = __webpack_require__(377);
-exports.ReadPreference = __webpack_require__(378);
+exports.Binary = __webpack_require__(353);
+exports.Collection = __webpack_require__(229);
+exports.Decimal128 = __webpack_require__(464);
+exports.ObjectId = __webpack_require__(465);
+exports.ReadPreference = __webpack_require__(466);
 
 /***/ }),
-/* 262 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -58384,38 +58490,38 @@ exports.ReadPreference = __webpack_require__(378);
 
 
 
-const Binary = __webpack_require__(31).Binary;
+const Binary = __webpack_require__(50).Binary;
 
 module.exports = exports = Binary;
 
 
 /***/ }),
-/* 263 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Map = __webpack_require__(102),
-  Long = __webpack_require__(37),
-  Double = __webpack_require__(62),
-  Timestamp = __webpack_require__(63),
-  ObjectID = __webpack_require__(64),
-  BSONRegExp = __webpack_require__(65),
-  Symbol = __webpack_require__(66),
-  Int32 = __webpack_require__(103),
-  Code = __webpack_require__(67),
-  Decimal128 = __webpack_require__(68),
-  MinKey = __webpack_require__(69),
-  MaxKey = __webpack_require__(70),
-  DBRef = __webpack_require__(71),
-  Binary = __webpack_require__(43);
+var Map = __webpack_require__(152),
+  Long = __webpack_require__(61),
+  Double = __webpack_require__(106),
+  Timestamp = __webpack_require__(107),
+  ObjectID = __webpack_require__(108),
+  BSONRegExp = __webpack_require__(109),
+  Symbol = __webpack_require__(110),
+  Int32 = __webpack_require__(153),
+  Code = __webpack_require__(111),
+  Decimal128 = __webpack_require__(112),
+  MinKey = __webpack_require__(113),
+  MaxKey = __webpack_require__(114),
+  DBRef = __webpack_require__(115),
+  Binary = __webpack_require__(77);
 
 // Parts of the parser
-var deserialize = __webpack_require__(264),
-  serializer = __webpack_require__(265),
-  calculateObjectSize = __webpack_require__(267),
-  utils = __webpack_require__(32);
+var deserialize = __webpack_require__(355),
+  serializer = __webpack_require__(356),
+  calculateObjectSize = __webpack_require__(358),
+  utils = __webpack_require__(51);
 
 /**
  * @ignore
@@ -58783,27 +58889,27 @@ module.exports.Decimal128 = Decimal128;
 
 
 /***/ }),
-/* 264 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Long = __webpack_require__(37).Long,
-  Double = __webpack_require__(62).Double,
-  Timestamp = __webpack_require__(63).Timestamp,
-  ObjectID = __webpack_require__(64).ObjectID,
-  Symbol = __webpack_require__(66).Symbol,
-  Code = __webpack_require__(67).Code,
-  MinKey = __webpack_require__(69).MinKey,
-  MaxKey = __webpack_require__(70).MaxKey,
-  Decimal128 = __webpack_require__(68),
-  Int32 = __webpack_require__(103),
-  DBRef = __webpack_require__(71).DBRef,
-  BSONRegExp = __webpack_require__(65).BSONRegExp,
-  Binary = __webpack_require__(43).Binary;
+var Long = __webpack_require__(61).Long,
+  Double = __webpack_require__(106).Double,
+  Timestamp = __webpack_require__(107).Timestamp,
+  ObjectID = __webpack_require__(108).ObjectID,
+  Symbol = __webpack_require__(110).Symbol,
+  Code = __webpack_require__(111).Code,
+  MinKey = __webpack_require__(113).MinKey,
+  MaxKey = __webpack_require__(114).MaxKey,
+  Decimal128 = __webpack_require__(112),
+  Int32 = __webpack_require__(153),
+  DBRef = __webpack_require__(115).DBRef,
+  BSONRegExp = __webpack_require__(109).BSONRegExp,
+  Binary = __webpack_require__(77).Binary;
 
-var utils = __webpack_require__(32);
+var utils = __webpack_require__(51);
 
 var deserialize = function(buffer, options, isArray) {
   options = options == null ? {} : options;
@@ -59572,18 +59678,18 @@ module.exports = deserialize;
 
 
 /***/ }),
-/* 265 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var writeIEEE754 = __webpack_require__(266).writeIEEE754,
-  Long = __webpack_require__(37).Long,
-  Map = __webpack_require__(102),
-  Binary = __webpack_require__(43).Binary;
+var writeIEEE754 = __webpack_require__(357).writeIEEE754,
+  Long = __webpack_require__(61).Long,
+  Map = __webpack_require__(152),
+  Binary = __webpack_require__(77).Binary;
 
-var normalizedFunctionString = __webpack_require__(32).normalizedFunctionString;
+var normalizedFunctionString = __webpack_require__(51).normalizedFunctionString;
 
 // try {
 //   var _Buffer = Uint8Array;
@@ -60761,7 +60867,7 @@ module.exports = serializeInto;
 
 
 /***/ }),
-/* 266 */
+/* 357 */
 /***/ (function(module, exports) {
 
 // Copyright (c) 2008, Fair Oaks Labs, Inc.
@@ -60891,26 +60997,26 @@ exports.writeIEEE754 = writeIEEE754;
 
 
 /***/ }),
-/* 267 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Long = __webpack_require__(37).Long,
-  Double = __webpack_require__(62).Double,
-  Timestamp = __webpack_require__(63).Timestamp,
-  ObjectID = __webpack_require__(64).ObjectID,
-  Symbol = __webpack_require__(66).Symbol,
-  BSONRegExp = __webpack_require__(65).BSONRegExp,
-  Code = __webpack_require__(67).Code,
-  Decimal128 = __webpack_require__(68),
-  MinKey = __webpack_require__(69).MinKey,
-  MaxKey = __webpack_require__(70).MaxKey,
-  DBRef = __webpack_require__(71).DBRef,
-  Binary = __webpack_require__(43).Binary;
+var Long = __webpack_require__(61).Long,
+  Double = __webpack_require__(106).Double,
+  Timestamp = __webpack_require__(107).Timestamp,
+  ObjectID = __webpack_require__(108).ObjectID,
+  Symbol = __webpack_require__(110).Symbol,
+  BSONRegExp = __webpack_require__(109).BSONRegExp,
+  Code = __webpack_require__(111).Code,
+  Decimal128 = __webpack_require__(112),
+  MinKey = __webpack_require__(113).MinKey,
+  MaxKey = __webpack_require__(114).MaxKey,
+  DBRef = __webpack_require__(115).DBRef,
+  Binary = __webpack_require__(77).Binary;
 
-var normalizedFunctionString = __webpack_require__(32).normalizedFunctionString;
+var normalizedFunctionString = __webpack_require__(51).normalizedFunctionString;
 
 // To ensure that 0.4 of node works correctly
 var isDate = function isDate(d) {
@@ -61153,13 +61259,13 @@ module.exports = calculateObjectSize;
 
 
 /***/ }),
-/* 268 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var path = __webpack_require__(73);
-var Module = __webpack_require__(269);
+var path = __webpack_require__(72);
+var Module = __webpack_require__(360);
 
 module.exports = function (fromDir, moduleId) {
 	if (typeof fromDir !== 'string' || typeof moduleId !== 'string') {
@@ -61183,13 +61289,13 @@ module.exports = function (fromDir, moduleId) {
 
 
 /***/ }),
-/* 269 */
+/* 360 */
 /***/ (function(module, exports) {
 
 module.exports = require("module");
 
 /***/ }),
-/* 270 */
+/* 361 */
 /***/ (function(module, exports) {
 
 exports = module.exports = SemVer
@@ -62678,13 +62784,7 @@ function coerce (version) {
 
 
 /***/ }),
-/* 271 */
-/***/ (function(module, exports) {
-
-module.exports = require("zlib");
-
-/***/ }),
-/* 272 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -62727,15 +62827,15 @@ module.exports = CommandResult;
 
 
 /***/ }),
-/* 273 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const Msg = __webpack_require__(76).Msg;
-const KillCursor = __webpack_require__(23).KillCursor;
-const GetMore = __webpack_require__(23).GetMore;
-const calculateDurationInMs = __webpack_require__(14).calculateDurationInMs;
+const Msg = __webpack_require__(117).Msg;
+const KillCursor = __webpack_require__(39).KillCursor;
+const GetMore = __webpack_require__(39).GetMore;
+const calculateDurationInMs = __webpack_require__(21).calculateDurationInMs;
 
 /** Commands that we want to redact because of the sensitive nature of their contents */
 const SENSITIVE_COMMANDS = new Set([
@@ -62970,20 +63070,20 @@ module.exports = {
 
 
 /***/ }),
-/* 274 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const net = __webpack_require__(275);
-const tls = __webpack_require__(276);
-const Connection = __webpack_require__(142);
-const Query = __webpack_require__(23).Query;
-const createClientInfo = __webpack_require__(11).createClientInfo;
-const MongoError = __webpack_require__(3).MongoError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const defaultAuthProviders = __webpack_require__(145).defaultAuthProviders;
-const WIRE_CONSTANTS = __webpack_require__(143);
+const net = __webpack_require__(302);
+const tls = __webpack_require__(303);
+const Connection = __webpack_require__(210);
+const Query = __webpack_require__(39).Query;
+const createClientInfo = __webpack_require__(17).createClientInfo;
+const MongoError = __webpack_require__(5).MongoError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const defaultAuthProviders = __webpack_require__(213).defaultAuthProviders;
+const WIRE_CONSTANTS = __webpack_require__(211);
 const MAX_SUPPORTED_WIRE_VERSION = WIRE_CONSTANTS.MAX_SUPPORTED_WIRE_VERSION;
 const MAX_SUPPORTED_SERVER_VERSION = WIRE_CONSTANTS.MAX_SUPPORTED_SERVER_VERSION;
 const MIN_SUPPORTED_WIRE_VERSION = WIRE_CONSTANTS.MIN_SUPPORTED_WIRE_VERSION;
@@ -63347,32 +63447,20 @@ module.exports = connect;
 
 
 /***/ }),
-/* 275 */
-/***/ (function(module, exports) {
-
-module.exports = require("net");
-
-/***/ }),
-/* 276 */
-/***/ (function(module, exports) {
-
-module.exports = require("tls");
-
-/***/ }),
-/* 277 */
+/* 365 */
 /***/ (function(module) {
 
 module.exports = {"_from":"mongodb-core@3.2.7","_id":"mongodb-core@3.2.7","_inBundle":false,"_integrity":"sha512-WypKdLxFNPOH/Jy6i9z47IjG2wIldA54iDZBmHMINcgKOUcWJh8og+Wix76oGd7EyYkHJKssQ2FAOw5Su/n4XQ==","_location":"/mongodb-core","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"mongodb-core@3.2.7","name":"mongodb-core","escapedName":"mongodb-core","rawSpec":"3.2.7","saveSpec":null,"fetchSpec":"3.2.7"},"_requiredBy":["/mongodb","/mongoose"],"_resolved":"https://registry.npmjs.org/mongodb-core/-/mongodb-core-3.2.7.tgz","_shasum":"a8ef1fe764a192c979252dacbc600dc88d77e28f","_spec":"mongodb-core@3.2.7","_where":"D:\\Projects\\cv\\node_modules\\mongoose","author":{"name":"Christian Kvalheim"},"bugs":{"url":"https://github.com/mongodb-js/mongodb-core/issues"},"bundleDependencies":false,"dependencies":{"bson":"^1.1.1","require_optional":"^1.0.1","safe-buffer":"^5.1.2","saslprep":"^1.0.0"},"deprecated":false,"description":"Core MongoDB driver functionality, no bells and whistles and meant for integration not end applications","devDependencies":{"chai":"^4.2.0","chai-subset":"^1.6.0","co":"^4.6.0","eslint":"^4.6.1","eslint-plugin-prettier":"^2.2.0","jsdoc":"3.5.4","mongodb-extjson":"^2.1.2","mongodb-mock-server":"^1.0.1","mongodb-test-runner":"^1.3.4","prettier":"~1.12.0","sinon":"^6.0.0","snappy":"^6.1.1","standard-version":"^4.4.0"},"files":["index.js","lib"],"homepage":"https://github.com/mongodb-js/mongodb-core","keywords":["mongodb","core"],"license":"Apache-2.0","main":"index.js","name":"mongodb-core","optionalDependencies":{"saslprep":"^1.0.0"},"peerOptionalDependencies":{"kerberos":"^1.0.0","mongodb-extjson":"^2.1.2","snappy":"^6.1.1","bson-ext":"^2.0.0"},"repository":{"type":"git","url":"git://github.com/mongodb-js/mongodb-core.git"},"scripts":{"atlas":"node ./test/atlas.js","changelog":"conventional-changelog -p angular -i HISTORY.md -s","coverage":"nyc node test/runner.js -t functional -l && node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls","format":"prettier --print-width 100 --tab-width 2 --single-quote --write index.js test/**/*.js lib/**/*.js","lint":"eslint index.js lib test","release":"standard-version -i HISTORY.md","test":"npm run lint && mongodb-test-runner -t 60000 test/tests"},"version":"3.2.7"};
 
 /***/ }),
-/* 278 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const AuthProvider = __webpack_require__(39).AuthProvider;
-const retrieveKerberos = __webpack_require__(14).retrieveKerberos;
+const AuthProvider = __webpack_require__(62).AuthProvider;
+const retrieveKerberos = __webpack_require__(21).retrieveKerberos;
 let kerberos;
 
 /**
@@ -63503,7 +63591,7 @@ module.exports = SSPI;
 
 
 /***/ }),
-/* 279 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63516,7 +63604,7 @@ const {
   prohibited_characters,
   bidirectional_r_al,
   bidirectional_l,
-} = __webpack_require__(280);
+} = __webpack_require__(368);
 
 module.exports = saslprep;
 
@@ -63667,15 +63755,15 @@ function saslprep(input, opts = {}) {
 
 
 /***/ }),
-/* 280 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(__dirname) {
 
-const fs = __webpack_require__(74);
-const path = __webpack_require__(73);
-const bitfield = __webpack_require__(281);
+const fs = __webpack_require__(47);
+const path = __webpack_require__(72);
+const bitfield = __webpack_require__(369);
 
 /* eslint-disable-next-line security/detect-non-literal-fs-filename */
 const memory = fs.readFileSync(path.resolve(__dirname, '../code-points.mem'));
@@ -63714,10 +63802,10 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
-/* 281 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pager = __webpack_require__(282)
+var pager = __webpack_require__(370)
 
 module.exports = Bitfield
 
@@ -63815,7 +63903,7 @@ function powerOfTwo (x) {
 
 
 /***/ }),
-/* 282 */
+/* 370 */
 /***/ (function(module, exports) {
 
 module.exports = Pager
@@ -63981,15 +64069,15 @@ function factor (n, out) {
 
 
 /***/ }),
-/* 283 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongoError = __webpack_require__(3).MongoError;
-const collectionNamespace = __webpack_require__(12).collectionNamespace;
-const command = __webpack_require__(45);
+const MongoError = __webpack_require__(5).MongoError;
+const collectionNamespace = __webpack_require__(18).collectionNamespace;
+const command = __webpack_require__(79);
 
 function writeCommand(server, type, opsField, ns, ops, options, callback) {
   if (ops.length === 0) throw new MongoError(`${type} must contain at least one document`);
@@ -64038,18 +64126,18 @@ module.exports = writeCommand;
 
 
 /***/ }),
-/* 284 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const KillCursor = __webpack_require__(23).KillCursor;
-const MongoError = __webpack_require__(3).MongoError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const collectionNamespace = __webpack_require__(12).collectionNamespace;
-const maxWireVersion = __webpack_require__(14).maxWireVersion;
-const command = __webpack_require__(45);
+const KillCursor = __webpack_require__(39).KillCursor;
+const MongoError = __webpack_require__(5).MongoError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const collectionNamespace = __webpack_require__(18).collectionNamespace;
+const maxWireVersion = __webpack_require__(21).maxWireVersion;
+const command = __webpack_require__(79);
 
 function killCursors(server, ns, cursorState, callback) {
   callback = typeof callback === 'function' ? callback : () => {};
@@ -64115,22 +64203,22 @@ module.exports = killCursors;
 
 
 /***/ }),
-/* 285 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const GetMore = __webpack_require__(23).GetMore;
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const MongoError = __webpack_require__(3).MongoError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
+const GetMore = __webpack_require__(39).GetMore;
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const MongoError = __webpack_require__(5).MongoError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
 const BSON = retrieveBSON();
 const Long = BSON.Long;
-const collectionNamespace = __webpack_require__(12).collectionNamespace;
-const maxWireVersion = __webpack_require__(14).maxWireVersion;
-const applyCommonQueryOptions = __webpack_require__(12).applyCommonQueryOptions;
-const command = __webpack_require__(45);
+const collectionNamespace = __webpack_require__(18).collectionNamespace;
+const maxWireVersion = __webpack_require__(21).maxWireVersion;
+const applyCommonQueryOptions = __webpack_require__(18).applyCommonQueryOptions;
+const command = __webpack_require__(79);
 
 function getMore(server, ns, cursorState, batchSize, options, callback) {
   options = options || {};
@@ -64208,20 +64296,20 @@ module.exports = getMore;
 
 
 /***/ }),
-/* 286 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Query = __webpack_require__(23).Query;
-const MongoError = __webpack_require__(3).MongoError;
-const getReadPreference = __webpack_require__(12).getReadPreference;
-const collectionNamespace = __webpack_require__(12).collectionNamespace;
-const isSharded = __webpack_require__(12).isSharded;
-const maxWireVersion = __webpack_require__(14).maxWireVersion;
-const applyCommonQueryOptions = __webpack_require__(12).applyCommonQueryOptions;
-const command = __webpack_require__(45);
+const Query = __webpack_require__(39).Query;
+const MongoError = __webpack_require__(5).MongoError;
+const getReadPreference = __webpack_require__(18).getReadPreference;
+const collectionNamespace = __webpack_require__(18).collectionNamespace;
+const isSharded = __webpack_require__(18).isSharded;
+const maxWireVersion = __webpack_require__(21).maxWireVersion;
+const applyCommonQueryOptions = __webpack_require__(18).applyCommonQueryOptions;
+const command = __webpack_require__(79);
 
 function query(server, ns, cmd, cursorState, options, callback) {
   options = options || {};
@@ -64439,30 +64527,30 @@ module.exports = query;
 
 
 /***/ }),
-/* 287 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const inherits = __webpack_require__(2).inherits;
-const f = __webpack_require__(2).format;
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const ReadPreference = __webpack_require__(18);
-const BasicCursor = __webpack_require__(46);
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const Logger = __webpack_require__(24);
-const MongoError = __webpack_require__(3).MongoError;
-const Server = __webpack_require__(106);
-const ReplSetState = __webpack_require__(288);
-const clone = __webpack_require__(11).clone;
-const Timeout = __webpack_require__(11).Timeout;
-const Interval = __webpack_require__(11).Interval;
-const createClientInfo = __webpack_require__(11).createClientInfo;
-const SessionMixins = __webpack_require__(11).SessionMixins;
-const isRetryableWritesSupported = __webpack_require__(11).isRetryableWritesSupported;
-const relayEvents = __webpack_require__(14).relayEvents;
-const isRetryableError = __webpack_require__(3).isRetryableError;
+const inherits = __webpack_require__(3).inherits;
+const f = __webpack_require__(3).format;
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const ReadPreference = __webpack_require__(31);
+const BasicCursor = __webpack_require__(80);
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const Logger = __webpack_require__(40);
+const MongoError = __webpack_require__(5).MongoError;
+const Server = __webpack_require__(156);
+const ReplSetState = __webpack_require__(376);
+const clone = __webpack_require__(17).clone;
+const Timeout = __webpack_require__(17).Timeout;
+const Interval = __webpack_require__(17).Interval;
+const createClientInfo = __webpack_require__(17).createClientInfo;
+const SessionMixins = __webpack_require__(17).SessionMixins;
+const isRetryableWritesSupported = __webpack_require__(17).isRetryableWritesSupported;
+const relayEvents = __webpack_require__(21).relayEvents;
+const isRetryableError = __webpack_require__(5).isRetryableError;
 const BSON = retrieveBSON();
 
 //
@@ -65953,20 +66041,20 @@ module.exports = ReplSet;
 
 
 /***/ }),
-/* 288 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var inherits = __webpack_require__(2).inherits,
-  f = __webpack_require__(2).format,
-  diff = __webpack_require__(11).diff,
-  EventEmitter = __webpack_require__(10).EventEmitter,
-  Logger = __webpack_require__(24),
-  ReadPreference = __webpack_require__(18),
-  MongoError = __webpack_require__(3).MongoError,
-  Buffer = __webpack_require__(19).Buffer;
+var inherits = __webpack_require__(3).inherits,
+  f = __webpack_require__(3).format,
+  diff = __webpack_require__(17).diff,
+  EventEmitter = __webpack_require__(14).EventEmitter,
+  Logger = __webpack_require__(40),
+  ReadPreference = __webpack_require__(31),
+  MongoError = __webpack_require__(5).MongoError,
+  Buffer = __webpack_require__(28).Buffer;
 
 var TopologyType = {
   Single: 'Single',
@@ -67081,28 +67169,28 @@ module.exports = ReplSetState;
 
 
 /***/ }),
-/* 289 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const inherits = __webpack_require__(2).inherits;
-const f = __webpack_require__(2).format;
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const BasicCursor = __webpack_require__(46);
-const Logger = __webpack_require__(24);
-const retrieveBSON = __webpack_require__(16).retrieveBSON;
-const MongoError = __webpack_require__(3).MongoError;
-const Server = __webpack_require__(106);
-const clone = __webpack_require__(11).clone;
-const diff = __webpack_require__(11).diff;
-const cloneOptions = __webpack_require__(11).cloneOptions;
-const createClientInfo = __webpack_require__(11).createClientInfo;
-const SessionMixins = __webpack_require__(11).SessionMixins;
-const isRetryableWritesSupported = __webpack_require__(11).isRetryableWritesSupported;
-const relayEvents = __webpack_require__(14).relayEvents;
-const isRetryableError = __webpack_require__(3).isRetryableError;
+const inherits = __webpack_require__(3).inherits;
+const f = __webpack_require__(3).format;
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const BasicCursor = __webpack_require__(80);
+const Logger = __webpack_require__(40);
+const retrieveBSON = __webpack_require__(26).retrieveBSON;
+const MongoError = __webpack_require__(5).MongoError;
+const Server = __webpack_require__(156);
+const clone = __webpack_require__(17).clone;
+const diff = __webpack_require__(17).diff;
+const cloneOptions = __webpack_require__(17).cloneOptions;
+const createClientInfo = __webpack_require__(17).createClientInfo;
+const SessionMixins = __webpack_require__(17).SessionMixins;
+const isRetryableWritesSupported = __webpack_require__(17).isRetryableWritesSupported;
+const relayEvents = __webpack_require__(21).relayEvents;
+const isRetryableError = __webpack_require__(5).isRetryableError;
 const BSON = retrieveBSON();
 
 /**
@@ -68439,35 +68527,35 @@ module.exports = Mongos;
 
 
 /***/ }),
-/* 290 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const EventEmitter = __webpack_require__(10);
-const ServerDescription = __webpack_require__(25).ServerDescription;
-const ServerType = __webpack_require__(25).ServerType;
-const TopologyDescription = __webpack_require__(44).TopologyDescription;
-const TopologyType = __webpack_require__(44).TopologyType;
-const monitoring = __webpack_require__(150);
-const calculateDurationInMs = __webpack_require__(14).calculateDurationInMs;
-const MongoTimeoutError = __webpack_require__(3).MongoTimeoutError;
-const Server = __webpack_require__(291);
-const relayEvents = __webpack_require__(14).relayEvents;
-const ReadPreference = __webpack_require__(18);
-const readPreferenceServerSelector = __webpack_require__(151).readPreferenceServerSelector;
-const writableServerSelector = __webpack_require__(151).writableServerSelector;
-const isRetryableWritesSupported = __webpack_require__(11).isRetryableWritesSupported;
-const Cursor = __webpack_require__(46);
-const deprecate = __webpack_require__(2).deprecate;
-const BSON = __webpack_require__(16).retrieveBSON();
-const createCompressionInfo = __webpack_require__(11).createCompressionInfo;
-const isRetryableError = __webpack_require__(3).isRetryableError;
-const MongoParseError = __webpack_require__(3).MongoParseError;
-const ClientSession = __webpack_require__(78).ClientSession;
-const createClientInfo = __webpack_require__(11).createClientInfo;
-const MongoError = __webpack_require__(3).MongoError;
-const resolveClusterTime = __webpack_require__(11).resolveClusterTime;
+const EventEmitter = __webpack_require__(14);
+const ServerDescription = __webpack_require__(43).ServerDescription;
+const ServerType = __webpack_require__(43).ServerType;
+const TopologyDescription = __webpack_require__(78).TopologyDescription;
+const TopologyType = __webpack_require__(78).TopologyType;
+const monitoring = __webpack_require__(218);
+const calculateDurationInMs = __webpack_require__(21).calculateDurationInMs;
+const MongoTimeoutError = __webpack_require__(5).MongoTimeoutError;
+const Server = __webpack_require__(379);
+const relayEvents = __webpack_require__(21).relayEvents;
+const ReadPreference = __webpack_require__(31);
+const readPreferenceServerSelector = __webpack_require__(219).readPreferenceServerSelector;
+const writableServerSelector = __webpack_require__(219).writableServerSelector;
+const isRetryableWritesSupported = __webpack_require__(17).isRetryableWritesSupported;
+const Cursor = __webpack_require__(80);
+const deprecate = __webpack_require__(3).deprecate;
+const BSON = __webpack_require__(26).retrieveBSON();
+const createCompressionInfo = __webpack_require__(17).createCompressionInfo;
+const isRetryableError = __webpack_require__(5).isRetryableError;
+const MongoParseError = __webpack_require__(5).MongoParseError;
+const ClientSession = __webpack_require__(119).ClientSession;
+const createClientInfo = __webpack_require__(17).createClientInfo;
+const MongoError = __webpack_require__(5).MongoError;
+const resolveClusterTime = __webpack_require__(17).resolveClusterTime;
 
 // Global state
 let globalTopologyCounter = 0;
@@ -69500,26 +69588,26 @@ module.exports = Topology;
 
 
 /***/ }),
-/* 291 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const EventEmitter = __webpack_require__(10);
-const MongoError = __webpack_require__(3).MongoError;
-const Pool = __webpack_require__(144);
-const relayEvents = __webpack_require__(14).relayEvents;
-const wireProtocol = __webpack_require__(108);
-const BSON = __webpack_require__(16).retrieveBSON();
-const createClientInfo = __webpack_require__(11).createClientInfo;
-const Logger = __webpack_require__(24);
-const ServerDescription = __webpack_require__(25).ServerDescription;
-const ReadPreference = __webpack_require__(18);
-const monitorServer = __webpack_require__(150).monitorServer;
-const MongoParseError = __webpack_require__(3).MongoParseError;
-const MongoNetworkError = __webpack_require__(3).MongoNetworkError;
-const collationNotSupported = __webpack_require__(14).collationNotSupported;
-const debugOptions = __webpack_require__(16).debugOptions;
+const EventEmitter = __webpack_require__(14);
+const MongoError = __webpack_require__(5).MongoError;
+const Pool = __webpack_require__(212);
+const relayEvents = __webpack_require__(21).relayEvents;
+const wireProtocol = __webpack_require__(157);
+const BSON = __webpack_require__(26).retrieveBSON();
+const createClientInfo = __webpack_require__(17).createClientInfo;
+const Logger = __webpack_require__(40);
+const ServerDescription = __webpack_require__(43).ServerDescription;
+const ReadPreference = __webpack_require__(31);
+const monitorServer = __webpack_require__(218).monitorServer;
+const MongoParseError = __webpack_require__(5).MongoParseError;
+const MongoNetworkError = __webpack_require__(5).MongoNetworkError;
+const collationNotSupported = __webpack_require__(21).collationNotSupported;
+const debugOptions = __webpack_require__(26).debugOptions;
 
 // Used for filtering out fields for logging
 const DEBUG_FIELDS = [
@@ -69899,7 +69987,7 @@ module.exports = Server;
 
 
 /***/ }),
-/* 292 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -69987,16 +70075,16 @@ module.exports = { MongoCredentials };
 
 
 /***/ }),
-/* 293 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const URL = __webpack_require__(152);
-const qs = __webpack_require__(294);
-const dns = __webpack_require__(153);
-const MongoParseError = __webpack_require__(3).MongoParseError;
-const ReadPreference = __webpack_require__(18);
+const URL = __webpack_require__(59);
+const qs = __webpack_require__(382);
+const dns = __webpack_require__(220);
+const MongoParseError = __webpack_require__(5).MongoParseError;
+const ReadPreference = __webpack_require__(31);
 
 /**
  * The following regular expression validates a connection string and breaks the
@@ -70623,18 +70711,18 @@ module.exports = parseConnectionString;
 
 
 /***/ }),
-/* 294 */
+/* 382 */
 /***/ (function(module, exports) {
 
 module.exports = require("querystring");
 
 /***/ }),
-/* 295 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
+const EventEmitter = __webpack_require__(14).EventEmitter;
 
 class Instrumentation extends EventEmitter {
   constructor() {
@@ -70667,14 +70755,14 @@ module.exports = Instrumentation;
 
 
 /***/ }),
-/* 296 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongoNetworkError = __webpack_require__(1).MongoNetworkError;
-const mongoErrorContextSymbol = __webpack_require__(1).mongoErrorContextSymbol;
+const MongoNetworkError = __webpack_require__(4).MongoNetworkError;
+const mongoErrorContextSymbol = __webpack_require__(4).mongoErrorContextSymbol;
 
 const GET_MORE_NON_RESUMABLE_CODES = new Set([
   136, // CappedPositionLost
@@ -70717,17 +70805,17 @@ module.exports = { GET_MORE_NON_RESUMABLE_CODES, isResumableError };
 
 
 /***/ }),
-/* 297 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const common = __webpack_require__(158);
+const common = __webpack_require__(225);
 const BulkOperationBase = common.BulkOperationBase;
 const Batch = common.Batch;
 const bson = common.bson;
-const utils = __webpack_require__(0);
+const utils = __webpack_require__(2);
 const toError = utils.toError;
 
 /**
@@ -70841,17 +70929,17 @@ module.exports.Bulk = UnorderedBulkOperation;
 
 
 /***/ }),
-/* 298 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const common = __webpack_require__(158);
+const common = __webpack_require__(225);
 const BulkOperationBase = common.BulkOperationBase;
 const Batch = common.Batch;
 const bson = common.bson;
-const utils = __webpack_require__(0);
+const utils = __webpack_require__(2);
 const toError = utils.toError;
 
 /**
@@ -70953,22 +71041,22 @@ module.exports.Bulk = OrderedBulkOperation;
 
 
 /***/ }),
-/* 299 */
+/* 387 */
 /***/ (function(module) {
 
 module.exports = {"_from":"mongodb@3.2.7","_id":"mongodb@3.2.7","_inBundle":false,"_integrity":"sha512-2YdWrdf1PJgxcCrT1tWoL6nHuk6hCxhddAAaEh8QJL231ci4+P9FLyqopbTm2Z2sAU6mhCri+wd9r1hOcHdoMw==","_location":"/mongoose/mongodb","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"mongodb@3.2.7","name":"mongodb","escapedName":"mongodb","rawSpec":"3.2.7","saveSpec":null,"fetchSpec":"3.2.7"},"_requiredBy":["/mongoose"],"_resolved":"https://registry.npmjs.org/mongodb/-/mongodb-3.2.7.tgz","_shasum":"8ba149e4be708257cad0dea72aebb2bbb311a7ac","_spec":"mongodb@3.2.7","_where":"D:\\Projects\\cv\\node_modules\\mongoose","bugs":{"url":"https://github.com/mongodb/node-mongodb-native/issues"},"bundleDependencies":false,"dependencies":{"mongodb-core":"3.2.7","safe-buffer":"^5.1.2"},"deprecated":false,"description":"The official MongoDB driver for Node.js","devDependencies":{"bluebird":"3.5.0","bson":"^1.0.4","chai":"^4.1.1","chai-subset":"^1.6.0","co":"4.6.0","coveralls":"^2.11.6","eslint":"^4.5.0","eslint-plugin-prettier":"^2.2.0","istanbul":"^0.4.5","jsdoc":"3.5.5","lodash.camelcase":"^4.3.0","mocha-sinon":"^2.1.0","mongodb-extjson":"^2.1.1","mongodb-mock-server":"^1.0.1","mongodb-test-runner":"^1.1.18","prettier":"~1.12.0","semver":"^5.5.0","sinon":"^4.3.0","sinon-chai":"^3.2.0","standard-version":"^4.4.0","worker-farm":"^1.5.0"},"engines":{"node":">=4"},"files":["index.js","lib"],"homepage":"https://github.com/mongodb/node-mongodb-native","keywords":["mongodb","driver","official"],"license":"Apache-2.0","main":"index.js","name":"mongodb","repository":{"type":"git","url":"git+ssh://git@github.com/mongodb/node-mongodb-native.git"},"scripts":{"atlas":"node ./test/atlas_connectivity_tests.js","bench":"node test/driverBench/","coverage":"istanbul cover mongodb-test-runner -- -t 60000  test/unit test/functional","format":"prettier --print-width 100 --tab-width 2 --single-quote --write 'test/**/*.js' 'lib/**/*.js'","generate-evergreen":"node .evergreen/generate_evergreen_tasks.js","lint":"eslint lib test","release":"standard-version -i HISTORY.md","test":"npm run lint && mongodb-test-runner -t 60000 test/unit test/functional"},"version":"3.2.7"};
 
 /***/ }),
-/* 300 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Topology = __webpack_require__(1).Topology;
-const ServerCapabilities = __webpack_require__(33).ServerCapabilities;
-const Cursor = __webpack_require__(26);
-const translateOptions = __webpack_require__(0).translateOptions;
+const Topology = __webpack_require__(4).Topology;
+const ServerCapabilities = __webpack_require__(52).ServerCapabilities;
+const Cursor = __webpack_require__(44);
+const translateOptions = __webpack_require__(2).translateOptions;
 
 class NativeTopology extends Topology {
   constructor(servers, options) {
@@ -71018,17 +71106,17 @@ module.exports = NativeTopology;
 
 
 /***/ }),
-/* 301 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const ReadPreference = __webpack_require__(1).ReadPreference,
-  parser = __webpack_require__(152),
-  f = __webpack_require__(2).format,
-  Logger = __webpack_require__(1).Logger,
-  dns = __webpack_require__(153);
+const ReadPreference = __webpack_require__(4).ReadPreference,
+  parser = __webpack_require__(59),
+  f = __webpack_require__(3).format,
+  Logger = __webpack_require__(4).Logger,
+  dns = __webpack_require__(220);
 
 module.exports = function(url, options, callback) {
   if (typeof options === 'function') (callback = options), (options = {});
@@ -71647,7 +71735,7 @@ function parseConnectionString(url, options) {
 
 
 /***/ }),
-/* 302 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -71688,19 +71776,19 @@ function parseConnectionString(url, options) {
  *   });
  * });
  */
-const Chunk = __webpack_require__(161);
-const ObjectID = __webpack_require__(1).BSON.ObjectID;
-const ReadPreference = __webpack_require__(1).ReadPreference;
-const Buffer = __webpack_require__(19).Buffer;
-const fs = __webpack_require__(74);
-const f = __webpack_require__(2).format;
-const util = __webpack_require__(2);
-const MongoError = __webpack_require__(1).MongoError;
+const Chunk = __webpack_require__(228);
+const ObjectID = __webpack_require__(4).BSON.ObjectID;
+const ReadPreference = __webpack_require__(4).ReadPreference;
+const Buffer = __webpack_require__(28).Buffer;
+const fs = __webpack_require__(47);
+const f = __webpack_require__(3).format;
+const util = __webpack_require__(3);
+const MongoError = __webpack_require__(4).MongoError;
 const inherits = util.inherits;
 const Duplex = __webpack_require__(20).Duplex;
-const shallowClone = __webpack_require__(0).shallowClone;
-const executeOperation = __webpack_require__(0).executeOperation;
-const deprecate = __webpack_require__(2).deprecate;
+const shallowClone = __webpack_require__(2).shallowClone;
+const executeOperation = __webpack_require__(2).executeOperation;
+const deprecate = __webpack_require__(3).deprecate;
 
 var REFERENCE_BY_FILENAME = 0,
   REFERENCE_BY_ID = 1;
@@ -73561,19 +73649,19 @@ module.exports = GridStore;
 
 
 /***/ }),
-/* 303 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Emitter = __webpack_require__(10).EventEmitter;
-var GridFSBucketReadStream = __webpack_require__(304);
-var GridFSBucketWriteStream = __webpack_require__(305);
-var shallowClone = __webpack_require__(0).shallowClone;
-var toError = __webpack_require__(0).toError;
-var util = __webpack_require__(2);
-var executeOperation = __webpack_require__(0).executeOperation;
+var Emitter = __webpack_require__(14).EventEmitter;
+var GridFSBucketReadStream = __webpack_require__(392);
+var GridFSBucketWriteStream = __webpack_require__(393);
+var shallowClone = __webpack_require__(2).shallowClone;
+var toError = __webpack_require__(2).toError;
+var util = __webpack_require__(3);
+var executeOperation = __webpack_require__(2).executeOperation;
 
 var DEFAULT_GRIDFS_BUCKET_OPTIONS = {
   bucketName: 'fs',
@@ -73926,14 +74014,14 @@ function _drop(_this, callback) {
 
 
 /***/ }),
-/* 304 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var stream = __webpack_require__(20),
-  util = __webpack_require__(2);
+  util = __webpack_require__(3);
 
 module.exports = GridFSBucketReadStream;
 
@@ -74347,17 +74435,17 @@ function __handleError(_this, error) {
 
 
 /***/ }),
-/* 305 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var core = __webpack_require__(1);
-var crypto = __webpack_require__(38);
+var core = __webpack_require__(4);
+var crypto = __webpack_require__(42);
 var stream = __webpack_require__(20);
-var util = __webpack_require__(2);
-var Buffer = __webpack_require__(19).Buffer;
+var util = __webpack_require__(3);
+var Buffer = __webpack_require__(28).Buffer;
 
 var ERROR_NAMESPACE_NOT_FOUND = 26;
 
@@ -74892,13 +74980,13 @@ function checkAborted(_this, callback) {
 
 
 /***/ }),
-/* 306 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const utils = __webpack_require__(4);
+const utils = __webpack_require__(7);
 
 class PopulateOptions {
   constructor(obj) {
@@ -74928,7 +75016,7 @@ class PopulateOptions {
 module.exports = PopulateOptions;
 
 /***/ }),
-/* 307 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -74937,14 +75025,14 @@ module.exports = PopulateOptions;
  */
 
 if (typeof process === 'undefined' || process.type === 'renderer') {
-  module.exports = __webpack_require__(308);
+  module.exports = __webpack_require__(396);
 } else {
-  module.exports = __webpack_require__(310);
+  module.exports = __webpack_require__(398);
 }
 
 
 /***/ }),
-/* 308 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -74953,7 +75041,7 @@ if (typeof process === 'undefined' || process.type === 'renderer') {
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(166);
+exports = module.exports = __webpack_require__(233);
 exports.log = log;
 exports.formatArgs = formatArgs;
 exports.save = save;
@@ -75145,7 +75233,7 @@ function localstorage() {
 
 
 /***/ }),
-/* 309 */
+/* 397 */
 /***/ (function(module, exports) {
 
 /**
@@ -75303,15 +75391,15 @@ function plural(ms, n, name) {
 
 
 /***/ }),
-/* 310 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Module dependencies.
  */
 
-var tty = __webpack_require__(311);
-var util = __webpack_require__(2);
+var tty = __webpack_require__(399);
+var util = __webpack_require__(3);
 
 /**
  * This is the Node.js implementation of `debug()`.
@@ -75319,7 +75407,7 @@ var util = __webpack_require__(2);
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = __webpack_require__(166);
+exports = module.exports = __webpack_require__(233);
 exports.init = init;
 exports.log = log;
 exports.formatArgs = formatArgs;
@@ -75334,7 +75422,7 @@ exports.useColors = useColors;
 exports.colors = [ 6, 2, 3, 4, 5, 1 ];
 
 try {
-  var supportsColor = __webpack_require__(312);
+  var supportsColor = __webpack_require__(400);
   if (supportsColor && supportsColor.level >= 2) {
     exports.colors = [
       20, 21, 26, 27, 32, 33, 38, 39, 40, 41, 42, 43, 44, 45, 56, 57, 62, 63, 68,
@@ -75495,19 +75583,19 @@ exports.enable(load());
 
 
 /***/ }),
-/* 311 */
+/* 399 */
 /***/ (function(module, exports) {
 
 module.exports = require("tty");
 
 /***/ }),
-/* 312 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-const os = __webpack_require__(107);
-const hasFlag = __webpack_require__(313);
+const os = __webpack_require__(98);
+const hasFlag = __webpack_require__(401);
 
 const env = process.env;
 
@@ -75639,7 +75727,7 @@ module.exports = {
 
 
 /***/ }),
-/* 313 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75654,7 +75742,7 @@ module.exports = (flag, argv) => {
 
 
 /***/ }),
-/* 314 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75749,27 +75837,27 @@ denied.count.tailable = true;
 
 
 /***/ }),
-/* 315 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var env = __webpack_require__(167);
+var env = __webpack_require__(234);
 
 if ('unknown' == env.type) {
   throw new Error('Unknown environment');
 }
 
 module.exports =
-  env.isNode ? __webpack_require__(316) :
-    env.isMongo ? __webpack_require__(86) :
-      __webpack_require__(86);
+  env.isNode ? __webpack_require__(404) :
+    env.isMongo ? __webpack_require__(127) :
+      __webpack_require__(127);
 
 
 
 /***/ }),
-/* 316 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75779,8 +75867,8 @@ module.exports =
  * Module dependencies
  */
 
-var Collection = __webpack_require__(86);
-var utils = __webpack_require__(164);
+var Collection = __webpack_require__(127);
+var utils = __webpack_require__(231);
 
 function NodeCollection(col) {
   this.collection = col;
@@ -75927,7 +76015,7 @@ module.exports = exports = NodeCollection;
 
 
 /***/ }),
-/* 317 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75939,13 +76027,13 @@ function noConflict() {
     catch (e) {}
     return bluebird;
 }
-var bluebird = __webpack_require__(318)();
+var bluebird = __webpack_require__(406)();
 bluebird.noConflict = noConflict;
 module.exports = bluebird;
 
 
 /***/ }),
-/* 318 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75962,7 +76050,7 @@ var apiRejection = function(msg) {
 };
 function Proxyable() {}
 var UNDEFINED_BINDING = {};
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 
 var getDomain;
 if (util.isNode) {
@@ -75978,11 +76066,11 @@ if (util.isNode) {
 }
 util.notEnumerableProp(Promise, "_getDomain", getDomain);
 
-var es5 = __webpack_require__(41);
-var Async = __webpack_require__(319);
+var es5 = __webpack_require__(64);
+var Async = __webpack_require__(407);
 var async = new Async();
 es5.defineProperty(Promise, "_async", {value: async});
-var errors = __webpack_require__(27);
+var errors = __webpack_require__(45);
 var TypeError = Promise.TypeError = errors.TypeError;
 Promise.RangeError = errors.RangeError;
 var CancellationError = Promise.CancellationError = errors.CancellationError;
@@ -75993,19 +76081,19 @@ Promise.AggregateError = errors.AggregateError;
 var INTERNAL = function(){};
 var APPLY = {};
 var NEXT_FILTER = {};
-var tryConvertToPromise = __webpack_require__(322)(Promise, INTERNAL);
+var tryConvertToPromise = __webpack_require__(410)(Promise, INTERNAL);
 var PromiseArray =
-    __webpack_require__(323)(Promise, INTERNAL,
+    __webpack_require__(411)(Promise, INTERNAL,
                                tryConvertToPromise, apiRejection, Proxyable);
-var Context = __webpack_require__(324)(Promise);
+var Context = __webpack_require__(412)(Promise);
  /*jshint unused:false*/
 var createContext = Context.create;
-var debug = __webpack_require__(325)(Promise, Context);
+var debug = __webpack_require__(413)(Promise, Context);
 var CapturedTrace = debug.CapturedTrace;
 var PassThroughHandlerContext =
-    __webpack_require__(326)(Promise, tryConvertToPromise, NEXT_FILTER);
-var catchFilter = __webpack_require__(168)(NEXT_FILTER);
-var nodebackForPromise = __webpack_require__(169);
+    __webpack_require__(414)(Promise, tryConvertToPromise, NEXT_FILTER);
+var catchFilter = __webpack_require__(235)(NEXT_FILTER);
+var nodebackForPromise = __webpack_require__(236);
 var errorObj = util.errorObj;
 var tryCatch = util.tryCatch;
 function check(self, executor) {
@@ -76675,31 +76763,31 @@ util.notEnumerableProp(Promise,
                        "_makeSelfResolutionError",
                        makeSelfResolutionError);
 
-__webpack_require__(327)(Promise, INTERNAL, tryConvertToPromise, apiRejection,
+__webpack_require__(415)(Promise, INTERNAL, tryConvertToPromise, apiRejection,
     debug);
-__webpack_require__(328)(Promise, INTERNAL, tryConvertToPromise, debug);
-__webpack_require__(329)(Promise, PromiseArray, apiRejection, debug);
-__webpack_require__(330)(Promise);
-__webpack_require__(331)(Promise);
-__webpack_require__(332)(
+__webpack_require__(416)(Promise, INTERNAL, tryConvertToPromise, debug);
+__webpack_require__(417)(Promise, PromiseArray, apiRejection, debug);
+__webpack_require__(418)(Promise);
+__webpack_require__(419)(Promise);
+__webpack_require__(420)(
     Promise, PromiseArray, tryConvertToPromise, INTERNAL, async, getDomain);
 Promise.Promise = Promise;
 Promise.version = "3.5.1";
-__webpack_require__(333)(Promise, PromiseArray, apiRejection, tryConvertToPromise, INTERNAL, debug);
-__webpack_require__(334)(Promise);
-__webpack_require__(335)(Promise, apiRejection, tryConvertToPromise, createContext, INTERNAL, debug);
-__webpack_require__(336)(Promise, INTERNAL, debug);
-__webpack_require__(337)(Promise, apiRejection, INTERNAL, tryConvertToPromise, Proxyable, debug);
-__webpack_require__(338)(Promise);
-__webpack_require__(339)(Promise, INTERNAL);
-__webpack_require__(340)(Promise, PromiseArray, tryConvertToPromise, apiRejection);
-__webpack_require__(341)(Promise, INTERNAL, tryConvertToPromise, apiRejection);
-__webpack_require__(342)(Promise, PromiseArray, apiRejection, tryConvertToPromise, INTERNAL, debug);
-__webpack_require__(343)(Promise, PromiseArray, debug);
-__webpack_require__(344)(Promise, PromiseArray, apiRejection);
-__webpack_require__(345)(Promise, INTERNAL);
-__webpack_require__(346)(Promise, INTERNAL);
-__webpack_require__(347)(Promise);
+__webpack_require__(421)(Promise, PromiseArray, apiRejection, tryConvertToPromise, INTERNAL, debug);
+__webpack_require__(422)(Promise);
+__webpack_require__(423)(Promise, apiRejection, tryConvertToPromise, createContext, INTERNAL, debug);
+__webpack_require__(424)(Promise, INTERNAL, debug);
+__webpack_require__(425)(Promise, apiRejection, INTERNAL, tryConvertToPromise, Proxyable, debug);
+__webpack_require__(426)(Promise);
+__webpack_require__(427)(Promise, INTERNAL);
+__webpack_require__(428)(Promise, PromiseArray, tryConvertToPromise, apiRejection);
+__webpack_require__(429)(Promise, INTERNAL, tryConvertToPromise, apiRejection);
+__webpack_require__(430)(Promise, PromiseArray, apiRejection, tryConvertToPromise, INTERNAL, debug);
+__webpack_require__(431)(Promise, PromiseArray, debug);
+__webpack_require__(432)(Promise, PromiseArray, apiRejection);
+__webpack_require__(433)(Promise, INTERNAL);
+__webpack_require__(434)(Promise, INTERNAL);
+__webpack_require__(435)(Promise);
                                                          
     util.toFastProperties(Promise);                                          
     util.toFastProperties(Promise.prototype);                                
@@ -76727,16 +76815,16 @@ __webpack_require__(347)(Promise);
 
 
 /***/ }),
-/* 319 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var firstLineError;
 try {throw new Error(); } catch (e) {firstLineError = e;}
-var schedule = __webpack_require__(320);
-var Queue = __webpack_require__(321);
-var util = __webpack_require__(9);
+var schedule = __webpack_require__(408);
+var Queue = __webpack_require__(409);
+var util = __webpack_require__(16);
 
 function Async() {
     this._customScheduler = false;
@@ -76895,12 +76983,12 @@ module.exports.firstLineError = firstLineError;
 
 
 /***/ }),
-/* 320 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var schedule;
 var noAsyncScheduler = function() {
     throw new Error("No async scheduler available\u000a\u000a    See http://goo.gl/MqrFmX\u000a");
@@ -76963,7 +77051,7 @@ module.exports = schedule;
 
 
 /***/ }),
-/* 321 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77043,13 +77131,13 @@ module.exports = Queue;
 
 
 /***/ }),
-/* 322 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, INTERNAL) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var errorObj = util.errorObj;
 var isObject = util.isObject;
 
@@ -77136,14 +77224,14 @@ return tryConvertToPromise;
 
 
 /***/ }),
-/* 323 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, INTERNAL, tryConvertToPromise,
     apiRejection, Proxyable) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var isArray = util.isArray;
 
 function toResolutionValue(val) {
@@ -77328,7 +77416,7 @@ return PromiseArray;
 
 
 /***/ }),
-/* 324 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77404,7 +77492,7 @@ return Context;
 
 
 /***/ }),
-/* 325 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -77412,8 +77500,8 @@ return Context;
 module.exports = function(Promise, Context) {
 var getDomain = Promise._getDomain;
 var async = Promise._async;
-var Warning = __webpack_require__(27).Warning;
-var util = __webpack_require__(9);
+var Warning = __webpack_require__(45).Warning;
+var util = __webpack_require__(16);
 var canAttachTrace = util.canAttachTrace;
 var unhandledRejectionHandled;
 var possiblyUnhandledRejection;
@@ -78330,16 +78418,16 @@ return {
 
 
 /***/ }),
-/* 326 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, tryConvertToPromise, NEXT_FILTER) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var CancellationError = Promise.CancellationError;
 var errorObj = util.errorObj;
-var catchFilter = __webpack_require__(168)(NEXT_FILTER);
+var catchFilter = __webpack_require__(235)(NEXT_FILTER);
 
 function PassThroughHandlerContext(promise, type, handler) {
     this.promise = promise;
@@ -78483,14 +78571,14 @@ return PassThroughHandlerContext;
 
 
 /***/ }),
-/* 327 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports =
 function(Promise, INTERNAL, tryConvertToPromise, apiRejection, debug) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var tryCatch = util.tryCatch;
 
 Promise.method = function (fn) {
@@ -78545,7 +78633,7 @@ Promise.prototype._resolveFromSyncValue = function (value) {
 
 
 /***/ }),
-/* 328 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78619,13 +78707,13 @@ Promise.bind = function (thisArg, value) {
 
 
 /***/ }),
-/* 329 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, PromiseArray, apiRejection, debug) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var tryCatch = util.tryCatch;
 var errorObj = util.errorObj;
 var async = Promise._async;
@@ -78755,7 +78843,7 @@ Promise.prototype._resultCancelled = function() {
 
 
 /***/ }),
-/* 330 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78808,7 +78896,7 @@ Promise.prototype.catchReturn = function (value) {
 
 
 /***/ }),
-/* 331 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78918,7 +79006,7 @@ Promise.PromiseInspection = PromiseInspection;
 
 
 /***/ }),
-/* 332 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -78926,7 +79014,7 @@ Promise.PromiseInspection = PromiseInspection;
 module.exports =
 function(Promise, PromiseArray, tryConvertToPromise, INTERNAL, async,
          getDomain) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var canEvaluate = util.canEvaluate;
 var tryCatch = util.tryCatch;
 var errorObj = util.errorObj;
@@ -79093,7 +79181,7 @@ Promise.join = function () {
 
 
 /***/ }),
-/* 333 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79105,7 +79193,7 @@ module.exports = function(Promise,
                           INTERNAL,
                           debug) {
 var getDomain = Promise._getDomain;
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var tryCatch = util.tryCatch;
 var errorObj = util.errorObj;
 var async = Promise._async;
@@ -79268,7 +79356,7 @@ Promise.map = function (promises, fn, options, _filter) {
 
 
 /***/ }),
-/* 334 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79281,7 +79369,7 @@ if (cr) {
 }
 
 module.exports = function(Promise) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var canEvaluate = util.canEvaluate;
 var isIdentifier = util.isIdentifier;
 
@@ -79398,16 +79486,16 @@ Promise.prototype.get = function (propertyName) {
 
 
 /***/ }),
-/* 335 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function (Promise, apiRejection, tryConvertToPromise,
     createContext, INTERNAL, debug) {
-    var util = __webpack_require__(9);
-    var TypeError = __webpack_require__(27).TypeError;
-    var inherits = __webpack_require__(9).inherits;
+    var util = __webpack_require__(16);
+    var TypeError = __webpack_require__(45).TypeError;
+    var inherits = __webpack_require__(16).inherits;
     var errorObj = util.errorObj;
     var tryCatch = util.tryCatch;
     var NULL = {};
@@ -79631,13 +79719,13 @@ module.exports = function (Promise, apiRejection, tryConvertToPromise,
 
 
 /***/ }),
-/* 336 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, INTERNAL, debug) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var TimeoutError = Promise.TimeoutError;
 
 function HandleWrapper(handle)  {
@@ -79731,7 +79819,7 @@ Promise.prototype.timeout = function (ms, message) {
 
 
 /***/ }),
-/* 337 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -79742,9 +79830,9 @@ module.exports = function(Promise,
                           tryConvertToPromise,
                           Proxyable,
                           debug) {
-var errors = __webpack_require__(27);
+var errors = __webpack_require__(45);
 var TypeError = errors.TypeError;
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var errorObj = util.errorObj;
 var tryCatch = util.tryCatch;
 var yieldHandlers = [];
@@ -79961,13 +80049,13 @@ Promise.spawn = function (generatorFunction) {
 
 
 /***/ }),
-/* 338 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var async = Promise._async;
 var tryCatch = util.tryCatch;
 var errorObj = util.errorObj;
@@ -80026,19 +80114,19 @@ Promise.prototype.asCallback = Promise.prototype.nodeify = function (nodeback,
 
 
 /***/ }),
-/* 339 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(Promise, INTERNAL) {
 var THIS = {};
-var util = __webpack_require__(9);
-var nodebackForPromise = __webpack_require__(169);
+var util = __webpack_require__(16);
+var nodebackForPromise = __webpack_require__(236);
 var withAppended = util.withAppended;
 var maybeWrapAsError = util.maybeWrapAsError;
 var canEvaluate = util.canEvaluate;
-var TypeError = __webpack_require__(27).TypeError;
+var TypeError = __webpack_require__(45).TypeError;
 var defaultSuffix = "Async";
 var defaultPromisified = {__isPromisified__: true};
 var noCopyProps = [
@@ -80347,16 +80435,16 @@ Promise.promisifyAll = function (target, options) {
 
 
 /***/ }),
-/* 340 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(
     Promise, PromiseArray, tryConvertToPromise, apiRejection) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var isObject = util.isObject;
-var es5 = __webpack_require__(41);
+var es5 = __webpack_require__(64);
 var Es6Map;
 if (typeof Map === "function") Es6Map = Map;
 
@@ -80472,14 +80560,14 @@ Promise.props = function (promises) {
 
 
 /***/ }),
-/* 341 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports = function(
     Promise, INTERNAL, tryConvertToPromise, apiRejection) {
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 
 var raceLater = function (promise) {
     return promise.then(function(array) {
@@ -80528,7 +80616,7 @@ Promise.prototype.race = function () {
 
 
 /***/ }),
-/* 342 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80540,7 +80628,7 @@ module.exports = function(Promise,
                           INTERNAL,
                           debug) {
 var getDomain = Promise._getDomain;
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 var tryCatch = util.tryCatch;
 
 function ReductionPromiseArray(promises, fn, initialValue, _each) {
@@ -80707,7 +80795,7 @@ function gotValue(value) {
 
 
 /***/ }),
-/* 343 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80715,7 +80803,7 @@ function gotValue(value) {
 module.exports =
     function(Promise, PromiseArray, debug) {
 var PromiseInspection = Promise.PromiseInspection;
-var util = __webpack_require__(9);
+var util = __webpack_require__(16);
 
 function SettledPromiseArray(values) {
     this.constructor$(values);
@@ -80757,16 +80845,16 @@ Promise.prototype.settle = function () {
 
 
 /***/ }),
-/* 344 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 module.exports =
 function(Promise, PromiseArray, apiRejection) {
-var util = __webpack_require__(9);
-var RangeError = __webpack_require__(27).RangeError;
-var AggregateError = __webpack_require__(27).AggregateError;
+var util = __webpack_require__(16);
+var RangeError = __webpack_require__(45).RangeError;
+var AggregateError = __webpack_require__(45).AggregateError;
 var isArray = util.isArray;
 var CANCELLATION = {};
 
@@ -80912,7 +81000,7 @@ Promise._SomePromiseArray = SomePromiseArray;
 
 
 /***/ }),
-/* 345 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80931,7 +81019,7 @@ Promise.filter = function (promises, fn, options) {
 
 
 /***/ }),
-/* 346 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80968,7 +81056,7 @@ Promise.mapSeries = PromiseMapSeries;
 
 
 /***/ }),
-/* 347 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80996,7 +81084,7 @@ Promise.prototype.any = function () {
 
 
 /***/ }),
-/* 348 */
+/* 436 */
 /***/ (function(module, exports) {
 
 // These properties are special and can open client libraries to security
@@ -81310,7 +81398,7 @@ function K (v) {
 
 
 /***/ }),
-/* 349 */
+/* 437 */
 /***/ (function(module, exports) {
 
 /**
@@ -81478,7 +81566,7 @@ function plural(ms, msAbs, n, name) {
 
 
 /***/ }),
-/* 350 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81488,7 +81576,7 @@ function plural(ms, msAbs, n, name) {
 
 
 
-const StateMachine = __webpack_require__(351);
+const StateMachine = __webpack_require__(439);
 const ActiveRoster = StateMachine.ctor('require', 'modify', 'init', 'default', 'ignore');
 
 module.exports = exports = InternalCache;
@@ -81523,7 +81611,7 @@ function InternalCache() {
 
 
 /***/ }),
-/* 351 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81534,7 +81622,7 @@ function InternalCache() {
 
 
 
-const utils = __webpack_require__(4);
+const utils = __webpack_require__(7);
 
 /*!
  * StateMachine represents a minimal `interface` for the
@@ -81710,7 +81798,7 @@ StateMachine.prototype.map = function map() {
 
 
 /***/ }),
-/* 352 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81763,7 +81851,7 @@ msg.String.maxlength = 'Path `{PATH}` (`{VALUE}`) is longer than the maximum all
 
 
 /***/ }),
-/* 353 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81773,7 +81861,7 @@ msg.String.maxlength = 'Path `{PATH}` (`{VALUE}`) is longer than the maximum all
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /**
  * Schema validator error
@@ -81859,7 +81947,7 @@ module.exports = ValidatorError;
 
 
 /***/ }),
-/* 354 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81870,7 +81958,7 @@ module.exports = ValidatorError;
 
 
 
-const MongooseError = __webpack_require__(13);
+const MongooseError = __webpack_require__(19);
 
 /*!
  * MissingSchema Error constructor.
@@ -81905,7 +81993,7 @@ module.exports = MissingSchemaError;
 
 
 /***/ }),
-/* 355 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -81939,13 +82027,13 @@ function createImmutableSetter(path) {
 }
 
 /***/ }),
-/* 356 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const get = __webpack_require__(8);
+const get = __webpack_require__(15);
 
 /*!
  * Like `schema.path()`, except with a document, because impossible to
@@ -81989,7 +82077,7 @@ module.exports = function getEmbeddedDiscriminatorPath(doc, path, options) {
 
 
 /***/ }),
-/* 357 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82024,13 +82112,13 @@ function idGetter() {
 
 
 /***/ }),
-/* 358 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const isDefiningProjection = __webpack_require__(55);
+const isDefiningProjection = __webpack_require__(89);
 
 /*!
  * ignore
@@ -82059,7 +82147,7 @@ module.exports = function isExclusive(projection) {
 
 
 /***/ }),
-/* 359 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82069,14 +82157,14 @@ module.exports = function isExclusive(projection) {
 
 
 
-const NodeJSDocument = __webpack_require__(15);
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const MongooseError = __webpack_require__(13);
-const Schema = __webpack_require__(89);
-const ObjectId = __webpack_require__(34);
+const NodeJSDocument = __webpack_require__(22);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const MongooseError = __webpack_require__(19);
+const Schema = __webpack_require__(130);
+const ObjectId = __webpack_require__(53);
 const ValidationError = MongooseError.ValidationError;
-const applyHooks = __webpack_require__(121);
-const utils = __webpack_require__(4);
+const applyHooks = __webpack_require__(170);
+const utils = __webpack_require__(7);
 
 /**
  * Document constructor.
@@ -82168,14 +82256,14 @@ module.exports = exports = Document;
 
 
 /***/ }),
-/* 360 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const get = __webpack_require__(8);
-const utils = __webpack_require__(4);
+const get = __webpack_require__(15);
+const utils = __webpack_require__(7);
 
 /*!
  * Gather all indexes defined in the schema, including single nested,
@@ -82299,7 +82387,7 @@ module.exports = function getIndexes(schema) {
 
 
 /***/ }),
-/* 361 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82325,14 +82413,14 @@ module.exports = function merge(s1, s2) {
 
 
 /***/ }),
-/* 362 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongooseError = __webpack_require__(53);
-const util = __webpack_require__(2);
+const MongooseError = __webpack_require__(87);
+const util = __webpack_require__(3);
 
 module.exports = validateRef;
 
@@ -82350,7 +82438,7 @@ function validateRef(ref, path) {
 }
 
 /***/ }),
-/* 363 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82360,13 +82448,13 @@ function validateRef(ref, path) {
  * Module dependencies.
  */
 
-const SchemaType = __webpack_require__(17);
+const SchemaType = __webpack_require__(27);
 const CastError = SchemaType.CastError;
-const MongooseError = __webpack_require__(13);
-const castString = __webpack_require__(183);
-const utils = __webpack_require__(4);
+const MongooseError = __webpack_require__(19);
+const castString = __webpack_require__(250);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 let Document;
 
@@ -82875,7 +82963,7 @@ SchemaString.prototype.cast = function(value, doc, init) {
     }
 
     // lazy load
-    Document || (Document = __webpack_require__(15));
+    Document || (Document = __webpack_require__(22));
 
     if (value instanceof Document) {
       value.$__.wasPopulated = true;
@@ -82973,7 +83061,7 @@ module.exports = SchemaString;
 
 
 /***/ }),
-/* 364 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -82983,10 +83071,10 @@ module.exports = SchemaString;
  * Module dependencies.
  */
 
-const CastError = __webpack_require__(21);
-const SchemaType = __webpack_require__(17);
-const castBoolean = __webpack_require__(117);
-const utils = __webpack_require__(4);
+const CastError = __webpack_require__(34);
+const SchemaType = __webpack_require__(27);
+const castBoolean = __webpack_require__(166);
+const utils = __webpack_require__(7);
 
 /**
  * Boolean SchemaType constructor.
@@ -83188,7 +83276,7 @@ module.exports = SchemaBoolean;
 
 
 /***/ }),
-/* 365 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83198,17 +83286,17 @@ module.exports = SchemaBoolean;
  * Module dependencies.
  */
 
-const ArrayType = __webpack_require__(122);
-const CastError = __webpack_require__(21);
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const SchemaType = __webpack_require__(17);
-const discriminator = __webpack_require__(124);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
-const getConstructor = __webpack_require__(193);
+const ArrayType = __webpack_require__(171);
+const CastError = __webpack_require__(34);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const SchemaType = __webpack_require__(27);
+const discriminator = __webpack_require__(173);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
+const getConstructor = __webpack_require__(260);
 
-const arrayParentSymbol = __webpack_require__(6).arrayParentSymbol;
-const arrayPathSymbol = __webpack_require__(6).arrayPathSymbol;
+const arrayParentSymbol = __webpack_require__(10).arrayParentSymbol;
+const arrayPathSymbol = __webpack_require__(10).arrayPathSymbol;
 
 let MongooseDocumentArray;
 let Subdocument;
@@ -83280,7 +83368,7 @@ DocumentArray.prototype.constructor = DocumentArray;
  */
 
 function _createConstructor(schema, options, baseClass) {
-  Subdocument || (Subdocument = __webpack_require__(56));
+  Subdocument || (Subdocument = __webpack_require__(90));
 
   // compile an embedded document for this schema
   function EmbeddedDocument() {
@@ -83351,7 +83439,7 @@ DocumentArray.prototype.discriminator = function(name, schema) {
 
 DocumentArray.prototype.doValidate = function(array, fn, scope, options) {
   // lazy load
-  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(36));
+  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(55));
 
   const _this = this;
   try {
@@ -83481,7 +83569,7 @@ DocumentArray.prototype.getDefault = function(scope) {
   }
 
   // lazy load
-  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(36));
+  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(55));
 
   if (!Array.isArray(ret)) {
     ret = [ret];
@@ -83512,7 +83600,7 @@ DocumentArray.prototype.getDefault = function(scope) {
 
 DocumentArray.prototype.cast = function(value, doc, init, prev, options) {
   // lazy load
-  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(36));
+  MongooseDocumentArray || (MongooseDocumentArray = __webpack_require__(55));
 
   let selected;
   let subdoc;
@@ -83685,15 +83773,15 @@ module.exports = DocumentArray;
 
 
 /***/ }),
-/* 366 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const CastError = __webpack_require__(21);
-const castBoolean = __webpack_require__(117);
-const castString = __webpack_require__(183);
+const CastError = __webpack_require__(34);
+const castBoolean = __webpack_require__(166);
+const castString = __webpack_require__(250);
 
 /*!
  * Casts val to an object suitable for `$text`. Throws an error if the object
@@ -83731,7 +83819,7 @@ module.exports = function(val, path) {
 
 
 /***/ }),
-/* 367 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83749,7 +83837,7 @@ module.exports = function checkEmbeddedDiscriminatorKeyProjection(userProjection
 };
 
 /***/ }),
-/* 368 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -83759,17 +83847,17 @@ module.exports = function checkEmbeddedDiscriminatorKeyProjection(userProjection
  * Module dependencies.
  */
 
-const CastError = __webpack_require__(21);
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const ObjectExpectedError = __webpack_require__(175);
-const SchemaType = __webpack_require__(17);
-const $exists = __webpack_require__(116);
-const castToNumber = __webpack_require__(93).castToNumber;
-const discriminator = __webpack_require__(124);
-const geospatial = __webpack_require__(187);
-const get = __webpack_require__(8);
-const getConstructor = __webpack_require__(193);
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
+const CastError = __webpack_require__(34);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const ObjectExpectedError = __webpack_require__(242);
+const SchemaType = __webpack_require__(27);
+const $exists = __webpack_require__(165);
+const castToNumber = __webpack_require__(134).castToNumber;
+const discriminator = __webpack_require__(173);
+const geospatial = __webpack_require__(254);
+const get = __webpack_require__(15);
+const getConstructor = __webpack_require__(260);
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
 
 let Subdocument;
 
@@ -83807,7 +83895,7 @@ SingleNestedPath.prototype.constructor = SingleNestedPath;
 
 function _createConstructor(schema, baseClass) {
   // lazy load
-  Subdocument || (Subdocument = __webpack_require__(192));
+  Subdocument || (Subdocument = __webpack_require__(259));
 
   const _embedded = function SingleNested(value, path, parent) {
     const _this = this;
@@ -84060,7 +84148,7 @@ SingleNestedPath.prototype.clone = function() {
 
 
 /***/ }),
-/* 369 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84070,13 +84158,13 @@ SingleNestedPath.prototype.clone = function() {
 
 
 
-const handleBitwiseOperator = __webpack_require__(186);
-const utils = __webpack_require__(4);
+const handleBitwiseOperator = __webpack_require__(253);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
-const MongooseBuffer = __webpack_require__(123);
-const SchemaType = __webpack_require__(17);
+const MongooseBuffer = __webpack_require__(172);
+const SchemaType = __webpack_require__(27);
 
 const Binary = MongooseBuffer.Binary;
 const CastError = SchemaType.CastError;
@@ -84173,7 +84261,7 @@ SchemaBuffer.prototype.cast = function(value, doc, init) {
     }
 
     // lazy load
-    Document || (Document = __webpack_require__(15));
+    Document || (Document = __webpack_require__(22));
 
     if (value instanceof Document) {
       value.$__.wasPopulated = true;
@@ -84319,7 +84407,7 @@ module.exports = SchemaBuffer;
 
 
 /***/ }),
-/* 370 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84329,11 +84417,11 @@ module.exports = SchemaBuffer;
 
 
 
-const MongooseError = __webpack_require__(13);
-const castDate = __webpack_require__(371);
-const utils = __webpack_require__(4);
+const MongooseError = __webpack_require__(19);
+const castDate = __webpack_require__(459);
+const utils = __webpack_require__(7);
 
-const SchemaType = __webpack_require__(17);
+const SchemaType = __webpack_require__(27);
 
 const CastError = SchemaType.CastError;
 
@@ -84688,13 +84776,13 @@ module.exports = SchemaDate;
 
 
 /***/ }),
-/* 371 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const assert = __webpack_require__(40);
+const assert = __webpack_require__(63);
 
 module.exports = function castDate(value) {
   // Support empty string because of empty form values. Originally introduced
@@ -84735,7 +84823,7 @@ module.exports = function castDate(value) {
 };
 
 /***/ }),
-/* 372 */
+/* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84745,12 +84833,12 @@ module.exports = function castDate(value) {
 
 
 
-const castObjectId = __webpack_require__(190);
-const SchemaType = __webpack_require__(17);
-const oid = __webpack_require__(34);
-const utils = __webpack_require__(4);
+const castObjectId = __webpack_require__(257);
+const SchemaType = __webpack_require__(27);
+const oid = __webpack_require__(53);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 const CastError = SchemaType.CastError;
 let Document;
@@ -84941,7 +85029,7 @@ ObjectId.prototype.cast = function(value, doc, init) {
     }
 
     // lazy load
-    Document || (Document = __webpack_require__(15));
+    Document || (Document = __webpack_require__(22));
 
     if (value instanceof Document) {
       value.$__.wasPopulated = true;
@@ -85013,7 +85101,7 @@ function defaultId() {
 defaultId.$runBeforeSetters = true;
 
 function resetId(v) {
-  Document || (Document = __webpack_require__(15));
+  Document || (Document = __webpack_require__(22));
 
   if (this instanceof Document) {
     if (v === void 0) {
@@ -85036,7 +85124,7 @@ module.exports = ObjectId;
 
 
 /***/ }),
-/* 373 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85046,13 +85134,13 @@ module.exports = ObjectId;
 
 
 
-const SchemaType = __webpack_require__(17);
+const SchemaType = __webpack_require__(27);
 const CastError = SchemaType.CastError;
-const Decimal128Type = __webpack_require__(51);
-const castDecimal128 = __webpack_require__(374);
-const utils = __webpack_require__(4);
+const Decimal128Type = __webpack_require__(85);
+const castDecimal128 = __webpack_require__(462);
+const utils = __webpack_require__(7);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 let Document;
 
@@ -85188,7 +85276,7 @@ Decimal128.prototype.cast = function(value, doc, init) {
     }
 
     // lazy load
-    Document || (Document = __webpack_require__(15));
+    Document || (Document = __webpack_require__(22));
 
     if (value instanceof Document) {
       value.$__.wasPopulated = true;
@@ -85255,14 +85343,14 @@ module.exports = Decimal128;
 
 
 /***/ }),
-/* 374 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const Decimal128Type = __webpack_require__(51);
-const assert = __webpack_require__(40);
+const Decimal128Type = __webpack_require__(85);
+const assert = __webpack_require__(63);
 
 module.exports = function castDecimal128(value) {
   if (value == null) {
@@ -85297,7 +85385,7 @@ module.exports = function castDecimal128(value) {
 };
 
 /***/ }),
-/* 375 */
+/* 463 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85307,8 +85395,8 @@ module.exports = function castDecimal128(value) {
  * ignore
  */
 
-const MongooseMap = __webpack_require__(191);
-const SchemaType = __webpack_require__(17);
+const MongooseMap = __webpack_require__(258);
+const SchemaType = __webpack_require__(27);
 
 /*!
  * ignore
@@ -85349,7 +85437,7 @@ module.exports = Map;
 
 
 /***/ }),
-/* 376 */
+/* 464 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85359,11 +85447,11 @@ module.exports = Map;
 
 
 
-module.exports = __webpack_require__(31).Decimal128;
+module.exports = __webpack_require__(50).Decimal128;
 
 
 /***/ }),
-/* 377 */
+/* 465 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85376,7 +85464,7 @@ module.exports = __webpack_require__(31).Decimal128;
 
 
 
-const ObjectId = __webpack_require__(31).ObjectId;
+const ObjectId = __webpack_require__(50).ObjectId;
 
 /*!
  * ignore
@@ -85386,7 +85474,7 @@ module.exports = exports = ObjectId;
 
 
 /***/ }),
-/* 378 */
+/* 466 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85396,7 +85484,7 @@ module.exports = exports = ObjectId;
 
 
 
-const mongodb = __webpack_require__(31);
+const mongodb = __webpack_require__(50);
 const ReadPref = mongodb.ReadPreference;
 
 /*!
@@ -85440,7 +85528,7 @@ module.exports = function readPref(pref, tags) {
 
 
 /***/ }),
-/* 379 */
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85451,10 +85539,10 @@ module.exports = function readPref(pref, tags) {
 
 
 const Readable = __webpack_require__(20).Readable;
-const eachAsync = __webpack_require__(194);
-const helpers = __webpack_require__(28);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const eachAsync = __webpack_require__(261);
+const helpers = __webpack_require__(46);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
 /**
  * A QueryCursor is a concurrency primitive for processing query results
@@ -85785,7 +85873,7 @@ module.exports = QueryCursor;
 
 
 /***/ }),
-/* 380 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module) {(function (global, factory) {
@@ -91397,19 +91485,19 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(94)(module)))
 
 /***/ }),
-/* 381 */
+/* 469 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const castFilterPath = __webpack_require__(382);
-const cleanPositionalOperators = __webpack_require__(90);
-const getPath = __webpack_require__(383);
-const modifiedPaths = __webpack_require__(197);
+const castFilterPath = __webpack_require__(470);
+const cleanPositionalOperators = __webpack_require__(131);
+const getPath = __webpack_require__(471);
+const modifiedPaths = __webpack_require__(264);
 
 module.exports = function castArrayFilters(query) {
   const arrayFilters = query.options.arrayFilters;
@@ -91483,7 +91571,7 @@ module.exports = function castArrayFilters(query) {
 };
 
 /***/ }),
-/* 382 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91544,7 +91632,7 @@ module.exports = function castFilterPath(query, schematype, val) {
 };
 
 /***/ }),
-/* 383 */
+/* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91585,14 +91673,14 @@ module.exports = function getPath(schema, path) {
 };
 
 /***/ }),
-/* 384 */
+/* 472 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const cleanPositionalOperators = __webpack_require__(90);
-const get = __webpack_require__(8);
+const cleanPositionalOperators = __webpack_require__(131);
+const get = __webpack_require__(15);
 
 /*!
  * Like `schema.path()`, except with a document, because impossible to
@@ -91645,13 +91733,13 @@ module.exports = function getEmbeddedDiscriminatorPath(schema, update, filter, p
 
 
 /***/ }),
-/* 385 */
+/* 473 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const StrictModeError = __webpack_require__(88);
+const StrictModeError = __webpack_require__(129);
 
 module.exports = function handleImmutable(schematype, strict, obj, key, fullPath) {
   if (schematype == null || !schematype.options.immutable) {
@@ -91669,13 +91757,13 @@ module.exports = function handleImmutable(schematype, strict, obj, key, fullPath
 };
 
 /***/ }),
-/* 386 */
+/* 474 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const helpers = __webpack_require__(28);
+const helpers = __webpack_require__(46);
 
 module.exports = completeMany;
 
@@ -91723,7 +91811,7 @@ function completeMany(model, docs, fields, userProvidedFields, opts, callback) {
 
 
 /***/ }),
-/* 387 */
+/* 475 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91746,13 +91834,13 @@ module.exports = function(obj) {
 
 
 /***/ }),
-/* 388 */
+/* 476 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const isDefiningProjection = __webpack_require__(55);
+const isDefiningProjection = __webpack_require__(89);
 
 /*!
  * ignore
@@ -91787,7 +91875,7 @@ module.exports = function isInclusive(projection) {
 
 
 /***/ }),
-/* 389 */
+/* 477 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91840,7 +91928,7 @@ function isPathInFields(userProvidedFields, path) {
 
 
 /***/ }),
-/* 390 */
+/* 478 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -91850,12 +91938,12 @@ function isPathInFields(userProvidedFields, path) {
  * Module dependencies.
  */
 
-const Mixed = __webpack_require__(42);
-const ValidationError = __webpack_require__(115);
-const cleanPositionalOperators = __webpack_require__(90);
-const flatten = __webpack_require__(54).flatten;
-const modifiedPaths = __webpack_require__(54).modifiedPaths;
-const parallel = __webpack_require__(200);
+const Mixed = __webpack_require__(65);
+const ValidationError = __webpack_require__(164);
+const cleanPositionalOperators = __webpack_require__(131);
+const flatten = __webpack_require__(88).flatten;
+const modifiedPaths = __webpack_require__(88).modifiedPaths;
+const parallel = __webpack_require__(267);
 
 /**
  * Applies validators and defaults to update and findOneAndUpdate operations,
@@ -92075,11 +92163,11 @@ module.exports = function(query, schema, castedDoc, options) {
 
 
 /***/ }),
-/* 391 */
+/* 479 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(126),
-    isObject = __webpack_require__(205);
+var baseGetTag = __webpack_require__(175),
+    isObject = __webpack_require__(272);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -92118,10 +92206,10 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 392 */
+/* 480 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(202);
+var Symbol = __webpack_require__(269);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -92170,7 +92258,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 393 */
+/* 481 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -92198,7 +92286,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 394 */
+/* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92209,11 +92297,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = eachOfLimit;
 
-var _eachOfLimit2 = __webpack_require__(208);
+var _eachOfLimit2 = __webpack_require__(275);
 
 var _eachOfLimit3 = _interopRequireDefault(_eachOfLimit2);
 
-var _wrapAsync = __webpack_require__(95);
+var _wrapAsync = __webpack_require__(136);
 
 var _wrapAsync2 = _interopRequireDefault(_wrapAsync);
 
@@ -92245,7 +92333,7 @@ function eachOfLimit(coll, limit, iteratee, callback) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 395 */
+/* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92256,15 +92344,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = iterator;
 
-var _isArrayLike = __webpack_require__(94);
+var _isArrayLike = __webpack_require__(135);
 
 var _isArrayLike2 = _interopRequireDefault(_isArrayLike);
 
-var _getIterator = __webpack_require__(396);
+var _getIterator = __webpack_require__(484);
 
 var _getIterator2 = _interopRequireDefault(_getIterator);
 
-var _keys = __webpack_require__(397);
+var _keys = __webpack_require__(485);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -92309,7 +92397,7 @@ function iterator(coll) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 396 */
+/* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92328,12 +92416,12 @@ var iteratorSymbol = typeof Symbol === 'function' && Symbol.iterator;
 module.exports = exports['default'];
 
 /***/ }),
-/* 397 */
+/* 485 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(398),
-    baseKeys = __webpack_require__(410),
-    isArrayLike = __webpack_require__(94);
+var arrayLikeKeys = __webpack_require__(486),
+    baseKeys = __webpack_require__(498),
+    isArrayLike = __webpack_require__(135);
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -92371,15 +92459,15 @@ module.exports = keys;
 
 
 /***/ }),
-/* 398 */
+/* 486 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(399),
-    isArguments = __webpack_require__(400),
-    isArray = __webpack_require__(402),
-    isBuffer = __webpack_require__(403),
-    isIndex = __webpack_require__(405),
-    isTypedArray = __webpack_require__(406);
+var baseTimes = __webpack_require__(487),
+    isArguments = __webpack_require__(488),
+    isArray = __webpack_require__(490),
+    isBuffer = __webpack_require__(491),
+    isIndex = __webpack_require__(493),
+    isTypedArray = __webpack_require__(494);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -92426,7 +92514,7 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 399 */
+/* 487 */
 /***/ (function(module, exports) {
 
 /**
@@ -92452,11 +92540,11 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 400 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(401),
-    isObjectLike = __webpack_require__(128);
+var baseIsArguments = __webpack_require__(489),
+    isObjectLike = __webpack_require__(177);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -92494,11 +92582,11 @@ module.exports = isArguments;
 
 
 /***/ }),
-/* 401 */
+/* 489 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(126),
-    isObjectLike = __webpack_require__(128);
+var baseGetTag = __webpack_require__(175),
+    isObjectLike = __webpack_require__(177);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -92518,7 +92606,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 402 */
+/* 490 */
 /***/ (function(module, exports) {
 
 /**
@@ -92550,11 +92638,11 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 403 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(203),
-    stubFalse = __webpack_require__(404);
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(270),
+    stubFalse = __webpack_require__(492);
 
 /** Detect free variable `exports`. */
 var freeExports =  true && exports && !exports.nodeType && exports;
@@ -92592,10 +92680,10 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(94)(module)))
 
 /***/ }),
-/* 404 */
+/* 492 */
 /***/ (function(module, exports) {
 
 /**
@@ -92619,7 +92707,7 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 405 */
+/* 493 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -92650,12 +92738,12 @@ module.exports = isIndex;
 
 
 /***/ }),
-/* 406 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(407),
-    baseUnary = __webpack_require__(408),
-    nodeUtil = __webpack_require__(409);
+var baseIsTypedArray = __webpack_require__(495),
+    baseUnary = __webpack_require__(496),
+    nodeUtil = __webpack_require__(497);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -92683,12 +92771,12 @@ module.exports = isTypedArray;
 
 
 /***/ }),
-/* 407 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(126),
-    isLength = __webpack_require__(206),
-    isObjectLike = __webpack_require__(128);
+var baseGetTag = __webpack_require__(175),
+    isLength = __webpack_require__(273),
+    isObjectLike = __webpack_require__(177);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -92749,7 +92837,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 408 */
+/* 496 */
 /***/ (function(module, exports) {
 
 /**
@@ -92769,10 +92857,10 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 409 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(204);
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(271);
 
 /** Detect free variable `exports`. */
 var freeExports =  true && exports && !exports.nodeType && exports;
@@ -92803,14 +92891,14 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(72)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(94)(module)))
 
 /***/ }),
-/* 410 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isPrototype = __webpack_require__(411),
-    nativeKeys = __webpack_require__(412);
+var isPrototype = __webpack_require__(499),
+    nativeKeys = __webpack_require__(500);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -92842,7 +92930,7 @@ module.exports = baseKeys;
 
 
 /***/ }),
-/* 411 */
+/* 499 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -92866,10 +92954,10 @@ module.exports = isPrototype;
 
 
 /***/ }),
-/* 412 */
+/* 500 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(413);
+var overArg = __webpack_require__(501);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -92878,7 +92966,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 413 */
+/* 501 */
 /***/ (function(module, exports) {
 
 /**
@@ -92899,7 +92987,7 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 414 */
+/* 502 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -92910,15 +92998,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = asyncify;
 
-var _isObject = __webpack_require__(205);
+var _isObject = __webpack_require__(272);
 
 var _isObject2 = _interopRequireDefault(_isObject);
 
-var _initialParams = __webpack_require__(415);
+var _initialParams = __webpack_require__(503);
 
 var _initialParams2 = _interopRequireDefault(_initialParams);
 
-var _setImmediate = __webpack_require__(416);
+var _setImmediate = __webpack_require__(504);
 
 var _setImmediate2 = _interopRequireDefault(_setImmediate);
 
@@ -93015,7 +93103,7 @@ function rethrow(error) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 415 */
+/* 503 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93033,7 +93121,7 @@ exports.default = function (fn) {
     };
 };
 
-var _slice = __webpack_require__(129);
+var _slice = __webpack_require__(178);
 
 var _slice2 = _interopRequireDefault(_slice);
 
@@ -93042,7 +93130,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = exports['default'];
 
 /***/ }),
-/* 416 */
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93055,7 +93143,7 @@ exports.hasNextTick = exports.hasSetImmediate = undefined;
 exports.fallback = fallback;
 exports.wrap = wrap;
 
-var _slice = __webpack_require__(129);
+var _slice = __webpack_require__(178);
 
 var _slice2 = _interopRequireDefault(_slice);
 
@@ -93090,7 +93178,7 @@ if (hasSetImmediate) {
 exports.default = wrap(_defer);
 
 /***/ }),
-/* 417 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93108,7 +93196,7 @@ function doLimit(fn, limit) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 418 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93132,7 +93220,7 @@ module.exports = function wrapThunk(fn) {
 };
 
 /***/ }),
-/* 419 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -93142,51 +93230,51 @@ module.exports = function wrapThunk(fn) {
  * Module dependencies.
  */
 
-const Aggregate = __webpack_require__(212);
-const ChangeStream = __webpack_require__(421);
-const Document = __webpack_require__(15);
-const DocumentNotFoundError = __webpack_require__(114);
-const DivergentArrayError = __webpack_require__(173);
-const EventEmitter = __webpack_require__(10).EventEmitter;
-const MongooseBuffer = __webpack_require__(123);
-const MongooseError = __webpack_require__(13);
-const OverwriteModelError = __webpack_require__(172);
-const PromiseProvider = __webpack_require__(85);
-const Query = __webpack_require__(125);
-const RemoveOptions = __webpack_require__(422);
-const SaveOptions = __webpack_require__(423);
-const Schema = __webpack_require__(89);
-const VersionError = __webpack_require__(170);
-const ParallelSaveError = __webpack_require__(171);
-const applyQueryMiddleware = __webpack_require__(120);
-const applyHooks = __webpack_require__(121);
-const applyMethods = __webpack_require__(424);
-const applyStaticHooks = __webpack_require__(425);
-const applyStatics = __webpack_require__(426);
-const applyWriteConcern = __webpack_require__(196);
-const assignVals = __webpack_require__(427);
-const castBulkWrite = __webpack_require__(430);
-const discriminator = __webpack_require__(124);
-const getDiscriminatorByValue = __webpack_require__(28).getDiscriminatorByValue;
-const getModelsMapForPopulate = __webpack_require__(431);
-const immediate = __webpack_require__(50);
-const internalToObjectOptions = __webpack_require__(35).internalToObjectOptions;
-const isPathSelectedInclusive = __webpack_require__(435);
-const get = __webpack_require__(8);
-const leanPopulateMap = __webpack_require__(130);
-const modifiedPaths = __webpack_require__(197);
-const parallel = __webpack_require__(200);
-const parallelLimit = __webpack_require__(436);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const Aggregate = __webpack_require__(279);
+const ChangeStream = __webpack_require__(509);
+const Document = __webpack_require__(22);
+const DocumentNotFoundError = __webpack_require__(163);
+const DivergentArrayError = __webpack_require__(240);
+const EventEmitter = __webpack_require__(14).EventEmitter;
+const MongooseBuffer = __webpack_require__(172);
+const MongooseError = __webpack_require__(19);
+const OverwriteModelError = __webpack_require__(239);
+const PromiseProvider = __webpack_require__(126);
+const Query = __webpack_require__(174);
+const RemoveOptions = __webpack_require__(510);
+const SaveOptions = __webpack_require__(511);
+const Schema = __webpack_require__(130);
+const VersionError = __webpack_require__(237);
+const ParallelSaveError = __webpack_require__(238);
+const applyQueryMiddleware = __webpack_require__(169);
+const applyHooks = __webpack_require__(170);
+const applyMethods = __webpack_require__(512);
+const applyStaticHooks = __webpack_require__(513);
+const applyStatics = __webpack_require__(514);
+const applyWriteConcern = __webpack_require__(263);
+const assignVals = __webpack_require__(515);
+const castBulkWrite = __webpack_require__(518);
+const discriminator = __webpack_require__(173);
+const getDiscriminatorByValue = __webpack_require__(46).getDiscriminatorByValue;
+const getModelsMapForPopulate = __webpack_require__(519);
+const immediate = __webpack_require__(84);
+const internalToObjectOptions = __webpack_require__(54).internalToObjectOptions;
+const isPathSelectedInclusive = __webpack_require__(523);
+const get = __webpack_require__(15);
+const leanPopulateMap = __webpack_require__(179);
+const modifiedPaths = __webpack_require__(264);
+const parallel = __webpack_require__(267);
+const parallelLimit = __webpack_require__(524);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
 const VERSION_WHERE = 1;
 const VERSION_INC = 2;
 const VERSION_ALL = VERSION_WHERE | VERSION_INC;
 
-const arrayAtomicsSymbol = __webpack_require__(6).arrayAtomicsSymbol;
+const arrayAtomicsSymbol = __webpack_require__(10).arrayAtomicsSymbol;
 const modelCollectionSymbol = Symbol.for('mongoose#Model#collection');
-const modelSymbol = __webpack_require__(6).modelSymbol;
+const modelSymbol = __webpack_require__(10).modelSymbol;
 const subclassedSymbol = Symbol('mongoose#Model#subclassed');
 
 /**
@@ -96546,7 +96634,7 @@ Model.bulkWrite = function(ops, options, callback) {
 Model.hydrate = function(obj) {
   _checkContext(this, 'hydrate');
 
-  const model = __webpack_require__(28).createModel(this, obj);
+  const model = __webpack_require__(46).createModel(this, obj);
   model.init(obj);
   return model;
 };
@@ -97743,7 +97831,7 @@ module.exports = exports = Model;
 
 
 /***/ }),
-/* 420 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97754,9 +97842,9 @@ module.exports = exports = Model;
 
 
 const Readable = __webpack_require__(20).Readable;
-const eachAsync = __webpack_require__(194);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const eachAsync = __webpack_require__(261);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
 /**
  * An AggregationCursor is a concurrency primitive for processing aggregation
@@ -98046,7 +98134,7 @@ module.exports = AggregationCursor;
 
 
 /***/ }),
-/* 421 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98056,7 +98144,7 @@ module.exports = AggregationCursor;
  * Module dependencies.
  */
 
-const EventEmitter = __webpack_require__(10).EventEmitter;
+const EventEmitter = __webpack_require__(14).EventEmitter;
 
 /*!
  * ignore
@@ -98115,13 +98203,13 @@ module.exports = ChangeStream;
 
 
 /***/ }),
-/* 422 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const utils = __webpack_require__(4);
+const utils = __webpack_require__(7);
 
 class RemoveOptions {
   constructor(obj) {
@@ -98135,13 +98223,13 @@ class RemoveOptions {
 module.exports = RemoveOptions;
 
 /***/ }),
-/* 423 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const utils = __webpack_require__(4);
+const utils = __webpack_require__(7);
 
 class SaveOptions {
   constructor(obj) {
@@ -98155,13 +98243,13 @@ class SaveOptions {
 module.exports = SaveOptions;
 
 /***/ }),
-/* 424 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const get = __webpack_require__(8);
+const get = __webpack_require__(15);
 
 /*!
  * Register methods for this model
@@ -98218,14 +98306,14 @@ module.exports = function applyMethods(model, schema) {
 
 
 /***/ }),
-/* 425 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const middlewareFunctions = __webpack_require__(120).middlewareFunctions;
-const utils = __webpack_require__(4);
+const middlewareFunctions = __webpack_require__(169).middlewareFunctions;
+const utils = __webpack_require__(7);
 
 module.exports = function applyStaticHooks(model, hooks, statics) {
   const kareemOptions = {
@@ -98295,7 +98383,7 @@ module.exports = function applyStaticHooks(model, hooks, statics) {
 };
 
 /***/ }),
-/* 426 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98314,19 +98402,19 @@ module.exports = function applyStatics(model, schema) {
 
 
 /***/ }),
-/* 427 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const assignRawDocsToIdStructure = __webpack_require__(428);
-const get = __webpack_require__(8);
-const getVirtual = __webpack_require__(213);
-const leanPopulateMap = __webpack_require__(130);
-const mpath = __webpack_require__(52);
-const sift = __webpack_require__(429).default;
-const utils = __webpack_require__(4);
+const assignRawDocsToIdStructure = __webpack_require__(516);
+const get = __webpack_require__(15);
+const getVirtual = __webpack_require__(280);
+const leanPopulateMap = __webpack_require__(179);
+const mpath = __webpack_require__(86);
+const sift = __webpack_require__(517).default;
+const utils = __webpack_require__(7);
 
 module.exports = function assignVals(o) {
   // Options that aren't explicitly listed in `populateOptions`
@@ -98546,7 +98634,7 @@ function isPopulatedObject(obj) {
 }
 
 /***/ }),
-/* 428 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98638,7 +98726,7 @@ function assignRawDocsToIdStructure(rawIds, resultDocs, resultOrder, options, re
 }
 
 /***/ }),
-/* 429 */
+/* 517 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99202,17 +99290,17 @@ function compare(a, b) {
 };
 
 /***/ }),
-/* 430 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const applyTimestampsToChildren = __webpack_require__(180);
-const applyTimestampsToUpdate = __webpack_require__(182);
-const cast = __webpack_require__(92);
-const castUpdate = __webpack_require__(198);
-const setDefaultsOnInsert = __webpack_require__(199);
+const applyTimestampsToChildren = __webpack_require__(247);
+const applyTimestampsToUpdate = __webpack_require__(249);
+const cast = __webpack_require__(133);
+const castUpdate = __webpack_require__(265);
+const setDefaultsOnInsert = __webpack_require__(266);
 
 /*!
  * Given a model and a bulkWrite op, return a thunk that handles casting and
@@ -99348,24 +99436,24 @@ module.exports = function castBulkWrite(model, op, options) {
 };
 
 /***/ }),
-/* 431 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const MongooseError = __webpack_require__(13);
-const get = __webpack_require__(8);
-const isPathExcluded = __webpack_require__(432);
-const getSchemaTypes = __webpack_require__(433);
-const getVirtual = __webpack_require__(213);
-const normalizeRefPath = __webpack_require__(434);
-const util = __webpack_require__(2);
-const utils = __webpack_require__(4);
+const MongooseError = __webpack_require__(19);
+const get = __webpack_require__(15);
+const isPathExcluded = __webpack_require__(520);
+const getSchemaTypes = __webpack_require__(521);
+const getVirtual = __webpack_require__(280);
+const normalizeRefPath = __webpack_require__(522);
+const util = __webpack_require__(3);
+const utils = __webpack_require__(7);
 
-const modelSymbol = __webpack_require__(6).modelSymbol;
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
-const schemaMixedSymbol = __webpack_require__(87).schemaMixedSymbol;
+const modelSymbol = __webpack_require__(10).modelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
+const schemaMixedSymbol = __webpack_require__(128).schemaMixedSymbol;
 
 module.exports = function getModelsMapForPopulate(model, docs, options) {
   let i;
@@ -99766,13 +99854,13 @@ function convertTo_id(val) {
 }
 
 /***/ }),
-/* 432 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const isDefiningProjection = __webpack_require__(55);
+const isDefiningProjection = __webpack_require__(89);
 
 /*!
  * Determines if `path` is excluded by `projection`
@@ -99808,7 +99896,7 @@ module.exports = function isPathExcluded(projection, path) {
 
 
 /***/ }),
-/* 433 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99818,12 +99906,12 @@ module.exports = function isPathExcluded(projection, path) {
  * ignore
  */
 
-const Mixed = __webpack_require__(42);
-const get = __webpack_require__(8);
-const leanPopulateMap = __webpack_require__(130);
-const mpath = __webpack_require__(52);
+const Mixed = __webpack_require__(65);
+const get = __webpack_require__(15);
+const leanPopulateMap = __webpack_require__(179);
+const mpath = __webpack_require__(86);
 
-const populateModelSymbol = __webpack_require__(6).populateModelSymbol;
+const populateModelSymbol = __webpack_require__(10).populateModelSymbol;
 
 /*!
  * @param {Schema} schema
@@ -100013,7 +100101,7 @@ module.exports = function getSchemaTypes(schema, doc, path) {
 
 
 /***/ }),
-/* 434 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100064,7 +100152,7 @@ module.exports = function normalizeRefPath(refPath, doc, populatedPath) {
 };
 
 /***/ }),
-/* 435 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100099,7 +100187,7 @@ module.exports = function isPathSelectedInclusive(fields, path) {
 
 
 /***/ }),
-/* 436 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100110,11 +100198,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = parallelLimit;
 
-var _eachOfLimit = __webpack_require__(208);
+var _eachOfLimit = __webpack_require__(275);
 
 var _eachOfLimit2 = _interopRequireDefault(_eachOfLimit);
 
-var _parallel = __webpack_require__(211);
+var _parallel = __webpack_require__(278);
 
 var _parallel2 = _interopRequireDefault(_parallel);
 
@@ -100145,7 +100233,7 @@ function parallelLimit(tasks, limit, callback) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 437 */
+/* 525 */
 /***/ (function(module, exports) {
 
 module.exports = pluralize;
@@ -100246,19 +100334,19 @@ function pluralize(str) {
 
 
 /***/ }),
-/* 438 */
+/* 526 */
 /***/ (function(module) {
 
 module.exports = {"_from":"mongoose@^5.6.9","_id":"mongoose@5.6.9","_inBundle":false,"_integrity":"sha512-NRW5UJSmwyJxK+MRHmq+dQKgZqMZCpW1aPkpBZESqrrgF2J15Flo/4K3RYkSSQY7oKhfbgqZTPo+J1snJ3hJ3w==","_location":"/mongoose","_phantomChildren":{"lodash":"4.17.15"},"_requested":{"type":"range","registry":true,"raw":"mongoose@^5.6.9","name":"mongoose","escapedName":"mongoose","rawSpec":"^5.6.9","saveSpec":null,"fetchSpec":"^5.6.9"},"_requiredBy":["#USER","/"],"_resolved":"https://registry.npmjs.org/mongoose/-/mongoose-5.6.9.tgz","_shasum":"86bdf258c5348a5c4a6acaf944d7baa73e3d1707","_spec":"mongoose@^5.6.9","_where":"D:\\Projects\\cv","author":{"name":"Guillermo Rauch","email":"guillermo@learnboost.com"},"browser":"./browser.js","bugs":{"url":"https://github.com/Automattic/mongoose/issues/new"},"bundleDependencies":false,"dependencies":{"async":"2.6.2","bson":"~1.1.1","kareem":"2.3.0","mongodb":"3.2.7","mongodb-core":"3.2.7","mongoose-legacy-pluralize":"1.0.2","mpath":"0.6.0","mquery":"3.2.1","ms":"2.1.2","regexp-clone":"1.0.0","safe-buffer":"5.1.2","sift":"7.0.1","sliced":"1.0.1"},"deprecated":false,"description":"Mongoose MongoDB ODM","devDependencies":{"acorn":"5.7.3","acquit":"1.x","acquit-ignore":"0.1.x","acquit-require":"0.1.x","babel-loader":"7.1.4","babel-preset-es2015":"6.24.1","benchmark":"2.1.4","bluebird":"3.5.5","chalk":"2.4.2","cheerio":"1.0.0-rc.2","co":"4.6.0","dox":"0.3.1","eslint":"5.16.0","highlight.js":"9.1.0","lodash.isequal":"4.5.0","lodash.isequalwith":"4.4.0","marked":"0.6.2","mocha":"5.x","moment":"2.x","mongodb-topology-manager":"1.0.11","mongoose-long":"0.2.1","node-static":"0.7.11","nyc":"14.1.1","object-sizeof":"1.3.0","promise-debug":"0.1.1","pug":"2.0.3","q":"1.5.1","semver":"5.5.0","uuid":"2.0.3","uuid-parse":"1.0.0","validator":"10.8.0","webpack":"4.16.4"},"directories":{"lib":"./lib/mongoose"},"engines":{"node":">=4.0.0"},"eslintConfig":{"extends":["eslint:recommended"],"parserOptions":{"ecmaVersion":2015},"env":{"node":true,"es6":true},"rules":{"comma-style":"error","consistent-this":["error","_this"],"indent":["error",2,{"SwitchCase":1,"VariableDeclarator":2}],"keyword-spacing":"error","no-buffer-constructor":"warn","no-console":"off","no-multi-spaces":"error","func-call-spacing":"error","no-trailing-spaces":"error","quotes":["error","single"],"semi":"error","space-before-blocks":"error","space-before-function-paren":["error","never"],"space-infix-ops":"error","space-unary-ops":"error","no-var":"warn","prefer-const":"warn","strict":["error","global"],"no-restricted-globals":["error",{"name":"context","message":"Don't use Mocha's global context"}]}},"homepage":"https://mongoosejs.com","keywords":["mongodb","document","model","schema","database","odm","data","datastore","query","nosql","orm","db"],"license":"MIT","main":"./index.js","name":"mongoose","repository":{"type":"git","url":"git://github.com/Automattic/mongoose.git"},"scripts":{"lint":"eslint .","release":"git pull && git push origin master --tags && npm publish","release-legacy":"git pull origin 4.x && git push origin 4.x --tags && npm publish --tag legacy","test":"mocha --exit test/*.test.js test/**/*.test.js","test-cov":"nyc --reporter=html --reporter=text npm test"},"version":"5.6.9"};
 
 /***/ }),
-/* 439 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const each = __webpack_require__(215);
+const each = __webpack_require__(282);
 
 /*!
  * ignore
@@ -100297,7 +100385,7 @@ module.exports = function(schema) {
 
 
 /***/ }),
-/* 440 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100315,13 +100403,13 @@ function _withoutIndex(iteratee) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 441 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const each = __webpack_require__(215);
+const each = __webpack_require__(282);
 
 /*!
  * ignore
@@ -100388,7 +100476,7 @@ module.exports = function(schema) {
 
 
 /***/ }),
-/* 442 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100439,14 +100527,14 @@ module.exports = function(schema) {
 
 
 /***/ }),
-/* 443 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-const objectIdSymbol = __webpack_require__(6).objectIdSymbol;
-const utils = __webpack_require__(4);
+const objectIdSymbol = __webpack_require__(10).objectIdSymbol;
+const utils = __webpack_require__(7);
 
 /*!
  * ignore
@@ -100529,7 +100617,7 @@ function storeShard() {
 
 
 /***/ }),
-/* 444 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100543,12 +100631,12 @@ if (typeof jest !== 'undefined' && typeof window !== 'undefined') {
 }
 
 /***/ }),
-/* 445 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./connection": 216,
-	"./drivers/node-mongodb-native/connection": 446
+	"./connection": 283,
+	"./drivers/node-mongodb-native/connection": 534
 };
 
 
@@ -100570,10 +100658,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 445;
+webpackContext.id = 533;
 
 /***/ }),
-/* 446 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -100583,8 +100671,8 @@ webpackContext.id = 445;
 
 
 
-const MongooseConnection = __webpack_require__(216);
-const STATES = __webpack_require__(83);
+const MongooseConnection = __webpack_require__(283);
+const STATES = __webpack_require__(124);
 
 /**
  * A [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) connection implementation.
@@ -100764,12 +100852,12 @@ module.exports = NativeConnection;
 
 
 /***/ }),
-/* 447 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./collection": 163,
-	"./drivers/node-mongodb-native/collection": 162
+	"./collection": 230,
+	"./drivers/node-mongodb-native/collection": 229
 };
 
 
@@ -100791,10 +100879,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 447;
+webpackContext.id = 535;
 
 /***/ }),
-/* 448 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* @flow */
@@ -100820,8 +100908,8 @@ type DotenvConfigOutput = {
 
 */
 
-const fs = __webpack_require__(74)
-const path = __webpack_require__(73)
+const fs = __webpack_require__(47)
+const path = __webpack_require__(72)
 
 function log (message /*: string */) {
   console.log(`[dotenv][DEBUG] ${message}`)

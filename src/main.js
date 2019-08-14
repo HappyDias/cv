@@ -3,8 +3,11 @@ import Sandbox from "./views/Sandbox.vue";
 import router from "./router";
 import "./registerServiceWorker";
 import store from "./store/";
+
 //import vuetify from "./vuetify";
 import vuetify from "./plugins/vuetify";
+
+import { createProvider } from './vue-apollo'
 //import i18n from "./i18n";
 
 Vue.config.productionTip = false;
@@ -13,5 +16,6 @@ new Vue({
   router,
   store,
   vuetify,
+  apolloProvider: createProvider(),
   render: h => h(Sandbox)
 }).$mount("#app");
