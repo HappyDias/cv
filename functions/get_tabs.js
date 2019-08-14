@@ -58071,7 +58071,6 @@ __webpack_require__.r(__webpack_exports__);
 var dotenv = __webpack_require__(536).config(); // Initialize connection to database
 
 
-console.log("CONNECTING", "mongodb+srv://antonio:Omaior234CV2020@cluster0-nzetq.mongodb.net/test0");
 var dbUrl = "mongodb+srv://antonio:Omaior234CV2020@cluster0-nzetq.mongodb.net/test0",
     dbOptions = {
   useNewUrlParser: true,

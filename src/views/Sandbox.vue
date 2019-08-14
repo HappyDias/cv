@@ -61,6 +61,6 @@ export default {
       return binding;
     }
   },
-  components: { Settings, UserCard, UserContent }
+  components: { Settings, UserCard, UserContent },
 };
 </script>

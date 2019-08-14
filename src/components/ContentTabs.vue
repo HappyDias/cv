@@ -9,6 +9,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import { gql } from "apollo-boost";
 
 export default {
   computed: {
@@ -22,6 +23,7 @@ export default {
   },
   methods: {
     change: function(number) {
+      console.log("HERE", this.hello);
       if(!this.tabs[number].content){
         this.getTabInfo({title: this.tabs[number].title, idx: number});
       }
@@ -31,6 +33,9 @@ export default {
   },
   mounted: function(){
     this.getTabs();
+  },
+  apollo:{
+    hello: gql`{hello}`
   }
 };
 </script>
