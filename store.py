@@ -3,6 +3,7 @@ import json
 import pymongo
 import datetime
 import time
+import html
 
 conn_file = open('.env.local', 'r')
 conn_file.readline() #First line
@@ -26,7 +27,7 @@ if __name__ == "__main__":
 				"date"  : time.time(),
 				"title" : tab_name
 			}
-			fo = open(os.path.join(tabsPath,file))
+			fo = open(os.path.join(tabsPath,file), 'r', encoding='utf-8')
 			file_data = json.load(fo)
 			fo.close()
 			document["data"] = file_data
