@@ -15,7 +15,7 @@ if __name__ == "__main__":
 	client = pymongo.MongoClient(conn_str)
 	db = client['cv_adias']
 	collection = db['tabs']
-	tabsPath = os.path.join("src", "data", "tabs")
+	tabsPath = os.path.join("data", "tabs")
 	
 	for file in os.listdir(tabsPath):
 		tab_name = file.split('.')[0]
