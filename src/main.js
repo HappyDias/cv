@@ -7,7 +7,6 @@ import store from "./store/";
 //import vuetify from "./vuetify";
 import vuetify from "./plugins/vuetify";
 
-import apolloProvider from './apollo'
 //import i18n from "./i18n";
 
 Vue.config.productionTip = false;
@@ -16,6 +15,5 @@ new Vue({
   router,
   store,
   vuetify,
-  apolloProvider,
   render: h => h(Sandbox)
 }).$mount("#app");

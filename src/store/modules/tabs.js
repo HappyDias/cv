@@ -1,39 +1,6 @@
-import axios from "axios";
-import qs from 'qs';
-
-function orderByDate(a,b){
-  if(a.year < b.year) return -1;
-  if(a.year > b.year) return 1;
-  return 0;
-}
-
-function homogenize(obj){
-  const toReturn = {...obj};
-  const testKeys = {
-    year : ['date'],
-    url : ['adsurl'],
-    journal: ['journaltitle', 'booktitle']
-  }
-
-  Object.keys(testKeys).forEach(testKey =>{
-    if(!(testKey in toReturn)){
-      testKeys[testKey].forEach(checkKey =>{
-        if(toReturn[checkKey]){
-          toReturn[testKey] = toReturn[checkKey];
-        }
-      })
-    }
-  })
-
-  if(toReturn.author[0].includes('Dias')){
-    toReturn['authType'] = 'Main Author'
-  }
-  else{
-    toReturn['authType'] = 'Co-Author'
-  }
-
-  return toReturn;
-}
+import { gql } from "apollo-boost";
+import client from '../../apollo';
+import {orderByDate, homogenize, order} from "../../utils/functions"
 
 export default {
   namespaced: true,
@@ -90,40 +57,58 @@ export default {
       context.commit("set", payload);
     },
     getTabs(context){
-      axios.get("/.netlify/functions/get_tabs")
-        .then(res => {
-          if(res.status === 200){
-            const tabs = res.data.map((key,idx) => ({
+      client.query({
+        query: gql`
+          {
+            tabList
+          }
+        `
+      })
+        .then(result=>{
+          const {data} = result; // This is 
+          const {tabList} = data; // kinda ugly
+
+          const tabs = tabList.sort(order).map((key,idx) => ({
               title: key,
               content: null
             }));
-            context.commit("set", {key: 'tab', value: 0});
-            context.commit("set", {key: 'tabs', value: tabs});
-          }
+
+          context.commit("set", {key: 'tab', value: 0});
+          context.commit("set", {key: 'tabs', value: tabs});
           context.commit("set", {key: 'fetching', value: false});
-      })
-        .catch(error => {
-          console.log("error", error);
+        })
+        .catch(err=>{
+          console.log("GRAPHQL ERROR", err);
           context.commit("set", {key: 'fetching', value: false});
-      });
+        });
     },
     getTabInfo(context, payload){
       const {title, idx} = payload;
       context.commit("set", {key: 'fetchingTab', value: true});
-      axios.get("/.netlify/functions/get_tab_info?title="+title)
-        .then(res=>{
-          if(res.status === 200){
-            const returnData = res.data.data;
-            if(title === 'Publications'){
-              returnData.bibliography = returnData.bibliography.map(homogenize).sort(orderByDate);
-            }
-            context.commit("setTab", {idx, content: res.data.data});
+      client.query({
+        query: gql`
+          {getTab(title: "${title}"){
+            _id
+            date
+            title
+            data
+          }}
+        `
+      })
+        .then(result=>{
+          const {data} = result; // This is 
+          const {getTab} = data; // kinda ugly
+          const toCommit = getTab.data; // ?
+          if(title === 'Publications'){
+            toCommit.bibliography = toCommit.bibliography.map(homogenize).sort(orderByDate);
           }
+          context.commit("setTab", {idx, content: toCommit});
           context.commit("set", {key: 'fetchingTab', value: false});
         })
-        .catch(error=>{
+        .catch(err=>{
+          console.log("GRAPHQL ERROR", err);
           context.commit("set", {key: 'fetchingTab', value: false});
-        })
+        });
     }
   }
 };

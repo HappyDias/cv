@@ -1,25 +1,12 @@
-// src/lambda/graphql.js
-const { ApolloServer, gql } = require("apollo-server-lambda");
-
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: (root, args, context) => {
-      return "Hello, world!";
-    }
-  }
-};
+import {ApolloServer} from "apollo-server-lambda";
+import schema from "../graphql/schema";
+import resolvers from "../graphql/resolvers";
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: schema,
   resolvers,
   introspection: true,
-  playground: true
+  playground: true //Should consider this, some joker can just use up all my netlify functions with the playground
 });
 
 exports.handler = server.createHandler();
