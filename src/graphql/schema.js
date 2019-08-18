@@ -1,6 +1,31 @@
 import {gql} from "apollo-server-lambda";
+import {getTabTitles} from '../utils/functions';
+import makeConnection from '../utils/server';
 
-const schema = gql`
+async function makeSchema(){
+  const dbconn = await makeConnection();
+  const titles = await getTabTitles(dbconn);
+
+  const schema = gql`
+  scalar Data
+  enum Title { ${titles.join(' ')} }
+  type Tab {
+    _id: String!
+    data: Data
+    date: Float!
+    title: String!
+  }
+  type Query {
+    getTab( title: Title): Tab
+    tabList: [String]
+  }
+`;
+  dbconn.close();
+
+  return schema;
+}
+
+const typeDefs = gql`
   scalar Data
   type Tab {
     _id: String!
@@ -15,4 +40,4 @@ const schema = gql`
   }
 `;
 
-export default schema;
+export {typeDefs, makeSchema};

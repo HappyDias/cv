@@ -4,9 +4,6 @@ import {GraphqlError} from '../utils/errors';
 
 const resolvers = {
   Query: {
-    hello: (root, args, context) => {
-      return "Hello, world!";
-    },
     getTab: async (root, args, context) => {
       const {title} = args;
 

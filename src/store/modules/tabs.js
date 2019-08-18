@@ -87,7 +87,7 @@ export default {
       context.commit("set", {key: 'fetchingTab', value: true});
       client.query({
         query: gql`
-          {getTab(title: "${title}"){
+          {getTab(title: ${title}){
             _id
             date
             title

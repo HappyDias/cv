@@ -45,4 +45,12 @@ function order(a,b){
   return orders[a] - orders[b];
 }
 
-export {orderByDate, homogenize, order};
+async function getTabTitles(dbconn){
+  const db = dbconn.db('cv_adias');
+  const collection = db.collection('tabs');
+  const titles = await collection.distinct('title');
+
+  return titles;
+}
+
+export {orderByDate, homogenize, order, getTabTitles};
