@@ -4,7 +4,9 @@
   	  {{content.title}}
   	</v-card-title>
     <v-card-text>
-      <ContentText :content="content" v-if="!this.fetching && this.content.content"/>
+      <div v-if="!this.fetching && this.content.content">
+        <component :is="currentComponent" :content="content"></component>
+      </div>
       <div v-else>
         {{this.errorText}}
       </div>
@@ -13,9 +15,22 @@
 </template>
 
 <script>
-import ContentText from "@/components/ContentText.vue";
+import * as Tabs from "./Tabs";
 
 export default {
+  data: function(){
+    return {
+      tabMapping: {
+        Interests: 'Interests',
+        Experience: 'Timeline',
+        Education: 'Timeline',
+        Languages: 'Languages',
+        Skills: 'Skills',
+        Publications: 'Bibliography',
+      },
+      Tabs
+    };
+  },
   props: ["content", "fetching"],
   computed: {
     errorText: function(){
@@ -23,8 +38,11 @@ export default {
         return "A problem occurred";
       }
       return "Loading . . ."
+    },
+    currentComponent: function(){
+      return this.Tabs[this.tabMapping[this.content.title]]
     }
   },
-  components: { ContentText }
+  components: { ...Tabs }
 };
 </script>

@@ -22,9 +22,10 @@ export default {
   },
   methods: {
     change: function(number) {
-      if(!this.tabs[number].content){
+      /*if(!this.tabs[number].content){
         this.getTabInfo({title: this.tabs[number].title, idx: number});
-      }
+      }*/
+      this.getTabInfo({title: this.tabs[number].title, idx: number});
       this.set({ key: "tab", value: number });
     },
     ...mapActions("tabs", ["set", "getTabs", "getTabInfo"])
