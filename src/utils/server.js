@@ -8,6 +8,18 @@ const dbUrl = process.env.MONGO_STR,
         useNewUrlParser: true,
       }
 
+class Connection {
+    static connectToMongo() {
+        if ( this.db ) return Promise.resolve(this.db)
+        return MongoClient.connect(this.url, this.options)
+            .then(db => this.db = db)
+    }
+}
+
+Connection.db = null;
+Connection.url = dbUrl;
+Connection.options = dbOptions;
+
 async function makeConnection(){
 	var connection = null;
 	try{
@@ -20,4 +32,4 @@ async function makeConnection(){
 }
 
 
-export default makeConnection;
+export default Connection;

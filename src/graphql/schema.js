@@ -1,9 +1,9 @@
 import {gql} from "apollo-server-lambda";
 import {getTabTitles} from '../utils/functions';
-import makeConnection from '../utils/server';
+import Connection from '../utils/server';
 
 async function makeSchema(){
-  const dbconn = await makeConnection();
+  const dbconn = await Connection.connectToMongo();
   const titles = await getTabTitles(dbconn);
 
   const schema = gql`
@@ -20,7 +20,6 @@ async function makeSchema(){
     tabList: [String]
   }
 `;
-  dbconn.close();
 
   return schema;
 }

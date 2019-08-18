@@ -16,6 +16,8 @@ if __name__ == "__main__":
 	db = client['cv_adias']
 	collection = db['tabs']
 	tabsPath = os.path.join("data", "tabs")
+
+	collection.create_index([("title", pymongo.ASCENDING), ("date", pymongo.DESCENDING)], name='search_index')
 	
 	for file in os.listdir(tabsPath):
 		tab_name = file.split('.')[0]

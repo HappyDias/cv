@@ -1,5 +1,5 @@
 import { GraphQLScalarType } from  'graphql';
-import makeConnection from '../utils/server';
+import Connection from '../utils/server';
 import {GraphqlError} from '../utils/errors';
 
 const resolvers = {
@@ -7,7 +7,7 @@ const resolvers = {
     getTab: async (root, args, context) => {
       const {title} = args;
 
-      const dbconn = await makeConnection();
+      const dbconn = await Connection.connectToMongo();
       const db = dbconn.db('cv_adias');
       const collection = db.collection('tabs');
       const titles = await collection.distinct('title');
@@ -20,14 +20,12 @@ const resolvers = {
       	throw new GraphqlError('Invalid title ' + title + ' must be one of: ' + titles.join(', '));
       }
 
-      dbconn.close();
-
       if(query) return query;
       return null;
     },
     tabList: async (root, args, context) => {
 
-      const dbconn = await makeConnection();
+      const dbconn = await Connection.connectToMongo();
       const db = dbconn.db('cv_adias');
       const collection = db.collection('tabs');
       const query = await collection.distinct('title');
