@@ -24,19 +24,4 @@ async function makeSchema(){
   return schema;
 }
 
-const typeDefs = gql`
-  scalar Data
-  type Tab {
-    _id: String!
-    data: Data
-    date: Float!
-    title: String!
-  }
-  type Query {
-    getTab( title: String): Tab
-    tabList: [String]
-    hello: String
-  }
-`;
-
-export {typeDefs, makeSchema};
+export {makeSchema};

@@ -10,17 +10,17 @@ const runHandler = (request, context, handler) =>
 })
 
 const run = async (context, request) => {
-    const schema = await makeSchema();
-    // Async functions go here
-    const server = new ApolloServer({
-       typeDefs: schema,
-       resolvers,
-       introspection: true,
-       playground: true
-    })
-    const handler = server.createHandler({
-        cors: { credentials: true, origin: true }
-     });
+  const schema = await makeSchema();
+  // Async functions go here
+  const server = new ApolloServer({
+     typeDefs: schema,
+     resolvers,
+     introspection: true,
+     playground: true
+  })
+  const handler = server.createHandler({
+      cors: { credentials: true, origin: true }
+   });
   
   const response = await runHandler(request, context, handler)
 

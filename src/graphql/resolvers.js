@@ -30,8 +30,6 @@ const resolvers = {
       const collection = db.collection('tabs');
       const query = await collection.distinct('title');
 
-      dbconn.close();
-
       if(query) return query;
       return null;
     }
