@@ -1,5 +1,6 @@
 import { gql } from "apollo-boost";
 import client from '../../apollo';
+import router from '../../router';
 import {orderByDate, homogenize, order} from "../../utils/functions"
 
 export default {
@@ -7,7 +8,6 @@ export default {
   state() {
     return {
       tabs: null,
-      tab: -1,
       fetching: true,
       fetchingTab: true,
       userInfo: [
@@ -73,13 +73,20 @@ export default {
           const {data} = result; // This is 
           const {__type} = data; // kinda ugly
           const {enumValues} = __type;
+          const {tab} = router.currentRoute.params;
 
           const tabs = enumValues.map((key,idx) => ({
-              title: key.name,
-              content: null
-            })).sort(order);
+            title: key.name,
+            content: null
+          })).sort(order);
 
-          context.commit("set", {key: 'tab', value: 0});
+          if(tab){
+            const tabFound = tabs.filter(tabObj => tabObj.title === tab);
+            if(tabFound.length > 0){
+              context.dispatch("getTabInfo", {title: tabFound[0].title, idx:  tabs.indexOf(tabFound[0])});
+            }
+          }
+
           context.commit("set", {key: 'tabs', value: tabs});
           context.commit("set", {key: 'fetching', value: false});
         })
@@ -105,9 +112,16 @@ export default {
           const {data} = result; // This is 
           const {getTab} = data; // kinda ugly
           const toCommit = getTab.data; // ?
+          const {tab} = router.currentRoute.params;
+
           if(title === 'Publications'){
             toCommit.bibliography = toCommit.bibliography.map(homogenize).sort(orderByDate);
           }
+
+          if(tab !== title){
+            router.push({ path: `/${title}` }); //Maybe consider a replace instead of a push
+          }
+
           context.commit("setTab", {idx, content: toCommit});
           context.commit("set", {key: 'fetchingTab', value: false});
         })

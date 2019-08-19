@@ -1,34 +1,21 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+//import TabSelector  from "./components/TabSelector";
+//import UserContent  from "./components/UserContent";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  routes: [
+  routes: [//Maybe consider a "home" route, but not particularly necessary
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: "/:tab",
+      name: "tab",
+      props: true,
+      component: ()=> {
+        return import(/* webpackChunkName: "about"*/  "./components/UserContent")
+      }
     },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    },
-    {
-      path: "/sandbox",
-      name: "sandbox",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Sandbox.vue")
-    }
   ]
 });

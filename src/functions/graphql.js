@@ -27,13 +27,4 @@ const run = async (context, request) => {
   return response
 }
 
-/*const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-  introspection: true,
-  playground: true //Should consider this, some joker can just use up all my netlify functions with the playground
-});
-
-exports.handler = server.createHandler();*/
-
 exports.handler = run;

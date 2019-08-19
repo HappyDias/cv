@@ -22,17 +22,7 @@ const resolvers = {
 
       if(query) return query;
       return null;
-    },
-    /*tabList: async (root, args, context) => {
-
-      const dbconn = await Connection.connectToMongo();
-      const db = dbconn.db('cv_adias');
-      const collection = db.collection('tabs');
-      const query = await collection.distinct('title');
-
-      if(query) return query;
-      return null;
-    }*/
+    }
   },
   Data: new GraphQLScalarType({
     name: "TabData",
