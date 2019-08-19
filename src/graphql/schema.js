@@ -17,7 +17,6 @@ async function makeSchema(){
   }
   type Query {
     getTab( title: Title): Tab
-    tabList: [String]
   }
 `;
 

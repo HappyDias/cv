@@ -42,7 +42,7 @@ function order(a,b){
     "Publications" : 5,
   }
 
-  return orders[a] - orders[b];
+  return orders[a.title] - orders[b.title];
 }
 
 async function getTabTitles(dbconn){

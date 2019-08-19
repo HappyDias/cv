@@ -60,18 +60,24 @@ export default {
       client.query({
         query: gql`
           {
-            tabList
+            __type(name:"Title"){
+              name
+              enumValues{
+                name
+              }
+            }
           }
         `
       })
         .then(result=>{
           const {data} = result; // This is 
-          const {tabList} = data; // kinda ugly
+          const {__type} = data; // kinda ugly
+          const {enumValues} = __type;
 
-          const tabs = tabList.sort(order).map((key,idx) => ({
-              title: key,
+          const tabs = enumValues.map((key,idx) => ({
+              title: key.name,
               content: null
-            }));
+            })).sort(order);
 
           context.commit("set", {key: 'tab', value: 0});
           context.commit("set", {key: 'tabs', value: tabs});
