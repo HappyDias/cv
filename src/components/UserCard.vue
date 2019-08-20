@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="600">
-    <v-img class="white--text" src="https://storage.cloud.google.com/adias-cv/cv_photo2.jpg">
+    <v-img class="white--text" src="/img/cv_photo2.jpg">
       <v-card-title class="align-end fill-height">
         Curriculum Vitae - António Dias
       </v-card-title>
@@ -21,7 +21,7 @@
               <span v-html="info.text"/>
             </div>
             <div>
-            	<a href="https://storage.cloud.google.com/adias-cv/adiasCV.pdf" target="_blank">
+            	<a href="/adiasCV.pdf" target="_blank">
             	  <v-icon>mdi-file-pdf</v-icon>
             	  Pdf version
             	</a>
