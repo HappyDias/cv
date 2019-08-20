@@ -14,12 +14,15 @@ conn_file.close()
 if __name__ == "__main__":
 	client = pymongo.MongoClient(conn_str)
 	db = client['cv_adias']
-	collection = db['tabs']
-	tabsPath = os.path.join("data", "tabs")
+	collection_tabs = db['tabs']
+	collection_info = db['info']
+	data_path = "data"
+	tabs_path = os.path.join(data_path, "tabs")
 
-	collection.create_index([("title", pymongo.ASCENDING), ("date", pymongo.DESCENDING)], name='search_index')
+	collection_tabs.create_index([("title", pymongo.ASCENDING), ("date", pymongo.DESCENDING)], name='search_index')
+	collection_info.create_index([("title", pymongo.ASCENDING), ("date", pymongo.DESCENDING)], name='search_index')
 	
-	for file in os.listdir(tabsPath):
+	for file in os.listdir(tabs_path):
 		tab_name = file.split('.')[0]
 		file_ext = file.split('.')[1]
 		if file_ext == "json":
@@ -29,10 +32,15 @@ if __name__ == "__main__":
 				"date"  : time.time(),
 				"title" : tab_name
 			}
-			fo = open(os.path.join(tabsPath,file), 'r', encoding='utf-8')
-			file_data = json.load(fo)
-			fo.close()
-			document["data"] = file_data
+			with open(os.path.join(tabs_path,file), 'r', encoding='utf-8') as fo:
+				file_data = json.load(fo)
+				document["data"] = file_data
 
 			#Insert document
-			collection.insert_one(document)
+			collection_tabs.insert_one(document)
+	with open(os.path.join(data_path,"user_info.json"), 'r') as fo:
+		file_data = json.load(fo)
+		for idx,field in enumerate(file_data):
+			document = field
+			document["date"] = time.time()
+			collection_info.insert_one(document)
