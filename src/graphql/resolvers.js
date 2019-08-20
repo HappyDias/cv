@@ -22,6 +22,25 @@ const resolvers = {
 
       if(query) return query;
       return null;
+    },
+    getInfo: async (root, args, context) => {
+      const dbconn = await Connection.connectToMongo();
+      const db = dbconn.db('cv_adias');
+      const collection = db.collection('info');
+      const titles = await collection.distinct('title');
+      const info = await collection.aggregate([
+        {$group: 
+          {
+            _id: '$title',
+            date: {$max: '$date'},
+            data: { "$first": "$$CURRENT" } // Should be able to do destructuring =(
+          }
+        }
+      ]).toArray();
+
+      if(info) return info;
+      return null;
+
     }
   },
   Data: new GraphQLScalarType({

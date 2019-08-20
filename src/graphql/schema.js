@@ -15,8 +15,14 @@ async function makeSchema(){
     date: Float!
     title: String!
   }
+  type Info {
+    _id: String!
+    date: Float!
+    data: Data
+  }
   type Query {
     getTab( title: Title): Tab
+    getInfo: [Info]
   }
 `;
 
