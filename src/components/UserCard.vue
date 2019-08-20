@@ -45,7 +45,7 @@ import ContentTabs from "@/components/ContentTabs.vue";
 
 export default {
   data: () => ({
-    showInfo: true,
+    showInfo: false,
   }),
   methods: {
     redirect: link => {
