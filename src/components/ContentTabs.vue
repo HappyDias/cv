@@ -38,10 +38,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions("tabs", ["set", "getTabs", "getTabInfo"])
+    ...mapActions("tabs", ["set", "getTabs", "getTabInfo", "getInfo"])
   },
   mounted: function(){
     this.getTabs();
+    this.getInfo();
   }
 };
 </script>

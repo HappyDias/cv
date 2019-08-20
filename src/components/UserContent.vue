@@ -1,8 +1,8 @@
 <template>
   <v-card>
-    <div v-if="this.content && !this.fetchingTab">
+    <div v-if="this.component && !this.fetchingTab">
       <v-card-title class="align-end fill-height">
-        {{this.content.title}}
+        {{this.tab}}
       </v-card-title>
       <v-card-text>
         <component :is="component" :content="this.content"></component>
@@ -17,6 +17,7 @@
 <script>
 import { mapState } from "vuex";
 import * as Tabs from "./Tabs";
+import UnavailableTab from "./UnavailableTab.vue";
 
 export default {
   computed: {
@@ -27,21 +28,20 @@ export default {
       }
       return "Loading . . .";
     },
+    tab: function(){
+      return this.$route.params.tab;
+    },
     component: function(){
-      const {tab} = this.$route.params;
-
-      if(tab && Tabs){
-        if(tab in Tabs){
-          return Tabs[tab];
+      if(this.tab && Tabs){
+        if(this.tab in Tabs){
+          return Tabs[this.tab];
         }
       }
-      return null;
+      return UnavailableTab;
     },
     content: function (){
-      const {tab} = this.$route.params;
-
-      if(tab && this.tabs){
-        const foundTab = this.tabs.filter(tabObj => tabObj.title === tab);
+      if(this.tab && this.tabs){
+        const foundTab = this.tabs.filter(tabObj => tabObj.title === this.tab);
         if(foundTab.length > 0){
           return foundTab[0];
         }

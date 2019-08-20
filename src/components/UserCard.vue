@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="600">
-    <v-img class="white--text" :src="'/img/cv_photo2.jpg'">
+    <v-img class="white--text" src="https://storage.cloud.google.com/adias-cv/cv_photo2.jpg">
       <v-card-title class="align-end fill-height">
         Curriculum Vitae - António Dias
       </v-card-title>
@@ -13,17 +13,22 @@
       <span class="text--primary">
       	<ContentTabs />
         <div v-if="showInfo">
-          <div v-for="info in userInfo" v-bind:key="info.icon">
-            <v-icon @click="redirect(info.redirect)">
-              {{info.icon}}
-            </v-icon>
-            <span v-html="info.text"/>
+          <div v-if="!fetchingInfo && userInfo">
+            <div v-for="info in userInfo" v-bind:key="info.icon">
+              <v-icon @click="redirect(info.redirect)">
+                {{info.icon}}
+              </v-icon>
+              <span v-html="info.text"/>
+            </div>
+            <div>
+            	<a href="https://storage.cloud.google.com/adias-cv/adiasCV.pdf" target="_blank">
+            	  <v-icon>mdi-file-pdf</v-icon>
+            	  Pdf version
+            	</a>
+            </div>
           </div>
-          <div>
-          	<a href="/adiasCV.pdf" target="_blank">
-          	  <v-icon>mdi-file-pdf</v-icon>
-          	  Pdf version
-          	</a>
+          <div v-else>
+            {{errorMsg}}
           </div>
         </div>
         <v-layout :class="infoData.location">
@@ -40,7 +45,7 @@ import ContentTabs from "@/components/ContentTabs.vue";
 
 export default {
   data: () => ({
-    showInfo: false,
+    showInfo: true,
   }),
   methods: {
     redirect: link => {
@@ -55,9 +60,12 @@ export default {
   },
   computed: {
     ...mapState("settings", ["show"]),
-    ...mapState("tabs", ["userInfo"]),
+    ...mapState("tabs", ["userInfo", "fetchingInfo"]),
     infoData: function(){
       return this.showInfo ? {icon: 'mdi-minus', location:'justify-end'} : {icon: 'mdi-plus', location:'justify-start'};
+    },
+    errorMsg: function(){
+      return !this.fetchingInfo && !this.userInfo ? "An error occurred" : "...Loading"
     }
   },
   components: { ContentTabs }

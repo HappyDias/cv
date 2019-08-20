@@ -9,39 +9,9 @@ export default {
     return {
       tabs: null,
       fetching: true,
-      fetchingTab: true,
-      userInfo: [
-      {
-        icon: 'mdi-email',
-        text: 'amcbd89@gmail.com',
-        'redirect': 'mailto:amcbd89@gmail.com'
-      },
-      {
-        icon: 'mdi-phone',
-        text: '(+351) 96 9875 025',
-        'redirect': 'tel:+351969875025'
-      },
-      {
-        icon: 'mdi-skype',
-        text: 'amcbd89',
-        'redirect': 'skype:amcbd89?chat'
-      },
-      {
-        icon: 'mdi-home',
-        text: 'Rua dos Escritores, 7, 7C, <br />2685-207, Portela LRS, Portugal',
-        'redirect': 'https://www.google.com/maps/search/?api=1&query=38.783029,-9.108888'
-      },
-      {
-        icon: 'mdi-gender-male-female',
-        text: 'Male',
-        'redirect': ''
-      },
-      {
-        icon: 'mdi-cake-variant',
-        text: '21<sup>st</sup> of November 1989',
-        'redirect': ''
-      }
-    ]
+      fetchingTab: false,
+      fetchingInfo: true,
+      userInfo: null
     };
   },
   mutations: {
@@ -129,6 +99,31 @@ export default {
           console.log("GRAPHQL ERROR", err);
           context.commit("set", {key: 'fetchingTab', value: false});
         });
+    },
+    getInfo(context){
+      context.commit("set", {key: 'fetchingInfo', value: true});
+      client.query({
+        query: gql`
+          {
+            getInfo{
+              _id
+              date
+              data
+            }
+          }
+        `
+      }).then(result =>{
+        const {data} = result; // This is 
+        const {getInfo} = data; // kinda ugly
+        const toCommit = getInfo.map(obj => ({...obj.data}));
+
+        context.commit("set", {key: 'userInfo', value: toCommit});
+        context.commit("set", {key: 'fetchingInfo', value: false});
+          
+      }).catch(err=>{
+          console.log("GRAPHQL ERROR", err);
+          context.commit("set", {key: 'fetchingInfo', value: false});
+      });
     }
   }
 };
